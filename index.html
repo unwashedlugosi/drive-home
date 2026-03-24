@@ -186,38 +186,38 @@ const ROUTE = { days: [
     tip: 'Hit the road by 7 AM to reach the Jack Rabbit by 10 when it opens. The AZ stops are clustered along I-40 between miles 185–280 from Mesa.',
     appleMapsUrl: 'https://maps.apple.com/?saddr=Mesa,+AZ&daddr=3386+Historic+US-66,+Joseph+City,+AZ+86032&daddr=Petrified+Forest+National+Park,+AZ&daddr=Meteor+Crater,+Winslow,+AZ&daddr=Hampton+Inn,+Albuquerque,+NM',
     sections: [
-      { name: 'Mesa to Holbrook', stops: [
+      { name: 'Flagstaff to Winslow', stops: [
+        { name: 'Twin Arrows', type: 'history', lat: 35.069, lng: -111.168,
+          desc: 'Exit 219. Two giant arrows stuck in the ground — once marked a trading post, now just the arrows remain. Visible from I-40.',
+          blurb: 'Twin Arrows was a Hopi-owned trading post that opened in the 1950s. The two 25-foot wooden arrows were the advertising gimmick. The place closed in the 1990s when I-40 bypassed it. The Navajo Nation later built a casino nearby, but the original arrows and ruins still stand as one of Route 66\'s most haunting landmarks.' },
+        { name: 'Two Guns Ghost Town', type: 'history', lat: 35.095, lng: -111.082,
+          desc: 'Exit 230. Abandoned Route 66 town with ruins of a zoo, trading post, and Apache Death Cave. Free to explore — crumbling structures.',
+          blurb: 'Two Guns sits on the site of an Apache Death Cave, where in 1878 a group of Navajo warriors reportedly trapped and suffocated 42 Apaches inside a limestone cavern by building a fire at the entrance. In the 1920s, a con man named Harry "Two Gun" Miller built a tourist trap here, exhibiting mountain lions in pens carved from the canyon wall. The town burned twice and was finally abandoned when I-40 bypassed it in the 1970s.' },
+        { name: 'Meteor Crater', type: 'scenic', lat: 35.028, lng: -111.023,
+          desc: 'Exit 233. Best-preserved impact site on Earth. Nearly a mile wide, 550 feet deep. $22/person. 45 min.',
+          blurb: 'About 50,000 years ago, a nickel-iron meteorite 150 feet across slammed into this spot at 26,000 miles per hour. The explosion was equivalent to 10 megatons of TNT — about 150 times the force of the Hiroshima bomb. The crater is 3,900 feet across and 560 feet deep. NASA trained Apollo astronauts here in the 1960s because the terrain resembled the lunar surface.',
+          appleMap: 'https://maps.apple.com/?address=Meteor+Crater+Rd,+Winslow,+AZ+86047' },
+        { name: 'Standin\' on the Corner Park', type: 'attraction', lat: 35.024, lng: -110.697,
+          desc: 'Exit 253, Winslow. "Take It Easy" by the Eagles. Life-size statue, mural of the girl in the flatbed Ford. 10-min stop.',
+          blurb: 'This park commemorates the Eagles\' 1972 hit "Take It Easy," written by Jackson Browne and Glenn Frey. The lyric "standing on a corner in Winslow, Arizona" put this small Route 66 town on the map permanently. The statue was erected in 1999, and the mural across the street features a girl in a red flatbed Ford reflected in a trompe-l\'oeil storefront window.',
+          appleMap: 'https://maps.apple.com/?address=100+E+2nd+St,+Winslow,+AZ+86047' }
+      ]},
+      { name: 'Winslow to Petrified Forest', stops: [
         { name: 'Jack Rabbit Trading Post', type: 'attraction', lat: 34.956, lng: -110.333,
-          desc: 'The famous "Here It Is" billboard and giant jackrabbit. Route 66 souvenirs. Opens 10 AM.',
+          desc: 'Exit 269, Joseph City. The famous "Here It Is" billboard and giant jackrabbit. Route 66 souvenirs. Opens 10 AM.',
           blurb: 'The Jack Rabbit Trading Post has been luring travelers off the highway since 1949 with its "HERE IT IS" billboards stretching hundreds of miles in each direction. The giant jackrabbit out front is one of the most photographed spots on all of Route 66. It\'s owned by Tony and Cindy Jaquez, who took over the family business.',
           appleMap: 'https://maps.apple.com/?address=3386+Historic+US-66,+Joseph+City,+AZ+86032' },
         { name: 'Geronimo Trading Post', type: 'curiosity', lat: 34.933, lng: -110.197,
-          desc: 'Giant concrete teepee and enormous dream catcher. Classic Route 66 tourist trap in the best possible way.',
+          desc: 'Holbrook. Giant concrete teepee and enormous dream catcher. Classic Route 66 tourist trap in the best possible way.',
           appleMap: 'https://maps.apple.com/?address=Geronimo+Trading+Post,+Holbrook,+AZ' },
-        { name: 'Petrified Forest National Park', type: 'scenic', lat: 35.065, lng: -109.789,
-          desc: '28-mile scenic road. Massive petrified logs, Painted Desert, Crystal Forest trail. $25/vehicle. 1.5–2 hours.',
-          blurb: 'These petrified logs are 225 million years old, from the Late Triassic period, when this area was a tropical floodplain near the equator. The logs were buried by volcanic ash and slowly replaced by silica, turning them to stone while preserving every detail of the original wood grain. The Painted Desert section shows layers of iron and manganese minerals in bands of red, orange, purple and gray.',
-          appleMap: 'https://maps.apple.com/?address=Petrified+Forest+National+Park,+AZ' },
         { name: 'Wigwam Motel', type: 'curiosity', lat: 34.903, lng: -110.158,
-          desc: 'Iconic concrete teepees of Holbrook. One of only 3 surviving Wigwam Motels. Quick photo stop.',
+          desc: 'Holbrook. Iconic concrete teepees. One of only 3 surviving Wigwam Motels. Quick photo stop.',
           blurb: 'Chester Lewis built this Wigwam Village in 1950, one of seven built across America between 1937 and 1950. Each "wigwam" is a freestanding concrete and steel teepee, about 28 feet tall. Only three of the original seven villages survive. The design was patented by Frank Redford of Cave City, Kentucky, who charged franchisees $3,000 for the plans.',
-          appleMap: 'https://maps.apple.com/?address=811+W+Hopi+Dr,+Holbrook,+AZ+86025' }
-      ]},
-      { name: 'Holbrook to Winslow', stops: [
-        { name: 'Two Guns Ghost Town', type: 'history', lat: 35.095, lng: -111.082,
-          desc: 'Abandoned Route 66 town with ruins of a zoo, trading post, and Apache Death Cave. Free, open to explore but be careful — crumbling structures.',
-          blurb: 'Two Guns sits on the site of an Apache Death Cave, where in 1878 a group of Navajo warriors reportedly trapped and suffocated 42 Apaches inside a limestone cavern by building a fire at the entrance. In the 1920s, a con man named Harry "Two Gun" Miller built a tourist trap here, exhibiting mountain lions in pens carved from the canyon wall. The town burned twice and was finally abandoned when I-40 bypassed it in the 1970s.' },
-        { name: 'Standin\' on the Corner Park', type: 'attraction', lat: 35.024, lng: -110.697,
-          desc: '"Take It Easy" by the Eagles. Life-size statue, mural of the girl in the flatbed Ford. 10-min stop.',
-          blurb: 'This park commemorates the Eagles\' 1972 hit "Take It Easy," written by Jackson Browne and Glenn Frey. The lyric "standing on a corner in Winslow, Arizona" put this small Route 66 town on the map permanently. The statue was erected in 1999, and the mural across the street features a girl in a red flatbed Ford reflected in a trompe-l\'oeil storefront window.',
-          appleMap: 'https://maps.apple.com/?address=100+E+2nd+St,+Winslow,+AZ+86047' },
-        { name: 'Meteor Crater', type: 'scenic', lat: 35.028, lng: -111.023,
-          desc: 'Best-preserved impact site on Earth. Nearly a mile wide, 550 feet deep. $22/person. 45 min.',
-          blurb: 'About 50,000 years ago, a nickel-iron meteorite 150 feet across slammed into this spot at 26,000 miles per hour. The explosion was equivalent to 10 megatons of TNT — about 150 times the force of the Hiroshima bomb. The crater is 3,900 feet across and 560 feet deep. NASA trained Apollo astronauts here in the 1960s because the terrain resembled the lunar surface.',
-          appleMap: 'https://maps.apple.com/?address=Meteor+Crater+Rd,+Winslow,+AZ+86047' },
-        { name: 'Twin Arrows', type: 'history', lat: 35.069, lng: -111.168,
-          desc: 'Two giant arrows stuck in the ground — once marked a gas station/trading post, now just the arrows remain. Visible from I-40.',
-          blurb: 'Twin Arrows was a Hopi-owned trading post that opened in the 1950s. The two 25-foot wooden arrows were the advertising gimmick. The place closed in the 1990s when I-40 bypassed it. The Navajo Nation later built a casino nearby, but the original arrows and ruins still stand as one of Route 66\'s most haunting landmarks.' }
+          appleMap: 'https://maps.apple.com/?address=811+W+Hopi+Dr,+Holbrook,+AZ+86025' },
+        { name: 'Petrified Forest National Park', type: 'scenic', lat: 35.065, lng: -109.789,
+          desc: 'Exit 311. 28-mile scenic road. Massive petrified logs, Painted Desert, Crystal Forest trail. $25/vehicle. 1.5–2 hours.',
+          blurb: 'These petrified logs are 225 million years old, from the Late Triassic period, when this area was a tropical floodplain near the equator. The logs were buried by volcanic ash and slowly replaced by silica, turning them to stone while preserving every detail of the original wood grain. The Painted Desert section shows layers of iron and manganese minerals in bands of red, orange, purple and gray.',
+          appleMap: 'https://maps.apple.com/?address=Petrified+Forest+National+Park,+AZ' }
       ]},
       { name: 'Winslow to Albuquerque', stops: [
         { name: 'Continental Divide', type: 'history', lat: 35.438, lng: -108.985,
@@ -288,24 +288,24 @@ const ROUTE = { days: [
     appleMapsUrl: 'https://maps.apple.com/?saddr=Amarillo,+TX&daddr=124+N+Main+St,+Shamrock,+TX&daddr=Elk+City,+OK&daddr=Hampton+Inn+Bricktown,+Oklahoma+City,+OK',
     sections: [
       { name: 'Amarillo to Shamrock', stops: [
+        { name: 'Slug Bug Ranch', type: 'curiosity', lat: 35.240, lng: -101.379,
+          desc: 'Exit 96, Conway, TX. Five VW Beetles buried nose-first, just like Cadillac Ranch but with Bugs. Free, spray paint welcome.',
+          appleMap: 'https://maps.apple.com/?address=Conway,+TX' },
         { name: 'Leaning Tower of Texas', type: 'curiosity', lat: 35.200, lng: -101.099,
-          desc: 'In Groom, TX. A water tower tilted at 80 degrees — intentionally, to lure tourists to a truck stop. One of Route 66\'s best sight gags.',
+          desc: 'Exit 113, Groom, TX. A water tower tilted at 80 degrees — intentionally, to lure tourists. One of Route 66\'s best sight gags.',
           blurb: 'Ralph Britten bought this water tower from the town of Lefors and towed it 34 miles to Groom, then used a bulldozer to tilt it. The idea was to make passing drivers do a double-take and pull over to his truck stop. It worked. The "Britten U.S.A." tower has been a Route 66 landmark since the 1980s and remains one of the most photographed oddities on the road.',
           appleMap: 'https://maps.apple.com/?address=Groom,+TX+79039' },
         { name: 'Cross of Our Lord, Groom', type: 'curiosity', lat: 35.205, lng: -101.055,
-          desc: '190-foot steel cross visible for miles across the flat Texas Panhandle. 2.5 million pounds of steel. Free. Surrounded by Stations of the Cross.',
+          desc: 'Exit 113. 190-foot steel cross visible for miles across the flat Panhandle. 2.5 million pounds of steel. Free.',
           blurb: 'Steve Thomas, a structural engineer, built this 19-story cross in 1995 at a cost of $500,000. It weighs 2.5 million pounds and stands 190 feet tall, making it one of the largest crosses in the Western Hemisphere. On a clear day, it\'s visible from 20 miles away across the flat panhandle. The surrounding grounds include life-size bronze Stations of the Cross.' },
-        { name: 'Slug Bug Ranch', type: 'curiosity', lat: 35.240, lng: -101.379,
-          desc: 'In Conway, TX. Five VW Beetles buried nose-first, just like Cadillac Ranch but with Bugs. Free, spray paint welcome.',
-          appleMap: 'https://maps.apple.com/?address=Conway,+TX' },
-        { name: 'U-Drop Inn, Shamrock', type: 'attraction', lat: 35.226, lng: -100.249,
-          desc: 'Art Deco 1936 Conoco gas station — inspired Ramone\'s in Pixar\'s Cars. Beautifully restored. Free.',
-          blurb: 'Architect J.C. Berry designed this stunning Art Deco combination gas station and cafe in 1936. It cost $23,000 to build — a fortune during the Depression. The U-Drop Inn served Route 66 travelers for decades until the interstate bypass killed business. After sitting empty for years, it was restored in 2003 with the help of a National Historic Preservation grant. Pixar\'s art director visited it while researching Cars and it became the direct model for Ramone\'s House of Body Art.',
-          appleMap: 'https://maps.apple.com/?address=124+N+Main+St,+Shamrock,+TX+79079' },
         { name: 'Devil\'s Rope Museum, McLean', type: 'curiosity', lat: 35.232, lng: -100.600,
-          desc: 'Museum dedicated to barbed wire — 450+ types on display, plus Route 66 exhibit. Free. 30 min.',
+          desc: 'Exit 143. Museum dedicated to barbed wire — 450+ types on display, plus Route 66 exhibit. Free. 30 min.',
           blurb: 'Barbed wire may be the most transformative invention in Western history. Before Joseph Glidden\'s 1874 patent, the open range was truly open — there was no cheap way to fence the Great Plains. Barbed wire ended the era of the open-range cowboy, sparked range wars, and made modern agriculture possible. This museum has over 450 varieties, from Civil War-era designs to exotic collector pieces.',
-          appleMap: 'https://maps.apple.com/?address=100+Kingsley+St,+McLean,+TX+79057' }
+          appleMap: 'https://maps.apple.com/?address=100+Kingsley+St,+McLean,+TX+79057' },
+        { name: 'U-Drop Inn, Shamrock', type: 'attraction', lat: 35.226, lng: -100.249,
+          desc: 'Exit 164. Art Deco 1936 Conoco gas station — inspired Ramone\'s in Pixar\'s Cars. Beautifully restored. Free.',
+          blurb: 'Architect J.C. Berry designed this stunning Art Deco combination gas station and cafe in 1936. It cost $23,000 to build — a fortune during the Depression. The U-Drop Inn served Route 66 travelers for decades until the interstate bypass killed business. After sitting empty for years, it was restored in 2003 with the help of a National Historic Preservation grant. Pixar\'s art director visited it while researching Cars and it became the direct model for Ramone\'s House of Body Art.',
+          appleMap: 'https://maps.apple.com/?address=124+N+Main+St,+Shamrock,+TX+79079' }
       ]},
       { name: 'Elk City to Clinton', stops: [
         { name: 'Truck Stop 40 — Punjabi Restaurant', type: 'truckstop', lat: 35.295, lng: -99.637,
@@ -355,13 +355,13 @@ const ROUTE = { days: [
           desc: 'Fort Smith National Historic Site — "Hanging Judge" Parker\'s courtroom and the Trail of Tears endpoint. Quick walkthrough.',
           blurb: 'Judge Isaac Parker presided over this federal court from 1875 to 1896, sentencing 160 people to death (79 were actually hanged) in a jurisdiction that covered 74,000 square miles of Indian Territory. He was known as the "Hanging Judge," though he actually advocated for better conditions for Native peoples. The fort also marks the endpoint of the Trail of Tears, where Cherokee, Choctaw, Creek, and other nations were forcibly relocated in the 1830s.',
           appleMap: 'https://maps.apple.com/?address=Fort+Smith+National+Historic+Site,+Fort+Smith,+AR' },
-        { name: 'Lunch in Little Rock', type: 'food', lat: 34.749, lng: -92.280,
-          desc: 'The Root Cafe — farm-to-table, great vegetarian menu. Raduno Brick Oven — wood-fired veggie pizza.' }
       ]},
       { name: 'Little Rock to Memphis', stops: [
         { name: 'Indian Tadka — Plummerville, AR', type: 'truckstop', lat: 35.164, lng: -92.627,
-          desc: 'Relocated Punjabi Dhaba (was in Morrilton). Exit 107 area off I-40. Authentic Indian food, vegetarian options.',
+          desc: 'Exit 107 off I-40. Relocated Punjabi Dhaba. Authentic Indian food, great vegetarian options. In a former Waffle House.',
           appleMap: 'https://maps.apple.com/?address=305+N+Springfield+Dr,+Plummerville,+AR' },
+        { name: 'Lunch in Little Rock', type: 'food', lat: 34.749, lng: -92.280,
+          desc: 'The Root Cafe — farm-to-table, great vegetarian menu. Raduno Brick Oven — wood-fired veggie pizza.' },
         { name: 'Little Rock Central High School', type: 'history', lat: 34.737, lng: -92.299,
           desc: 'National Historic Site. Where the Little Rock Nine desegregated a school in 1957 with Army escort. Visitor center, free. 5 min off I-40.',
           blurb: 'In September 1957, nine Black students attempted to enter this all-white high school, and Arkansas Governor Orval Faubus called out the National Guard to block them. President Eisenhower responded by sending the 101st Airborne Division to escort the students inside. The standoff became one of the pivotal moments of the Civil Rights Movement. The school is still an active high school today.',
@@ -414,6 +414,10 @@ const ROUTE = { days: [
         { name: 'Wytheville, VA', type: 'food', lat: 36.948, lng: -81.085,
           desc: 'Good lunch stop. Graze on Main has vegetarian options. Also a potential overnight if you want to split Day 5.',
           appleMap: 'https://maps.apple.com/?address=Wytheville,+VA' },
+        { name: 'Natural Bridge, VA', type: 'scenic', lat: 37.628, lng: -79.544,
+          desc: '215-foot natural limestone arch. George Washington carved his initials in it. Thomas Jefferson bought it. $9. 15 min off I-81.',
+          blurb: 'This 215-foot natural limestone arch was once considered one of the natural wonders of the world. George Washington surveyed it as a young man and carved his initials in the rock (you can still see them). Thomas Jefferson was so impressed he bought it from King George III in 1774 for 20 shillings. The Monacan people considered it sacred. It spans 90 feet across Cedar Creek.',
+          appleMap: 'https://maps.apple.com/?address=Natural+Bridge,+VA' },
         { name: 'Lexington, VA — VMI & W&L', type: 'history', lat: 37.784, lng: -79.443,
           desc: 'Virginia Military Institute (1839) and Washington & Lee University. Stonewall Jackson and Robert E. Lee are both buried here. 10 min off I-81.',
           blurb: 'Lexington is a small college town with an outsized place in American history. VMI, founded in 1839, is the oldest state-supported military college. Stonewall Jackson taught physics here before the Civil War. After the war, Robert E. Lee served as president of what became Washington & Lee University until his death in 1870. Both are buried in town. George C. Marshall, architect of the plan to rebuild Europe after WWII, was a VMI graduate.',
@@ -424,10 +428,6 @@ const ROUTE = { days: [
           desc: 'Charming Shenandoah Valley town. Wilson\'s birthplace museum, plus good lunch spots. Byers Street Bistro.',
           blurb: 'Woodrow Wilson was born in this Greek Revival manse in 1856, the son of a Presbyterian minister. He\'s the only president buried in Washington, D.C. (at the National Cathedral). Staunton itself is a beautifully preserved Victorian town — the entire downtown is a National Historic District with buildings dating to the 1850s.',
           appleMap: 'https://maps.apple.com/?address=Staunton,+VA' },
-        { name: 'Natural Bridge, VA', type: 'scenic', lat: 37.628, lng: -79.544,
-          desc: '215-foot natural limestone arch. George Washington carved his initials in it. Thomas Jefferson bought it. $9. 15 min off I-81.',
-          blurb: 'This 215-foot natural limestone arch was once considered one of the natural wonders of the world. George Washington surveyed it as a young man and carved his initials in the rock (you can still see them). Thomas Jefferson was so impressed he bought it from King George III in 1774 for 20 shillings. The Monacan people considered it sacred. It spans 90 feet across Cedar Creek.',
-          appleMap: 'https://maps.apple.com/?address=Natural+Bridge,+VA' },
         { name: 'Home', type: 'overnight', lat: 40.748, lng: -73.986,
           desc: 'I-81 N to I-78 E through NJ. Saturday evening. You made it.' }
       ]}
@@ -647,37 +647,29 @@ function distMiles(lat1, lng1, lat2, lng2) {
 }
 
 // Highwater mark — never goes backward. Stored in localStorage.
-let highwaterIdx = parseInt(localStorage.getItem('drivehome_hw') || '0');
+// Version key so stale data from reorderings gets cleared
+const HW_KEY = 'drivehome_hw_v2';
+let highwaterIdx = parseInt(localStorage.getItem(HW_KEY) || '0');
+// Clear old key
+localStorage.removeItem('drivehome_hw');
 
 function updateYouAreHere() {
   if (!currentPosition) return;
   const flat = getFlatStops();
 
-  // Walk through stops in order. A stop is "passed" if we're closer to the NEXT
-  // stop with coords than to this one. We only advance, never go back.
-  let candidateIdx = highwaterIdx;
-  for (let i = highwaterIdx; i < flat.length - 1; i++) {
-    const curr = flat[i];
-    if (!curr.lat || !curr.lng) { candidateIdx = i + 1; continue; }
-    // Find next stop with coords
-    let nextWithCoords = null;
-    for (let j = i + 1; j < flat.length; j++) {
-      if (flat[j].lat && flat[j].lng) { nextWithCoords = flat[j]; break; }
-    }
-    if (!nextWithCoords) break;
-    const dCurr = distMiles(currentPosition.lat, currentPosition.lng, curr.lat, curr.lng);
-    const dNext = distMiles(currentPosition.lat, currentPosition.lng, nextWithCoords.lat, nextWithCoords.lng);
-    if (dNext < dCurr) {
-      // We're past this stop
-      candidateIdx = i + 1;
-    } else {
-      break;
-    }
-  }
+  // Find the nearest stop with coordinates
+  let nearestIdx = 0;
+  let nearestDist = Infinity;
+  flat.forEach((stop, i) => {
+    if (!stop.lat || !stop.lng) return;
+    const d = distMiles(currentPosition.lat, currentPosition.lng, stop.lat, stop.lng);
+    if (d < nearestDist) { nearestDist = d; nearestIdx = i; }
+  });
 
-  if (candidateIdx > highwaterIdx) {
-    highwaterIdx = candidateIdx;
-    localStorage.setItem('drivehome_hw', String(highwaterIdx));
+  // Only advance forward, never backward
+  if (nearestIdx > highwaterIdx) {
+    highwaterIdx = nearestIdx;
+    localStorage.setItem(HW_KEY, String(highwaterIdx));
   }
 
   // Apply styles
