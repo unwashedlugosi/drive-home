@@ -78,6 +78,10 @@
     .listen-btn { display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.25rem; margin-left: 0.1rem; padding: 0.2rem 0.55rem; font-size: 0.72rem; font-weight: 600; color: #2d5a87; background: #eef3f8; border: 1px solid #d0dce8; border-radius: 5px; cursor: pointer; font-family: inherit; }
     .listen-btn:active { background: #d0dce8; }
     .listen-btn.speaking { color: white; background: #2d5a87; border-color: #2d5a87; }
+    .listen-btn .label-listen { display: inline; }
+    .listen-btn .label-stop { display: none; }
+    .listen-btn.speaking .label-listen { display: none; }
+    .listen-btn.speaking .label-stop { display: inline; }
     .listen-btn svg { width: 12px; height: 12px; fill: currentColor; }
 
     /* You-are-here caret */
@@ -585,7 +589,19 @@ const AUDIO_FILES = {
   'This outdoor museum tells the ': '/audio/blurb-47-this-outdoor-museum-tells-the-story-of-t.mp3',
 };
 
+const LISTEN_SVG = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>';
+
+function setBtnState(btn, playing) {
+  // Use class toggle instead of innerHTML to avoid reflow/scroll
+  if (playing) { btn.classList.add('speaking'); btn.dataset.state = 'playing'; }
+  else { btn.classList.remove('speaking'); btn.dataset.state = ''; }
+}
+
 function playBlurb(idx, btn) {
+  // Save scroll position — iOS Safari resets scroll on audio play
+  const scrollY = window.scrollY;
+  const restore = () => requestAnimationFrame(() => window.scrollTo(0, scrollY));
+
   const blurbText = ALL_BLURBS[idx];
   if (!blurbText) return;
   const key = blurbText.substring(0, 30);
@@ -595,42 +611,35 @@ function playBlurb(idx, btn) {
   if (speakingBtn === btn && !audioPlayer.paused) {
     audioPlayer.pause();
     audioPlayer.currentTime = 0;
-    btn.classList.remove('speaking');
-    btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen';
+    setBtnState(btn, false);
     speakingBtn = null;
+    restore();
     return;
   }
 
   // Stop any current playback
   audioPlayer.pause();
-  if (speakingBtn) {
-    speakingBtn.classList.remove('speaking');
-    speakingBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen';
-  }
+  if (speakingBtn) setBtnState(speakingBtn, false);
 
   if (!src) {
     // Fallback to speechSynthesis if no MP3
+    speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(blurbText);
     u.rate = 0.95;
-    u.onend = () => { btn.classList.remove('speaking'); btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen'; speakingBtn = null; };
-    btn.classList.add('speaking');
-    btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Stop';
+    u.onend = () => { setBtnState(btn, false); speakingBtn = null; };
+    setBtnState(btn, true);
     speakingBtn = btn;
     speechSynthesis.speak(u);
+    restore();
     return;
   }
 
   // Play MP3 (routes through CarPlay as media audio)
   audioPlayer.src = src;
-  audioPlayer.play();
-  btn.classList.add('speaking');
-  btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Stop';
+  audioPlayer.play().then(restore).catch(restore);
+  setBtnState(btn, true);
   speakingBtn = btn;
-  audioPlayer.onended = () => {
-    btn.classList.remove('speaking');
-    btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen';
-    speakingBtn = null;
-  };
+  audioPlayer.onended = () => { setBtnState(btn, false); speakingBtn = null; };
 }
 
 // Collect all blurbs into an array for safe onclick references
@@ -673,7 +682,7 @@ function renderDays() {
           <div class="stop-name">${stop.name} <span class="stop-type-label ${stop.type}">${typeLabel}</span></div>
           <div class="stop-desc">${stop.desc}</div>
           ${stop.appleMap ? `<a href="${stop.appleMap}" target="_blank" class="stop-link">Open in Apple Maps &rarr;</a>` : ''}
-          ${stop.blurb ? `<button class="listen-btn" onclick="playBlurb(${stop._blurbIdx}, this)"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen</button>` : ''}
+          ${stop.blurb ? `<button class="listen-btn" onclick="playBlurb(${stop._blurbIdx}, this)"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg><span class="label-listen">Listen</span><span class="label-stop">Stop</span></button>` : ''}
         </div>`;
       });
 
