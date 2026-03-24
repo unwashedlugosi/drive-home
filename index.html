@@ -529,7 +529,9 @@ const AUDIO_FILES = {
   'This outdoor museum tells the ': '/audio/blurb-36-this-outdoor-museum-tells-the-story-of-t.mp3',
 };
 
-function playBlurb(blurbText, btn) {
+function playBlurb(idx, btn) {
+  const blurbText = ALL_BLURBS[idx];
+  if (!blurbText) return;
   const key = blurbText.substring(0, 30);
   const src = AUDIO_FILES[key];
 
@@ -575,6 +577,12 @@ function playBlurb(blurbText, btn) {
   };
 }
 
+// Collect all blurbs into an array for safe onclick references
+const ALL_BLURBS = [];
+ROUTE.days.forEach(day => { day.sections.forEach(sec => { sec.stops.forEach(stop => {
+  if (stop.blurb) { stop._blurbIdx = ALL_BLURBS.length; ALL_BLURBS.push(stop.blurb); }
+}); }); });
+
 // ============================================================
 // RENDER
 // ============================================================
@@ -609,7 +617,7 @@ function renderDays() {
           <div class="stop-name">${stop.name} <span class="stop-type-label ${stop.type}">${typeLabel}</span></div>
           <div class="stop-desc">${stop.desc}</div>
           ${stop.appleMap ? `<a href="${stop.appleMap}" target="_blank" class="stop-link">Open in Apple Maps &rarr;</a>` : ''}
-          ${stop.blurb ? `<button class="listen-btn" onclick="playBlurb(\`${stop.blurb.replace(/`/g,"'").replace(/\\/g,"\\\\")}\`, this)"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen</button>` : ''}
+          ${stop.blurb ? `<button class="listen-btn" onclick="playBlurb(${stop._blurbIdx}, this)"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen</button>` : ''}
         </div>`;
       });
 
