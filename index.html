@@ -16,24 +16,20 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: #f8f6f3; color: #2c2c2c; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-    /* Hero */
     .hero { background: linear-gradient(135deg, #1a3a5c 0%, #2d5a87 100%); color: white; padding: 2.5rem 1.5rem 1.75rem; text-align: center; }
     .hero h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; }
     .hero .subtitle { font-size: 0.95rem; opacity: 0.8; margin-top: 0.15rem; }
-    .hero .route-badge { display: inline-block; margin-top: 0.6rem; background: rgba(255,255,255,0.15); padding: 0.35rem 1rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; }
+    .hero .route-badge { display: inline-block; margin-top: 0.6rem; background: rgba(255,255,255,0.15); padding: 0.35rem 1rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; }
     .hero .stats-row { display: flex; justify-content: center; gap: 1.25rem; margin-top: 0.75rem; font-size: 0.8rem; opacity: 0.85; }
 
-    /* Nav */
     .nav { max-width: 800px; margin: 1.25rem auto 0; padding: 0 1.25rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
     .nav a { font-size: 0.75rem; color: #2d5a87; text-decoration: none; font-weight: 600; padding: 0.3rem 0.65rem; background: white; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
 
     .content { max-width: 800px; margin: 0 auto; padding: 0 1.25rem 3rem; }
 
-    /* Overview map */
     .overview-map-wrap { margin-top: 1.25rem; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
     .overview-map { height: 220px; width: 100%; }
 
-    /* Day header */
     .day-header { margin-top: 2rem; background: #1a3a5c; color: white; border-radius: 12px; padding: 1.1rem 1.25rem; }
     .day-header h2 { font-size: 1.15rem; font-weight: 700; }
     .day-header .day-sub { font-size: 0.85rem; opacity: 0.8; margin-top: 0.1rem; }
@@ -42,26 +38,26 @@
     .day-header .nav-btn { display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.75rem; background: white; color: #1a3a5c; font-size: 0.8rem; font-weight: 700; padding: 0.5rem 1rem; border-radius: 8px; text-decoration: none; }
     .day-header .nav-btn svg { width: 16px; height: 16px; }
 
-    /* TripTik section */
     .triptik-section { margin-top: 1rem; }
     .triptik-section-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #8a8578; margin-bottom: 0.5rem; padding-left: 0.25rem; }
 
-    /* Section map */
     .section-map-wrap { border-radius: 10px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.08); border: 1px solid #e8e4de; }
     .section-map { height: 180px; width: 100%; }
 
-    /* Strip road */
-    .strip { position: relative; margin-top: 0.75rem; padding-left: 2rem; }
-    .strip::before { content: ''; position: absolute; left: 0.6rem; top: 0; bottom: 0; width: 3px; background: #1a3a5c; border-radius: 2px; }
+    .strip { position: relative; margin-top: 0.75rem; padding-left: 2.5rem; }
+    .strip::before { content: ''; position: absolute; left: 0.85rem; top: 0; bottom: 0; width: 3px; background: #1a3a5c; border-radius: 2px; }
 
-    /* Stop */
-    .stop { position: relative; padding: 0.5rem 0; }
-    .stop-dot { position: absolute; left: -1.65rem; top: 0.7rem; width: 14px; height: 14px; display: flex; align-items: center; justify-content: center; }
-    /* Shapes for stop types - colorblind safe */
+    .stop { position: relative; padding: 0.5rem 0; transition: opacity 0.3s; }
+    .stop-dot { position: absolute; left: -1.9rem; top: 0.7rem; width: 14px; height: 14px; display: flex; align-items: center; justify-content: center; }
     .stop-dot.attraction { width: 12px; height: 12px; background: #c87533; transform: rotate(45deg); border-radius: 2px; }
     .stop-dot.food { width: 11px; height: 11px; background: #2d5a87; border-radius: 2px; }
     .stop-dot.overnight { width: 13px; height: 13px; background: #1a3a5c; border-radius: 50%; }
     .stop-dot.scenic { width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 12px solid #6b4c8a; }
+    .stop-dot.history { width: 12px; height: 12px; background: #8b5e3c; border-radius: 50%; border: 2px solid #5c3a1e; }
+    .stop-dot.curiosity { width: 13px; height: 13px; background: #d94f00; border-radius: 3px; transform: rotate(45deg); }
+    .stop-dot.truckstop { width: 12px; height: 12px; background: #b8860b; border-radius: 2px; border: 2px solid #8b6508; }
+    .stop-dot.western { width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 12px solid #8b4513; }
+    .stop-dot.surplus { width: 12px; height: 12px; background: #556b2f; border-radius: 2px; }
 
     .stop-name { font-weight: 700; font-size: 0.9rem; color: #2c2c2c; }
     .stop-type-label { display: inline-block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.1rem 0.4rem; border-radius: 3px; margin-left: 0.3rem; vertical-align: middle; }
@@ -69,74 +65,68 @@
     .stop-type-label.food { background: #dbeafe; color: #1e40af; }
     .stop-type-label.overnight { background: #e0e7ff; color: #1a3a5c; }
     .stop-type-label.scenic { background: #f3e8ff; color: #6b21a8; }
+    .stop-type-label.history { background: #fde8d0; color: #6b3a1e; }
+    .stop-type-label.curiosity { background: #ffe4cc; color: #993300; }
+    .stop-type-label.truckstop { background: #fff3cd; color: #7a6008; }
+    .stop-type-label.western { background: #f5e6d3; color: #6b3a1e; }
+    .stop-type-label.surplus { background: #e8f0dc; color: #3d5a1e; }
     .stop-desc { font-size: 0.82rem; color: #666; margin-top: 0.1rem; }
     .stop-link { display: inline-block; margin-top: 0.2rem; font-size: 0.78rem; color: #2d5a87; text-decoration: none; font-weight: 600; }
     .stop-link:hover { text-decoration: underline; }
 
+    /* Listen button */
+    .listen-btn { display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.25rem; margin-left: 0.1rem; padding: 0.2rem 0.55rem; font-size: 0.72rem; font-weight: 600; color: #2d5a87; background: #eef3f8; border: 1px solid #d0dce8; border-radius: 5px; cursor: pointer; font-family: inherit; }
+    .listen-btn:active { background: #d0dce8; }
+    .listen-btn.speaking { color: white; background: #2d5a87; border-color: #2d5a87; }
+    .listen-btn svg { width: 12px; height: 12px; fill: currentColor; }
+
     /* You-are-here caret */
     .stop.current { position: relative; }
-    .stop.current::before {
-      content: '';
-      position: absolute;
-      left: -2.8rem;
-      top: 0.65rem;
-      width: 0; height: 0;
-      border-top: 8px solid transparent;
-      border-bottom: 8px solid transparent;
-      border-left: 12px solid #007AFF;
-      z-index: 5;
-    }
+    .stop.current::before { content: ''; position: absolute; left: -3.1rem; top: 0.65rem; width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 12px solid #007AFF; z-index: 5; }
+    .stop.passed .stop-name, .stop.passed .stop-type-label, .stop.passed .stop-desc, .stop.passed .stop-link, .stop.passed .listen-btn { opacity: 0.3; }
+    .stop.passed .stop-dot { opacity: 0.25; }
+    .day-header.passed { opacity: 0.3; }
+    .triptik-section.passed .triptik-section-label { opacity: 0.3; }
+    .triptik-section.passed .section-map-wrap { opacity: 0.3; }
+    .triptik-section.passed .overnight-box { opacity: 0.3; }
+    .strip.passed::before { opacity: 0.2; }
 
-    /* Passed stops */
-    .stop.passed .stop-name,
-    .stop.passed .stop-type-label,
-    .stop.passed .stop-desc,
-    .stop.passed .stop-link { opacity: 0.35; }
-    .stop.passed .stop-dot { opacity: 0.3; }
-
-    /* Passed day headers */
-    .day-header.passed { opacity: 0.35; }
-
-    /* Passed section labels & maps */
-    .triptik-section.passed .triptik-section-label { opacity: 0.35; }
-    .triptik-section.passed .section-map-wrap { opacity: 0.35; }
-    .triptik-section.passed .overnight-box { opacity: 0.35; }
-
-    /* Passed strip road line */
-    .strip.passed::before { opacity: 0.25; }
-
-    /* Overnight box */
     .overnight-box { margin-top: 0.5rem; background: #f0f4f8; border-radius: 8px; padding: 0.6rem 0.85rem; }
     .overnight-box .hotel-name { font-weight: 700; font-size: 0.85rem; color: #1a3a5c; }
     .overnight-box .hotel-detail { font-size: 0.78rem; color: #666; }
 
-    /* Tip card */
     .tip-card { margin-top: 1rem; background: #fffbeb; border-radius: 10px; padding: 0.85rem 1rem; box-shadow: 0 1px 6px rgba(0,0,0,0.04); border-left: 4px solid #f59e0b; font-size: 0.85rem; }
     .tip-card strong { color: #92400e; }
 
-    /* Info card (like Jack Rabbit) */
     .info-card { margin-top: 1.25rem; background: #fff; border-radius: 12px; padding: 1rem 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 4px solid #2d5a87; }
     .info-card h3 { font-size: 1rem; color: #1a3a5c; margin-bottom: 0.35rem; }
     .info-card .detail { font-size: 0.85rem; margin-bottom: 0.25rem; }
     .info-card .detail strong { color: #1a3a5c; }
 
-    /* GPS follow button */
     .follow-btn { position: fixed; bottom: 1.25rem; right: 1.25rem; width: 48px; height: 48px; border-radius: 50%; background: #1a3a5c; color: white; border: 3px solid white; box-shadow: 0 2px 12px rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; transition: background 0.2s; }
     .follow-btn.active { background: #007AFF; }
     .follow-btn svg { width: 22px; height: 22px; fill: currentColor; }
 
-    /* GPS dot */
     .gps-dot { width: 16px; height: 16px; background: #007AFF; border: 3px solid white; border-radius: 50%; box-shadow: 0 0 0 2px rgba(0,122,255,0.3); }
-    @keyframes gps-pulse {
-      0%, 100% { box-shadow: 0 0 0 2px rgba(0,122,255,0.3); }
-      50% { box-shadow: 0 0 0 10px rgba(0,122,255,0.08); }
-    }
+    @keyframes gps-pulse { 0%, 100% { box-shadow: 0 0 0 2px rgba(0,122,255,0.3); } 50% { box-shadow: 0 0 0 10px rgba(0,122,255,0.08); } }
     .gps-dot.tracking { animation: gps-pulse 2s infinite; }
 
-    /* Leaflet overrides */
     .leaflet-container { font-family: inherit; }
     .leaflet-popup-content-wrapper { border-radius: 8px; }
     .leaflet-popup-content { font-size: 0.8rem; margin: 8px 12px; }
+
+    /* Legend */
+    .legend { margin-top: 1.25rem; background: white; border-radius: 10px; padding: 0.75rem 1rem; box-shadow: 0 1px 6px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; }
+    .legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.7rem; font-weight: 600; color: #666; }
+    .legend-dot { width: 10px; height: 10px; flex-shrink: 0; }
+    .legend-dot.attraction { background: #c87533; transform: rotate(45deg); border-radius: 1px; }
+    .legend-dot.food { background: #2d5a87; border-radius: 1px; }
+    .legend-dot.scenic { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 9px solid #6b4c8a; background: none; }
+    .legend-dot.history { background: #8b5e3c; border-radius: 50%; border: 1.5px solid #5c3a1e; }
+    .legend-dot.curiosity { background: #d94f00; border-radius: 2px; transform: rotate(45deg); }
+    .legend-dot.truckstop { background: #b8860b; border-radius: 1px; border: 1.5px solid #8b6508; }
+    .legend-dot.western { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 9px solid #8b4513; background: none; }
+    .legend-dot.surplus { background: #556b2f; border-radius: 1px; }
 
     @media (max-width: 500px) {
       .hero { padding: 2rem 1.25rem 1.5rem; }
@@ -151,11 +141,7 @@
     <h1>Drive Home: AZ &rarr; NYC</h1>
     <div class="subtitle">The Route 66 Classic</div>
     <div class="route-badge">Tue Mar 25 &rarr; Sat Mar 29</div>
-    <div class="stats-row">
-      <span>~2,380 mi</span>
-      <span>5 days</span>
-      <span>4 overnights</span>
-    </div>
+    <div class="stats-row"><span>~2,380 mi</span><span>5 days</span><span>4 overnights</span></div>
   </div>
 
   <div class="nav">
@@ -163,234 +149,326 @@
   </div>
 
   <div class="content">
-    <!-- Overview Map -->
-    <div class="overview-map-wrap">
-      <div id="overview-map" class="overview-map"></div>
+    <div class="overview-map-wrap"><div id="overview-map" class="overview-map"></div></div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot attraction"></div>Attraction</div>
+      <div class="legend-item"><div class="legend-dot food"></div>Food</div>
+      <div class="legend-item"><div class="legend-dot scenic"></div>Scenic</div>
+      <div class="legend-item"><div class="legend-dot history"></div>History</div>
+      <div class="legend-item"><div class="legend-dot curiosity"></div>Curiosity</div>
+      <div class="legend-item"><div class="legend-dot truckstop"></div>Indian Dhaba</div>
+      <div class="legend-item"><div class="legend-dot western"></div>Western Wear</div>
+      <div class="legend-item"><div class="legend-dot surplus"></div>Mil Surplus</div>
     </div>
 
-    <!-- Jack Rabbit Info -->
-    <div class="info-card">
-      <h3>Jack Rabbit Trading Post &mdash; "Here It Is"</h3>
-      <div class="detail"><strong>Status:</strong> Still open as of 2026</div>
-      <div class="detail"><strong>Hours:</strong> Mon&ndash;Sat 10 AM &ndash; 4 PM &middot; Closed Sunday</div>
-      <div class="detail"><strong>Address:</strong> 3386 Historic US-66, Joseph City, AZ 86032</div>
-      <div class="detail"><strong>On the way?</strong> Yes &mdash; right off I-40 at Exit 269. About 3 hrs from Mesa.</div>
-      <div class="detail" style="margin-top:0.35rem"><a href="https://maps.apple.com/?address=3386+Historic+US-66,+Joseph+City,+AZ+86032" target="_blank" class="stop-link">Open in Apple Maps &rarr;</a></div>
-    </div>
-
-    <!-- Days rendered by JS below -->
     <div id="triptik-days"></div>
   </div>
 
-  <!-- Follow Me button -->
   <button class="follow-btn" id="follow-btn" onclick="toggleFollow()" title="Follow my location">
     <svg viewBox="0 0 24 24"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
   </button>
 
 <script>
 // ============================================================
-// ROUTE DATA MODEL
+// ROUTE DATA
 // ============================================================
-const ROUTE = {
-  days: [
-    {
-      day: 1, date: 'Tue Mar 25', from: 'Mesa, AZ', to: 'Albuquerque, NM',
-      miles: 470, hours: '7.5',
-      overnight: { name: 'Hampton Inn Albuquerque — University/Midtown', detail: 'Near Old Town and Nob Hill. Good base for a morning walk.' },
-      tip: 'Hit the road by 7 AM to reach the Jack Rabbit by 10 when it opens. The AZ stops are all clustered along I-40 between miles 185–280 from Mesa.',
-      appleMapsUrl: 'https://maps.apple.com/?saddr=Mesa,+AZ&daddr=3386+Historic+US-66,+Joseph+City,+AZ+86032&daddr=Petrified+Forest+National+Park,+AZ&daddr=Meteor+Crater,+Winslow,+AZ&daddr=Hampton+Inn,+Albuquerque,+NM',
-      sections: [
-        {
-          name: 'Mesa to Holbrook',
-          stops: [
-            { name: 'Jack Rabbit Trading Post', type: 'attraction', lat: 34.956, lng: -110.333,
-              desc: 'The famous "Here It Is" billboard and giant jackrabbit sign. Route 66 souvenirs. Opens 10 AM.',
-              address: '3386 Historic US-66, Joseph City, AZ 86032',
-              appleMap: 'https://maps.apple.com/?address=3386+Historic+US-66,+Joseph+City,+AZ+86032' },
-            { name: 'Petrified Forest National Park', type: 'scenic', lat: 35.065, lng: -109.789,
-              desc: '28-mile scenic road. Massive petrified logs, the Painted Desert, stunning badlands. $25/vehicle. 1.5–2 hours.',
-              appleMap: 'https://maps.apple.com/?address=Petrified+Forest+National+Park,+AZ' },
-            { name: 'Wigwam Motel (Photo Op)', type: 'attraction', lat: 34.903, lng: -110.158,
-              desc: 'Iconic concrete teepees of Holbrook. One of Route 66\'s most famous landmarks. Quick photo stop.',
-              appleMap: 'https://maps.apple.com/?address=811+W+Hopi+Dr,+Holbrook,+AZ+86025' }
-          ]
-        },
-        {
-          name: 'Holbrook to Winslow',
-          stops: [
-            { name: 'Standin\' on the Corner Park', type: 'attraction', lat: 35.024, lng: -110.697,
-              desc: '"Take It Easy" by the Eagles. Life-size statue, mural of the girl in the flatbed Ford. Quick 10-min stop.',
-              appleMap: 'https://maps.apple.com/?address=100+E+2nd+St,+Winslow,+AZ+86047' },
-            { name: 'Meteor Crater', type: 'scenic', lat: 35.028, lng: -111.023,
-              desc: 'Best-preserved meteorite impact site on Earth. Nearly a mile wide, 550 feet deep. $22/person. 45 min.',
-              appleMap: 'https://maps.apple.com/?address=Meteor+Crater+Rd,+Winslow,+AZ+86047' }
-          ]
-        },
-        {
-          name: 'Winslow to Albuquerque',
-          stops: [
-            { name: 'Dinner in Albuquerque', type: 'food', lat: 35.084, lng: -106.651,
-              desc: 'Vinaigrette — farm-to-table salad bistro. Or Flying Star Cafe — great veggie burgers, salads, pastries.' },
-            { name: 'Hampton Inn Albuquerque', type: 'overnight', lat: 35.088, lng: -106.619,
-              desc: 'Near Old Town and Nob Hill district.' }
-          ]
-        }
-      ]
-    },
-    {
-      day: 2, date: 'Wed Mar 26', from: 'Albuquerque, NM', to: 'Amarillo, TX',
-      miles: 290, hours: '5',
-      overnight: { name: 'Hampton Inn Amarillo — West/Medical Center', detail: 'Short day. Consider Palo Duro Canyon detour (25 mi south).' },
-      tip: 'Shortest driving day — take your time at stops. Palo Duro Canyon State Park (25 mi south of Amarillo) is the second-largest canyon in the US. 120 miles long, 800 feet deep, spectacular red rock. $8 entry. Adds 1.5–2 hrs.',
-      appleMapsUrl: 'https://maps.apple.com/?saddr=Albuquerque,+NM&daddr=1085+Blue+Hole+Rd,+Santa+Rosa,+NM&daddr=Tucumcari,+NM&daddr=13651+I-40+Frontage+Rd,+Amarillo,+TX&daddr=Hampton+Inn,+Amarillo,+TX',
-      sections: [
-        {
-          name: 'Albuquerque to Santa Rosa',
-          stops: [
-            { name: 'Old Town Albuquerque', type: 'attraction', lat: 35.096, lng: -106.670,
-              desc: 'Morning stroll. Adobe buildings, galleries, San Felipe de Neri Church (1706). Green chile bread at Golden Crown Panaderia.' },
-            { name: 'The Blue Hole', type: 'scenic', lat: 34.939, lng: -104.684,
-              desc: 'Crystal-clear 80-foot-deep natural artesian pool in the middle of the desert. Free to view.',
-              appleMap: 'https://maps.apple.com/?address=1085+Blue+Hole+Rd,+Santa+Rosa,+NM+88435' }
-          ]
-        },
-        {
-          name: 'Santa Rosa to Tucumcari',
-          stops: [
-            { name: 'Tucumcari: Route 66 Neon Capital', type: 'attraction', lat: 35.172, lng: -103.728,
-              desc: 'Highest concentration of surviving neon signs on Route 66. Blue Swallow Motel, Tee Pee Curios, murals. 15–20 min cruise.',
-              appleMap: 'https://maps.apple.com/?address=Tucumcari,+NM' }
-          ]
-        },
-        {
-          name: 'Tucumcari to Amarillo',
-          stops: [
-            { name: 'Cadillac Ranch', type: 'attraction', lat: 35.187, lng: -101.987,
-              desc: 'Ten Cadillacs buried nose-down in a wheat field. Bring spray paint — you\'re supposed to add graffiti. Free, 24/7.',
-              appleMap: 'https://maps.apple.com/?address=13651+I-40+Frontage+Rd,+Amarillo,+TX+79124' },
-            { name: 'Dinner in Amarillo', type: 'food', lat: 35.199, lng: -101.845,
-              desc: 'Yellow City Street Food — eclectic, good veggie options. Or Six Car Pub & Brewery.' },
-            { name: 'Hampton Inn Amarillo', type: 'overnight', lat: 35.195, lng: -101.910,
-              desc: 'West/Medical Center area.' }
-          ]
-        }
-      ]
-    },
-    {
-      day: 3, date: 'Thu Mar 27', from: 'Amarillo, TX', to: 'Oklahoma City, OK',
-      miles: 265, hours: '4.5',
-      overnight: { name: 'Hampton Inn Oklahoma City — Bricktown', detail: 'Entertainment district — restaurants, canal walk, minor league ballpark.' },
-      tip: 'Another short day. POPS in Arcadia, OK (20 min east of OKC) has a 66-foot illuminated soda bottle and 400+ craft sodas. Worth a detour on the way in or out.',
-      appleMapsUrl: 'https://maps.apple.com/?saddr=Amarillo,+TX&daddr=124+N+Main+St,+Shamrock,+TX&daddr=Elk+City,+OK&daddr=Hampton+Inn+Bricktown,+Oklahoma+City,+OK',
-      sections: [
-        {
-          name: 'Amarillo to Shamrock',
-          stops: [
-            { name: 'U-Drop Inn, Shamrock', type: 'attraction', lat: 35.226, lng: -100.249,
-              desc: 'Art Deco 1936 Conoco gas station that inspired Ramone\'s in Pixar\'s Cars. Beautifully restored. Free.',
-              appleMap: 'https://maps.apple.com/?address=124+N+Main+St,+Shamrock,+TX+79079' },
-            { name: 'Devil\'s Rope Museum, McLean', type: 'attraction', lat: 35.232, lng: -100.600,
-              desc: 'Museum dedicated to barbed wire — 450+ types on display, plus Route 66 exhibit. Free. 30 min.',
-              appleMap: 'https://maps.apple.com/?address=100+Kingsley+St,+McLean,+TX+79057' }
-          ]
-        },
-        {
-          name: 'Elk City to Clinton',
-          stops: [
-            { name: 'National Route 66 Museum', type: 'attraction', lat: 35.412, lng: -99.404,
-              desc: 'Walk-through exhibits recreating each of the 8 states on Route 66. Small admission. 45 min–1 hr.',
-              appleMap: 'https://maps.apple.com/?address=2717+W+3rd+St,+Elk+City,+OK+73644' },
-            { name: 'Oklahoma Route 66 Museum', type: 'attraction', lat: 35.515, lng: -98.967,
-              desc: 'Cultural history decade by decade. Vintage cars and memorabilia collection.',
-              appleMap: 'https://maps.apple.com/?address=2229+W+Gary+Blvd,+Clinton,+OK+73601' }
-          ]
-        },
-        {
-          name: 'Clinton to Oklahoma City',
-          stops: [
-            { name: 'Dinner in OKC', type: 'food', lat: 35.468, lng: -97.515,
-              desc: 'The Loaded Bowl — all-vegan comfort food, famous in OKC. Or Picasso Cafe in the Paseo Arts District.' },
-            { name: 'Hampton Inn OKC — Bricktown', type: 'overnight', lat: 35.464, lng: -97.509,
-              desc: 'Bricktown entertainment district. Evening canal walk.' }
-          ]
-        }
-      ]
-    },
-    {
-      day: 4, date: 'Fri Mar 28', from: 'Oklahoma City, OK', to: 'Nashville, TN',
-      miles: 800, hours: '11',
-      overnight: { name: 'Hampton Inn Nashville — Vanderbilt/West End', detail: 'Near Music Row and Midtown. Long day but set up for final push.' },
-      tip: 'This is the longest day. Leave OKC by 6 AM. If it feels too long, overnight in Memphis instead (~450 mi, ~6.5 hrs) and make it a 5th day.',
-      appleMapsUrl: 'https://maps.apple.com/?saddr=Oklahoma+City,+OK&daddr=Little+Rock,+AR&daddr=Memphis,+TN&daddr=Hampton+Inn+Vanderbilt,+Nashville,+TN',
-      sections: [
-        {
-          name: 'OKC to Little Rock',
-          stops: [
-            { name: 'POPS Soda Ranch', type: 'attraction', lat: 35.611, lng: -97.334,
-              desc: 'On the way out of OKC on I-44. Giant neon soda bottle, 400 craft sodas. Grab a weird flavor for the road.',
-              appleMap: 'https://maps.apple.com/?address=660+W+Hwy+66,+Arcadia,+OK+73007' },
-            { name: 'Lunch in Little Rock', type: 'food', lat: 34.749, lng: -92.280,
-              desc: 'Raduno Brick Oven — wood-fired pizza, great veggie pies. Or The Root Cafe — farm-to-table, locally sourced.' }
-          ]
-        },
-        {
-          name: 'Little Rock to Memphis',
-          stops: [
-            { name: 'Memphis (drive-through)', type: 'scenic', lat: 35.150, lng: -90.049,
-              desc: 'You\'ll pass through on I-40. Beale Street is just off the highway for a quick stop, but this is a long day.' }
-          ]
-        },
-        {
-          name: 'Memphis to Nashville',
-          stops: [
-            { name: 'Nashville arrival', type: 'scenic', lat: 36.163, lng: -86.782,
-              desc: 'Music City. If you have energy, Lower Broadway honky-tonks are walking distance from Vanderbilt area.' },
-            { name: 'Hampton Inn Nashville', type: 'overnight', lat: 36.150, lng: -86.804,
-              desc: 'Vanderbilt/West End area. Near Music Row.' }
-          ]
-        }
-      ]
-    },
-    {
-      day: 5, date: 'Sat Mar 29', from: 'Nashville, TN', to: 'New York, NY',
-      miles: 890, hours: '13',
-      overnight: null,
-      tip: 'Long final day. Leave Nashville by 5 AM to be home by 8–9 PM. Alternative: stay in Knoxville or Wytheville, VA on Friday night to split this into two shorter days.',
-      appleMapsUrl: 'https://maps.apple.com/?saddr=Nashville,+TN&daddr=Staunton,+VA&daddr=New+York,+NY',
-      sections: [
-        {
-          name: 'Nashville to the Appalachians',
-          stops: [
-            { name: 'Knoxville, TN', type: 'scenic', lat: 35.961, lng: -83.921,
-              desc: 'Gateway to the Smokies. Market Square is a nice downtown for a quick coffee stop. ~3 hrs from Nashville.' },
-            { name: 'Through the Appalachians', type: 'scenic', lat: 37.081, lng: -80.691,
-              desc: 'I-81 through Virginia is beautiful mountain driving. Late March may have early spring blooms.' }
-          ]
-        },
-        {
-          name: 'Shenandoah Valley',
-          stops: [
-            { name: 'Staunton, VA (lunch)', type: 'food', lat: 38.150, lng: -79.072,
-              desc: 'Charming small city in the Shenandoah Valley. Byers Street Bistro or any spot on the main drag.' }
-          ]
-        },
-        {
-          name: 'Virginia to NYC',
-          stops: [
-            { name: 'Home', type: 'overnight', lat: 40.748, lng: -73.986,
-              desc: 'I-81 N to I-78 E through NJ. Saturday evening traffic shouldn\'t be too bad. You made it.' }
-          ]
-        }
-      ]
-    }
-  ]
+const TYPE_LABELS = {
+  attraction: 'Attraction', food: 'Food', overnight: 'Overnight', scenic: 'Scenic',
+  history: 'History', curiosity: 'Curiosity', truckstop: 'Indian Dhaba', western: 'Western Wear', surplus: 'Mil Surplus'
 };
 
-// Day colors for overview map segments
+const ROUTE = { days: [
+  // ==================== DAY 1 ====================
+  { day: 1, date: 'Tue Mar 25', from: 'Mesa, AZ', to: 'Albuquerque, NM', miles: 470, hours: '7.5',
+    overnight: { name: 'Hampton Inn Albuquerque — University/Midtown', detail: 'Near Old Town and Nob Hill.' },
+    tip: 'Hit the road by 7 AM to reach the Jack Rabbit by 10 when it opens. The AZ stops are clustered along I-40 between miles 185–280 from Mesa.',
+    appleMapsUrl: 'https://maps.apple.com/?saddr=Mesa,+AZ&daddr=3386+Historic+US-66,+Joseph+City,+AZ+86032&daddr=Petrified+Forest+National+Park,+AZ&daddr=Meteor+Crater,+Winslow,+AZ&daddr=Hampton+Inn,+Albuquerque,+NM',
+    sections: [
+      { name: 'Mesa to Holbrook', stops: [
+        { name: 'Jack Rabbit Trading Post', type: 'attraction', lat: 34.956, lng: -110.333,
+          desc: 'The famous "Here It Is" billboard and giant jackrabbit. Route 66 souvenirs. Opens 10 AM.',
+          blurb: 'The Jack Rabbit Trading Post has been luring travelers off the highway since 1949 with its "HERE IT IS" billboards stretching hundreds of miles in each direction. The giant jackrabbit out front is one of the most photographed spots on all of Route 66. It\'s owned by Tony and Cindy Jaquez, who took over the family business.',
+          appleMap: 'https://maps.apple.com/?address=3386+Historic+US-66,+Joseph+City,+AZ+86032' },
+        { name: 'Geronimo Trading Post', type: 'curiosity', lat: 34.933, lng: -110.197,
+          desc: 'Giant concrete teepee and enormous dream catcher. Classic Route 66 tourist trap in the best possible way.',
+          appleMap: 'https://maps.apple.com/?address=Geronimo+Trading+Post,+Holbrook,+AZ' },
+        { name: 'Petrified Forest National Park', type: 'scenic', lat: 35.065, lng: -109.789,
+          desc: '28-mile scenic road. Massive petrified logs, Painted Desert, Crystal Forest trail. $25/vehicle. 1.5–2 hours.',
+          blurb: 'These petrified logs are 225 million years old, from the Late Triassic period, when this area was a tropical floodplain near the equator. The logs were buried by volcanic ash and slowly replaced by silica, turning them to stone while preserving every detail of the original wood grain. The Painted Desert section shows layers of iron and manganese minerals in bands of red, orange, purple and gray.',
+          appleMap: 'https://maps.apple.com/?address=Petrified+Forest+National+Park,+AZ' },
+        { name: 'Wigwam Motel', type: 'curiosity', lat: 34.903, lng: -110.158,
+          desc: 'Iconic concrete teepees of Holbrook. One of only 3 surviving Wigwam Motels. Quick photo stop.',
+          blurb: 'Chester Lewis built this Wigwam Village in 1950, one of seven built across America between 1937 and 1950. Each "wigwam" is a freestanding concrete and steel teepee, about 28 feet tall. Only three of the original seven villages survive. The design was patented by Frank Redford of Cave City, Kentucky, who charged franchisees $3,000 for the plans.',
+          appleMap: 'https://maps.apple.com/?address=811+W+Hopi+Dr,+Holbrook,+AZ+86025' }
+      ]},
+      { name: 'Holbrook to Winslow', stops: [
+        { name: 'Two Guns Ghost Town', type: 'history', lat: 35.095, lng: -111.082,
+          desc: 'Abandoned Route 66 town with ruins of a zoo, trading post, and Apache Death Cave. Free, open to explore but be careful — crumbling structures.',
+          blurb: 'Two Guns sits on the site of an Apache Death Cave, where in 1878 a group of Navajo warriors reportedly trapped and suffocated 42 Apaches inside a limestone cavern by building a fire at the entrance. In the 1920s, a con man named Harry "Two Gun" Miller built a tourist trap here, exhibiting mountain lions in pens carved from the canyon wall. The town burned twice and was finally abandoned when I-40 bypassed it in the 1970s.' },
+        { name: 'Standin\' on the Corner Park', type: 'attraction', lat: 35.024, lng: -110.697,
+          desc: '"Take It Easy" by the Eagles. Life-size statue, mural of the girl in the flatbed Ford. 10-min stop.',
+          blurb: 'This park commemorates the Eagles\' 1972 hit "Take It Easy," written by Jackson Browne and Glenn Frey. The lyric "standing on a corner in Winslow, Arizona" put this small Route 66 town on the map permanently. The statue was erected in 1999, and the mural across the street features a girl in a red flatbed Ford reflected in a trompe-l\'oeil storefront window.',
+          appleMap: 'https://maps.apple.com/?address=100+E+2nd+St,+Winslow,+AZ+86047' },
+        { name: 'Meteor Crater', type: 'scenic', lat: 35.028, lng: -111.023,
+          desc: 'Best-preserved impact site on Earth. Nearly a mile wide, 550 feet deep. $22/person. 45 min.',
+          blurb: 'About 50,000 years ago, a nickel-iron meteorite 150 feet across slammed into this spot at 26,000 miles per hour. The explosion was equivalent to 10 megatons of TNT — about 150 times the force of the Hiroshima bomb. The crater is 3,900 feet across and 560 feet deep. NASA trained Apollo astronauts here in the 1960s because the terrain resembled the lunar surface.',
+          appleMap: 'https://maps.apple.com/?address=Meteor+Crater+Rd,+Winslow,+AZ+86047' },
+        { name: 'Twin Arrows', type: 'history', lat: 35.069, lng: -111.168,
+          desc: 'Two giant arrows stuck in the ground — once marked a gas station/trading post, now just the arrows remain. Visible from I-40.',
+          blurb: 'Twin Arrows was a Hopi-owned trading post that opened in the 1950s. The two 25-foot wooden arrows were the advertising gimmick. The place closed in the 1990s when I-40 bypassed it. The Navajo Nation later built a casino nearby, but the original arrows and ruins still stand as one of Route 66\'s most haunting landmarks.' }
+      ]},
+      { name: 'Winslow to Albuquerque', stops: [
+        { name: 'Continental Divide', type: 'history', lat: 35.438, lng: -108.985,
+          desc: 'The Great Divide — where water splits between the Atlantic and Pacific. Trading post at Exit 47 sells souvenirs.',
+          blurb: 'The Continental Divide runs along the crest of the Rocky Mountains from Alaska to Patagonia. At this point on I-40 in New Mexico, elevation 7,275 feet, rain falling on the west side of the road eventually reaches the Pacific Ocean. Rain on the east side reaches the Gulf of Mexico and Atlantic. The divide was a critical landmark for 19th-century wagon trains heading west.' },
+        { name: 'Grants, NM — Uranium Capital', type: 'history', lat: 35.148, lng: -107.852,
+          desc: 'New Mexico Mining Museum — the only place in the world where you can tour an underground uranium mine. $5 admission.',
+          blurb: 'In 1950, a Navajo sheepherder named Paddy Martinez discovered uranium ore near Grants, touching off a mining boom that made this tiny town the "Uranium Capital of the World." The mines operated until the 1980s. The museum has a recreated mine shaft one level underground. At the peak, Grants supplied half the uranium for America\'s nuclear arsenal.',
+          appleMap: 'https://maps.apple.com/?address=100+N+Iron+Ave,+Grants,+NM+87020' },
+        { name: 'Sky City Casino — Acoma Pueblo Turnoff', type: 'history', lat: 34.909, lng: -107.583,
+          desc: 'Acoma Pueblo ("Sky City") is 15 mi south — one of the oldest continuously inhabited settlements in North America, atop a 367-ft mesa. Guided tours ~$25.',
+          blurb: 'Acoma Pueblo has been continuously inhabited since at least 1150 AD, making it one of the oldest communities in North America. The pueblo sits atop a sandstone mesa 367 feet above the valley floor. Until the 1950s, the only access was via a hand-carved staircase in the rock. The Spanish attacked it in 1599, and the mesa-top settlement survived because it was nearly impossible to assault.' },
+        { name: 'Dinner in Albuquerque', type: 'food', lat: 35.084, lng: -106.651,
+          desc: 'Vinaigrette — farm-to-table salad bistro. Flying Star Cafe — great veggie burgers and pastries. Both in Nob Hill.' },
+        { name: 'Hampton Inn Albuquerque', type: 'overnight', lat: 35.088, lng: -106.619,
+          desc: 'University/Midtown. Near Old Town.' }
+      ]}
+    ]
+  },
+  // ==================== DAY 2 ====================
+  { day: 2, date: 'Wed Mar 26', from: 'Albuquerque, NM', to: 'Amarillo, TX', miles: 290, hours: '5',
+    overnight: { name: 'Hampton Inn Amarillo — West/Medical Center', detail: 'Short day. Consider Palo Duro Canyon (25 mi south).' },
+    tip: 'Shortest driving day. Palo Duro Canyon (25 mi south of Amarillo) is the second-largest canyon in the US — 120 miles long, 800 feet deep. $8 entry. Adds 1.5–2 hrs but genuinely stunning.',
+    appleMapsUrl: 'https://maps.apple.com/?saddr=Albuquerque,+NM&daddr=1085+Blue+Hole+Rd,+Santa+Rosa,+NM&daddr=Tucumcari,+NM&daddr=13651+I-40+Frontage+Rd,+Amarillo,+TX&daddr=Hampton+Inn,+Amarillo,+TX',
+    sections: [
+      { name: 'Albuquerque to Santa Rosa', stops: [
+        { name: 'Old Town Albuquerque', type: 'attraction', lat: 35.096, lng: -106.670,
+          desc: 'Morning stroll. Adobe buildings, galleries, San Felipe de Neri Church (1706). Green chile bread at Golden Crown Panaderia.' },
+        { name: 'Route 66 Auto Museum', type: 'curiosity', lat: 34.939, lng: -104.683,
+          desc: 'In Santa Rosa. Vintage cars from the Route 66 era — Corvettes, muscle cars, hot rods. Small admission.',
+          appleMap: 'https://maps.apple.com/?address=2866+Will+Rogers+Dr,+Santa+Rosa,+NM+88435' },
+        { name: 'The Blue Hole', type: 'scenic', lat: 34.939, lng: -104.684,
+          desc: 'Crystal-clear 80-foot-deep natural artesian pool in the middle of the desert. Free to view.',
+          blurb: 'The Blue Hole is a natural artesian spring that pumps 3,000 gallons of water per minute from an underground river system. The water is a constant 62 degrees year-round and so clear you can see 80 feet to the bottom. It\'s a popular scuba diving spot — a bell-shaped pool that\'s 80 feet wide at the surface but widens to 130 feet at the bottom.',
+          appleMap: 'https://maps.apple.com/?address=1085+Blue+Hole+Rd,+Santa+Rosa,+NM+88435' }
+      ]},
+      { name: 'Santa Rosa to Tucumcari', stops: [
+        { name: 'Tucumcari: Route 66 Neon Capital', type: 'attraction', lat: 35.172, lng: -103.728,
+          desc: 'Highest concentration of surviving neon signs on Route 66. Blue Swallow Motel, Tee Pee Curios. 15-min cruise.',
+          blurb: 'Tucumcari was once home to over 2,000 motel rooms serving Route 66 travelers — one of the highest concentrations in the country. The famous "TUCUMCARI TONITE!" signs appeared on billboards for hundreds of miles in each direction. The Blue Swallow Motel still operates with its original 1939 neon sign, one of the most photographed on the entire route.',
+          appleMap: 'https://maps.apple.com/?address=Tucumcari,+NM' },
+        { name: 'Mesalands Dinosaur Museum', type: 'curiosity', lat: 35.178, lng: -103.725,
+          desc: 'Bronze and actual-size dinosaur skeletons. Strong paleontology collection. Small museum in Tucumcari. ~$7.',
+          appleMap: 'https://maps.apple.com/?address=222+E+Laughlin+St,+Tucumcari,+NM+88401' },
+        { name: 'Glenrio Ghost Town', type: 'history', lat: 35.180, lng: -103.044,
+          desc: 'Straddling the NM/TX border — an abandoned Route 66 town. The state line runs through the old buildings. Free to explore.',
+          blurb: 'Glenrio thrived as a Route 66 stop from the 1930s through the 1960s. Businesses here exploited the state line: bars were built on the New Mexico side (where liquor laws were laxer) and gas stations on the Texas side (no sales tax). When I-40 bypassed the town in 1975, everyone left. It\'s now a National Register ghost town you can walk through.' }
+      ]},
+      { name: 'Tucumcari to Amarillo', stops: [
+        { name: 'Adrian, TX — Midpoint of Route 66', type: 'history', lat: 35.248, lng: -102.669,
+          desc: 'Exact midpoint between Chicago and LA on Route 66. MidPoint Cafe is famous for its "ugly crust" pies.',
+          blurb: 'Adrian marks the precise geographic midpoint of Route 66: 1,139 miles to Chicago, 1,139 miles to Los Angeles. The MidPoint Cafe has been serving travelers since 1928 and was the inspiration for Flo\'s V8 Cafe in Pixar\'s Cars. The "ugly crust" pies — named because function beats form — are legendary.',
+          appleMap: 'https://maps.apple.com/?address=Adrian,+TX+79001' },
+        { name: 'Cadillac Ranch', type: 'attraction', lat: 35.187, lng: -101.987,
+          desc: 'Ten Cadillacs buried nose-down. Bring spray paint — you\'re supposed to add graffiti. Free, 24/7.',
+          blurb: 'In 1974, the art collective Ant Farm (Chip Lord, Hudson Marquez, and Doug Michels) buried ten Cadillacs nose-first in a wheat field west of Amarillo. The cars span model years 1949 to 1963, representing the rise and fall of the tailfin era. Eccentric Amarillo millionaire Stanley Marsh 3 financed it. Visitors are encouraged to spray paint the cars — they\'re repainted constantly and look different every day.',
+          appleMap: 'https://maps.apple.com/?address=13651+I-40+Frontage+Rd,+Amarillo,+TX+79124' },
+        { name: 'Dinner in Amarillo', type: 'food', lat: 35.199, lng: -101.845,
+          desc: 'Yellow City Street Food — eclectic, good veggie. Six Car Pub & Brewery. Jason\'s Deli has a big organic salad bar.' },
+        { name: 'Hampton Inn Amarillo', type: 'overnight', lat: 35.195, lng: -101.910, desc: 'West/Medical Center area.' }
+      ]}
+    ]
+  },
+  // ==================== DAY 3 ====================
+  { day: 3, date: 'Thu Mar 27', from: 'Amarillo, TX', to: 'Oklahoma City, OK', miles: 265, hours: '4.5',
+    overnight: { name: 'Hampton Inn Oklahoma City — Bricktown', detail: 'Entertainment district — restaurants, canal walk, ballpark.' },
+    tip: 'Another short day. POPS in Arcadia, OK (20 min east of OKC) has a 66-foot illuminated soda bottle and 400+ craft sodas.',
+    appleMapsUrl: 'https://maps.apple.com/?saddr=Amarillo,+TX&daddr=124+N+Main+St,+Shamrock,+TX&daddr=Elk+City,+OK&daddr=Hampton+Inn+Bricktown,+Oklahoma+City,+OK',
+    sections: [
+      { name: 'Amarillo to Shamrock', stops: [
+        { name: 'Leaning Tower of Texas', type: 'curiosity', lat: 35.200, lng: -101.099,
+          desc: 'In Groom, TX. A water tower tilted at 80 degrees — intentionally, to lure tourists to a truck stop. One of Route 66\'s best sight gags.',
+          blurb: 'Ralph Britten bought this water tower from the town of Lefors and towed it 34 miles to Groom, then used a bulldozer to tilt it. The idea was to make passing drivers do a double-take and pull over to his truck stop. It worked. The "Britten U.S.A." tower has been a Route 66 landmark since the 1980s and remains one of the most photographed oddities on the road.',
+          appleMap: 'https://maps.apple.com/?address=Groom,+TX+79039' },
+        { name: 'Cross of Our Lord, Groom', type: 'curiosity', lat: 35.205, lng: -101.055,
+          desc: '190-foot steel cross visible for miles across the flat Texas Panhandle. 2.5 million pounds of steel. Free. Surrounded by Stations of the Cross.',
+          blurb: 'Steve Thomas, a structural engineer, built this 19-story cross in 1995 at a cost of $500,000. It weighs 2.5 million pounds and stands 190 feet tall, making it one of the largest crosses in the Western Hemisphere. On a clear day, it\'s visible from 20 miles away across the flat panhandle. The surrounding grounds include life-size bronze Stations of the Cross.' },
+        { name: 'Slug Bug Ranch', type: 'curiosity', lat: 35.240, lng: -101.379,
+          desc: 'In Conway, TX. Five VW Beetles buried nose-first, just like Cadillac Ranch but with Bugs. Free, spray paint welcome.',
+          appleMap: 'https://maps.apple.com/?address=Conway,+TX' },
+        { name: 'U-Drop Inn, Shamrock', type: 'attraction', lat: 35.226, lng: -100.249,
+          desc: 'Art Deco 1936 Conoco gas station — inspired Ramone\'s in Pixar\'s Cars. Beautifully restored. Free.',
+          blurb: 'Architect J.C. Berry designed this stunning Art Deco combination gas station and cafe in 1936. It cost $23,000 to build — a fortune during the Depression. The U-Drop Inn served Route 66 travelers for decades until the interstate bypass killed business. After sitting empty for years, it was restored in 2003 with the help of a National Historic Preservation grant. Pixar\'s art director visited it while researching Cars and it became the direct model for Ramone\'s House of Body Art.',
+          appleMap: 'https://maps.apple.com/?address=124+N+Main+St,+Shamrock,+TX+79079' },
+        { name: 'Devil\'s Rope Museum, McLean', type: 'curiosity', lat: 35.232, lng: -100.600,
+          desc: 'Museum dedicated to barbed wire — 450+ types on display, plus Route 66 exhibit. Free. 30 min.',
+          blurb: 'Barbed wire may be the most transformative invention in Western history. Before Joseph Glidden\'s 1874 patent, the open range was truly open — there was no cheap way to fence the Great Plains. Barbed wire ended the era of the open-range cowboy, sparked range wars, and made modern agriculture possible. This museum has over 450 varieties, from Civil War-era designs to exotic collector pieces.',
+          appleMap: 'https://maps.apple.com/?address=100+Kingsley+St,+McLean,+TX+79057' }
+      ]},
+      { name: 'Elk City to Clinton', stops: [
+        { name: 'Truck Stop 40 — Punjabi Restaurant', type: 'truckstop', lat: 35.295, lng: -99.637,
+          desc: 'Sayre, OK. Exit 26 off I-40. Authentic Punjabi food at a truck stop — open 24/7. Curries, saag, aalu paronthe, chana. Vegetarian-friendly. Menu in Punjabi and English.',
+          blurb: 'About 20% of American long-haul truck drivers are Punjabi Sikh, and a network of dhabas — roadside Indian restaurants — has sprung up at truck stops across the interstate system to serve them. These places serve home-style Punjabi food: fresh roti, dal, saag paneer, curries. The food is authentic, cheap, and generous. This one at Exit 26 is a favorite on the I-40 corridor.',
+          appleMap: 'https://maps.apple.com/?address=11561+N+1900+Rd,+Sayre,+OK+73662' },
+        { name: 'National Route 66 Museum', type: 'attraction', lat: 35.412, lng: -99.404,
+          desc: 'Walk-through exhibits recreating each of the 8 states on Route 66. Small admission. 45 min–1 hr.',
+          appleMap: 'https://maps.apple.com/?address=2717+W+3rd+St,+Elk+City,+OK+73644' },
+        { name: 'Oklahoma Route 66 Museum', type: 'attraction', lat: 35.515, lng: -98.967,
+          desc: 'Cultural history decade by decade. Vintage cars and memorabilia.',
+          appleMap: 'https://maps.apple.com/?address=2229+W+Gary+Blvd,+Clinton,+OK+73601' }
+      ]},
+      { name: 'Clinton to Oklahoma City', stops: [
+        { name: 'Lucille\'s Service Station (ruin)', type: 'history', lat: 35.451, lng: -98.367,
+          desc: 'Near Hydro, OK. Ruins of a Route 66 gas station run by Lucille Hamons from 1941 until her death in 2000. She was known as "the Mother of the Mother Road."',
+          blurb: 'Lucille Hamons ran this gas station and roadhouse for nearly 60 years. She was so beloved by Route 66 travelers that she became known as the "Mother of the Mother Road." She pumped gas, served food, and rented rooms to travelers until she was well into her 80s. The building is now a ruin, but it\'s a Route 66 pilgrimage site.' },
+        { name: 'Stockyards City — Western Wear District', type: 'western', lat: 35.443, lng: -97.528,
+          desc: 'OKC\'s historic Stockyards. Langston\'s (since 1913), Little Joe\'s Boots, Tener\'s (since 1930), Shorty\'s Caboy Hattery. This is where real cowboys shop.',
+          blurb: 'Oklahoma City\'s Stockyards City is the largest stocker and feeder cattle market in the world, and the surrounding district is packed with authentic western wear shops dating back a century. Langston\'s has been selling boots, hats, and jeans here since 1913. Tener\'s opened in 1930. Shorty\'s makes custom cowboy hats by hand. These aren\'t tourist shops — working ranchers buy their gear here.',
+          appleMap: 'https://maps.apple.com/?address=2224+Exchange+Ave,+Oklahoma+City,+OK+73108' },
+        { name: 'Brigadoon Army Surplus', type: 'surplus', lat: 35.438, lng: -97.440,
+          desc: 'The last genuine military surplus store in Oklahoma County. Boots, uniforms, field gear, Civil War to present. Tue–Sat.',
+          appleMap: 'https://maps.apple.com/?address=1805+S+Sunnylane+Rd,+Oklahoma+City,+OK+73115' },
+        { name: 'Dinner in OKC', type: 'food', lat: 35.468, lng: -97.515,
+          desc: 'The Loaded Bowl — all-vegan comfort food, famous in OKC. Picasso Cafe in the Paseo Arts District. Or Dhaba OKC for Indian buffet.' },
+        { name: 'Hampton Inn OKC — Bricktown', type: 'overnight', lat: 35.464, lng: -97.509, desc: 'Bricktown entertainment district.' }
+      ]}
+    ]
+  },
+  // ==================== DAY 4 ====================
+  { day: 4, date: 'Fri Mar 28', from: 'Oklahoma City, OK', to: 'Nashville, TN', miles: 800, hours: '11',
+    overnight: { name: 'Hampton Inn Nashville — Vanderbilt/West End', detail: 'Near Music Row. Long day but set up for final push.' },
+    tip: 'Longest day. Leave by 6 AM. If it feels too long, overnight in Memphis instead (~450 mi, ~6.5 hrs).',
+    appleMapsUrl: 'https://maps.apple.com/?saddr=Oklahoma+City,+OK&daddr=Little+Rock,+AR&daddr=Memphis,+TN&daddr=Hampton+Inn+Vanderbilt,+Nashville,+TN',
+    sections: [
+      { name: 'OKC to Little Rock', stops: [
+        { name: 'POPS Soda Ranch', type: 'curiosity', lat: 35.611, lng: -97.334,
+          desc: 'Arcadia, OK. 66-foot illuminated soda bottle, 400+ craft sodas. Route 66 landmark. Quick stop on the way out.',
+          blurb: 'POPS opened in 2007 and instantly became a Route 66 icon. The 66-foot-tall soda bottle sculpture out front is made of steel and LED lights that cycle through colors at night. Inside, the gas station/restaurant stocks over 700 varieties of soda from around the world, organized by color. It was designed by architect Rand Elliott as a modern homage to Route 66\'s roadside culture.',
+          appleMap: 'https://maps.apple.com/?address=660+W+Hwy+66,+Arcadia,+OK+73007' },
+        { name: 'Oklahoma City National Memorial', type: 'history', lat: 35.473, lng: -97.517,
+          desc: 'If you have an early start, drive past the memorial\'s reflecting pool and 168 empty chairs (one for each victim). Open 24/7, free. Profoundly moving.',
+          blurb: 'On April 19, 1995, a truck bomb destroyed the Alfred P. Murrah Federal Building, killing 168 people including 19 children in the building\'s day care center. It was the deadliest act of domestic terrorism in American history. The memorial features 168 empty bronze and glass chairs arranged in nine rows representing each floor. The chairs glow at night. A survivor tree — an American elm that withstood the blast — still stands.',
+          appleMap: 'https://maps.apple.com/?address=620+N+Harvey+Ave,+Oklahoma+City,+OK+73102' },
+        { name: 'Fort Smith, AR', type: 'history', lat: 35.386, lng: -94.398,
+          desc: 'Fort Smith National Historic Site — "Hanging Judge" Parker\'s courtroom and the Trail of Tears endpoint. Quick walkthrough.',
+          blurb: 'Judge Isaac Parker presided over this federal court from 1875 to 1896, sentencing 160 people to death (79 were actually hanged) in a jurisdiction that covered 74,000 square miles of Indian Territory. He was known as the "Hanging Judge," though he actually advocated for better conditions for Native peoples. The fort also marks the endpoint of the Trail of Tears, where Cherokee, Choctaw, Creek, and other nations were forcibly relocated in the 1830s.',
+          appleMap: 'https://maps.apple.com/?address=Fort+Smith+National+Historic+Site,+Fort+Smith,+AR' },
+        { name: 'Lunch in Little Rock', type: 'food', lat: 34.749, lng: -92.280,
+          desc: 'The Root Cafe — farm-to-table, great vegetarian menu. Raduno Brick Oven — wood-fired veggie pizza.' }
+      ]},
+      { name: 'Little Rock to Memphis', stops: [
+        { name: 'Indian Tadka — Plummerville, AR', type: 'truckstop', lat: 35.164, lng: -92.627,
+          desc: 'Relocated Punjabi Dhaba (was in Morrilton). Exit 107 area off I-40. Authentic Indian food, vegetarian options.',
+          appleMap: 'https://maps.apple.com/?address=305+N+Springfield+Dr,+Plummerville,+AR' },
+        { name: 'Little Rock Central High School', type: 'history', lat: 34.737, lng: -92.299,
+          desc: 'National Historic Site. Where the Little Rock Nine desegregated a school in 1957 with Army escort. Visitor center, free. 5 min off I-40.',
+          blurb: 'In September 1957, nine Black students attempted to enter this all-white high school, and Arkansas Governor Orval Faubus called out the National Guard to block them. President Eisenhower responded by sending the 101st Airborne Division to escort the students inside. The standoff became one of the pivotal moments of the Civil Rights Movement. The school is still an active high school today.',
+          appleMap: 'https://maps.apple.com/?address=2120+W+Daisy+L+Gatson+Bates+Dr,+Little+Rock,+AR' },
+        { name: 'Forrest City, AR', type: 'history', lat: 35.008, lng: -90.790,
+          desc: 'Named for Confederate General Nathan Bedford Forrest. The town has been reckoning with this legacy — interesting to know as you drive through.',
+          blurb: 'Forrest City was named in 1868 for Nathan Bedford Forrest, the Confederate cavalry commander who later became the first Grand Wizard of the Ku Klux Klan. The town has debated renaming for decades. It\'s a microcosm of how the South grapples with its Confederate heritage — drive through and you\'ll see the tension between old monuments and new murals.' },
+        { name: 'Memphis — Sun Studio', type: 'attraction', lat: 35.139, lng: -90.034,
+          desc: 'Where Elvis, Johnny Cash, Jerry Lee Lewis, and B.B. King recorded. 45-min tour, $15. Or just drive down Beale Street.',
+          blurb: 'Sam Phillips opened Memphis Recording Service at 706 Union Avenue in 1950. On July 5, 1954, a teenage Elvis Presley walked in and recorded "That\'s All Right." Rock and roll was born. Phillips also recorded B.B. King, Howlin\' Wolf, Jerry Lee Lewis, Carl Perkins, Roy Orbison, and Johnny Cash here. The original equipment is still in place.',
+          appleMap: 'https://maps.apple.com/?address=706+Union+Ave,+Memphis,+TN+38103' }
+      ]},
+      { name: 'Memphis to Nashville', stops: [
+        { name: 'Jackson, TN — Casey Jones Village', type: 'history', lat: 35.612, lng: -88.814,
+          desc: 'Home and museum of the legendary railroad engineer. Small admission. The ballad of Casey Jones is one of America\'s great folk songs.',
+          blurb: 'John Luther "Casey" Jones was an Illinois Central Railroad engineer famous for his speed runs. On April 30, 1900, he was at the throttle of Cannonball Express No. 382 when he spotted a stalled train on the tracks ahead. He told his fireman to jump, then stayed at the brake, dying in the crash but saving every passenger. The ballad written about him became one of America\'s most famous folk songs.' },
+        { name: 'Nashville arrival', type: 'scenic', lat: 36.163, lng: -86.782,
+          desc: 'Music City. Lower Broadway honky-tonks are walking distance from the Vanderbilt area.' },
+        { name: 'Battleground Army Surplus', type: 'surplus', lat: 36.124, lng: -86.764,
+          desc: 'Nashville. 2001 Nolensville Pike. Since 1998 — military surplus, boots, ammo cans, MREs. The real deal.',
+          appleMap: 'https://maps.apple.com/?address=2001+Nolensville+Pike,+Nashville,+TN+37211' },
+        { name: 'Hampton Inn Nashville', type: 'overnight', lat: 36.150, lng: -86.804, desc: 'Vanderbilt/West End. Near Music Row.' }
+      ]}
+    ]
+  },
+  // ==================== DAY 5 ====================
+  { day: 5, date: 'Sat Mar 29', from: 'Nashville, TN', to: 'New York, NY', miles: 890, hours: '13',
+    overnight: null,
+    tip: 'Long final day. Leave by 5 AM. Alternative: overnight in Wytheville, VA (7 hrs) then 6 hrs home Sunday.',
+    appleMapsUrl: 'https://maps.apple.com/?saddr=Nashville,+TN&daddr=Knoxville,+TN&daddr=Staunton,+VA&daddr=New+York,+NY',
+    sections: [
+      { name: 'Nashville to Knoxville', stops: [
+        { name: 'Cookeville, TN — Depot Museum', type: 'history', lat: 36.163, lng: -85.502,
+          desc: 'Restored 1909 train depot. Small railroad museum. Free. Quick stretch stop right off I-40.',
+          blurb: 'Cookeville\'s depot was built in 1909 by the Tennessee Central Railway. The TC was the underdog railroad of Tennessee — it never turned a profit in 55 years of operation, but it connected Nashville to Knoxville through some of the most rugged terrain in the state. The depot now houses a museum with railroad artifacts and local history.' },
+        { name: 'Knoxville — Market Square', type: 'scenic', lat: 35.961, lng: -83.921,
+          desc: 'Gateway to the Smokies. Historic downtown square, good coffee stop. ~3 hrs from Nashville.' },
+        { name: 'Greene Military & Police — Knoxville', type: 'surplus', lat: 35.932, lng: -83.872,
+          desc: '5,000 sq ft showroom. Boots, tactical gear, holsters, knives. Legit military surplus.',
+          appleMap: 'https://maps.apple.com/?q=Greene+Military+Knoxville+TN' }
+      ]},
+      { name: 'Knoxville to the Valley', stops: [
+        { name: 'Through the Appalachians', type: 'scenic', lat: 37.081, lng: -80.691,
+          desc: 'I-81 through Virginia — beautiful mountain driving. Late March brings early spring blooms.',
+          blurb: 'The Appalachian Mountains are among the oldest on Earth — over 480 million years old, they were once taller than the Himalayas. What you\'re driving through is the Great Valley of Virginia, a limestone valley between the Blue Ridge to the east and the Alleghenies to the west. Scotch-Irish settlers poured down this valley in the 1700s, and it became the breadbasket of the Confederacy during the Civil War.' },
+        { name: 'Bristol — Birthplace of Country Music', type: 'history', lat: 36.595, lng: -82.189,
+          desc: 'The VA/TN state line runs down the main street. In 1927, Ralph Peer recorded Jimmie Rodgers and the Carter Family here — the "Big Bang" of country music.',
+          blurb: 'In August 1927, talent scout Ralph Peer set up a temporary recording studio in Bristol and recorded Jimmie Rodgers and the Carter Family, launching both careers and essentially creating commercial country music. A sign on State Street reads "Bristol VA/TN — A Good Place to Live." The state line literally runs down the middle of the street — one sidewalk is in Virginia, the other in Tennessee.',
+          appleMap: 'https://maps.apple.com/?address=Bristol,+VA' },
+        { name: 'Wytheville, VA', type: 'food', lat: 36.948, lng: -81.085,
+          desc: 'Good lunch stop. Graze on Main has vegetarian options. Also a potential overnight if you want to split Day 5.',
+          appleMap: 'https://maps.apple.com/?address=Wytheville,+VA' },
+        { name: 'Lexington, VA — VMI & W&L', type: 'history', lat: 37.784, lng: -79.443,
+          desc: 'Virginia Military Institute (1839) and Washington & Lee University. Stonewall Jackson and Robert E. Lee are both buried here. 10 min off I-81.',
+          blurb: 'Lexington is a small college town with an outsized place in American history. VMI, founded in 1839, is the oldest state-supported military college. Stonewall Jackson taught physics here before the Civil War. After the war, Robert E. Lee served as president of what became Washington & Lee University until his death in 1870. Both are buried in town. George C. Marshall, architect of the plan to rebuild Europe after WWII, was a VMI graduate.',
+          appleMap: 'https://maps.apple.com/?address=Lexington,+VA' }
+      ]},
+      { name: 'Shenandoah Valley to NYC', stops: [
+        { name: 'Staunton, VA — Woodrow Wilson Birthplace', type: 'history', lat: 38.150, lng: -79.072,
+          desc: 'Charming Shenandoah Valley town. Wilson\'s birthplace museum, plus good lunch spots. Byers Street Bistro.',
+          blurb: 'Woodrow Wilson was born in this Greek Revival manse in 1856, the son of a Presbyterian minister. He\'s the only president buried in Washington, D.C. (at the National Cathedral). Staunton itself is a beautifully preserved Victorian town — the entire downtown is a National Historic District with buildings dating to the 1850s.',
+          appleMap: 'https://maps.apple.com/?address=Staunton,+VA' },
+        { name: 'Natural Bridge, VA', type: 'scenic', lat: 37.628, lng: -79.544,
+          desc: '215-foot natural limestone arch. George Washington carved his initials in it. Thomas Jefferson bought it. $9. 15 min off I-81.',
+          blurb: 'This 215-foot natural limestone arch was once considered one of the natural wonders of the world. George Washington surveyed it as a young man and carved his initials in the rock (you can still see them). Thomas Jefferson was so impressed he bought it from King George III in 1774 for 20 shillings. The Monacan people considered it sacred. It spans 90 feet across Cedar Creek.',
+          appleMap: 'https://maps.apple.com/?address=Natural+Bridge,+VA' },
+        { name: 'Home', type: 'overnight', lat: 40.748, lng: -73.986,
+          desc: 'I-81 N to I-78 E through NJ. Saturday evening. You made it.' }
+      ]}
+    ]
+  }
+]};
+
 const DAY_COLORS = ['#c87533', '#2d5a87', '#6b4c8a', '#1a3a5c', '#8a4444'];
 
 // ============================================================
-// RENDER TRIPTIK
+// TEXT-TO-SPEECH
+// ============================================================
+let currentUtterance = null;
+let speakingBtn = null;
+
+function speak(text, btn) {
+  if (currentUtterance && speakingBtn === btn) {
+    speechSynthesis.cancel();
+    currentUtterance = null;
+    btn.classList.remove('speaking');
+    btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen';
+    speakingBtn = null;
+    return;
+  }
+  speechSynthesis.cancel();
+  if (speakingBtn) {
+    speakingBtn.classList.remove('speaking');
+    speakingBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen';
+  }
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 0.95;
+  u.onend = () => { btn.classList.remove('speaking'); btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen'; speakingBtn = null; currentUtterance = null; };
+  btn.classList.add('speaking');
+  btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Stop';
+  speakingBtn = btn;
+  currentUtterance = u;
+  speechSynthesis.speak(u);
+}
+
+// ============================================================
+// RENDER
 // ============================================================
 function renderDays() {
   const container = document.getElementById('triptik-days');
@@ -398,20 +476,16 @@ function renderDays() {
   let globalStopIndex = 0;
 
   ROUTE.days.forEach(day => {
-    // Day header
     html += `<div class="day-header" data-day="${day.day}">
       <h2>Day ${day.day}: ${day.from} &rarr; ${day.to}</h2>
       <div class="day-sub">${day.date} &middot; ~${day.miles} miles &middot; ~${day.hours} hrs driving</div>
-      <div class="day-stats">
-        ${day.sections.map(s => `<span class="day-stat">${s.name}</span>`).join('')}
-      </div>
+      <div class="day-stats">${day.sections.map(s => `<span class="day-stat">${s.name}</span>`).join('')}</div>
       <a href="${day.appleMapsUrl}" target="_blank" class="nav-btn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
         Navigate Day ${day.day} in Apple Maps
       </a>
     </div>`;
 
-    // Sections
     day.sections.forEach((section, si) => {
       const mapId = `map-d${day.day}-s${si}`;
       html += `<div class="triptik-section" data-day="${day.day}" data-section="${si}">
@@ -420,43 +494,29 @@ function renderDays() {
         <div class="strip">`;
 
       section.stops.forEach(stop => {
-        const typeLabel = stop.type.charAt(0).toUpperCase() + stop.type.slice(1);
+        const typeLabel = TYPE_LABELS[stop.type] || stop.type;
         const stopIdx = globalStopIndex++;
         html += `<div class="stop" data-stop-idx="${stopIdx}">
           <div class="stop-dot ${stop.type}"></div>
           <div class="stop-name">${stop.name} <span class="stop-type-label ${stop.type}">${typeLabel}</span></div>
           <div class="stop-desc">${stop.desc}</div>
           ${stop.appleMap ? `<a href="${stop.appleMap}" target="_blank" class="stop-link">Open in Apple Maps &rarr;</a>` : ''}
+          ${stop.blurb ? `<button class="listen-btn" onclick="speak(\`${stop.blurb.replace(/`/g,"'").replace(/\\/g,"\\\\")}\`, this)"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen</button>` : ''}
         </div>`;
       });
 
-      html += '</div>'; // .strip
-
-      // Overnight box at end of last section
+      html += '</div>';
       if (si === day.sections.length - 1 && day.overnight) {
-        html += `<div class="overnight-box">
-          <div class="hotel-name">${day.overnight.name}</div>
-          <div class="hotel-detail">${day.overnight.detail}</div>
-        </div>`;
+        html += `<div class="overnight-box"><div class="hotel-name">${day.overnight.name}</div><div class="hotel-detail">${day.overnight.detail}</div></div>`;
       }
-
-      html += '</div>'; // .triptik-section
+      html += '</div>';
     });
 
-    // Tip card
-    if (day.tip) {
-      html += `<div class="tip-card"><strong>Tip:</strong> ${day.tip}</div>`;
-    }
-
-    // St. Louis tip on Day 3
-    if (day.day === 3) {
-      html += `<div class="tip-card"><strong>St. Louis option:</strong> From OKC, St. Louis is ~500 miles straight up I-44 (the original Route 66 corridor through Tulsa, Joplin, and Springfield). If you want to see your friend, you could extend Day 3 to St. Louis (~8 hrs total from Amarillo) or add a day between OKC and Nashville. I-44 is a great drive.</div>`;
-    }
+    if (day.tip) html += `<div class="tip-card"><strong>Tip:</strong> ${day.tip}</div>`;
+    if (day.day === 3) html += `<div class="tip-card"><strong>St. Louis option:</strong> From OKC, St. Louis is ~500 miles straight up I-44 (the original Route 66 corridor through Tulsa, Joplin, Springfield). Extend Day 3 or add a day. I-44 is a great drive.</div>`;
   });
 
-  // Final assessment
-  html += `<div class="tip-card" style="margin-top:2rem"><strong>Heads up:</strong> Days 1–3 are easy and packed with great stops (4.5–7.5 hrs). Day 4 (OKC→Nashville, 11 hrs) and Day 5 (Nashville→NYC, 13 hrs) are grinds. If it feels too long, split Day 5 by overnighting in Wytheville, VA (7 hrs from Nashville), then a relaxed 6-hr drive home Sunday.</div>`;
-
+  html += `<div class="tip-card" style="margin-top:2rem"><strong>Heads up:</strong> Days 1–3 are easy (4.5–7.5 hrs). Day 4 (11 hrs) and Day 5 (13 hrs) are grinds. Split Day 5 by overnighting in Wytheville, VA (7 hrs from Nashville), then 6 hrs home Sunday.</div>`;
   container.innerHTML = html;
 }
 
@@ -467,42 +527,16 @@ const sectionMaps = {};
 let overviewMap = null;
 
 function initOverviewMap() {
-  const map = L.map('overview-map', {
-    scrollWheelZoom: false,
-    zoomControl: false,
-    attributionControl: false,
-    dragging: true
-  });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    maxZoom: 18
-  }).addTo(map);
-
-  // Draw full route with day-colored segments
+  const map = L.map('overview-map', { scrollWheelZoom: false, zoomControl: false, attributionControl: false, dragging: true });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 18 }).addTo(map);
   const allPoints = [];
   ROUTE.days.forEach((day, di) => {
-    const dayPoints = [];
-    day.sections.forEach(section => {
-      section.stops.forEach(stop => {
-        if (stop.lat && stop.lng) {
-          dayPoints.push([stop.lat, stop.lng]);
-          allPoints.push([stop.lat, stop.lng]);
-        }
-      });
-    });
-    if (dayPoints.length > 1) {
-      L.polyline(dayPoints, { color: DAY_COLORS[di], weight: 3, opacity: 0.8 }).addTo(map);
-    }
-    // Day label at first stop
-    if (dayPoints.length > 0) {
-      L.circleMarker(dayPoints[0], { radius: 6, color: DAY_COLORS[di], fillColor: DAY_COLORS[di], fillOpacity: 1, weight: 2 })
-        .bindTooltip(`Day ${day.day}`, { permanent: true, direction: 'top', offset: [0, -8], className: 'day-label' })
-        .addTo(map);
-    }
+    const pts = [];
+    day.sections.forEach(s => s.stops.forEach(st => { if (st.lat && st.lng) { pts.push([st.lat, st.lng]); allPoints.push([st.lat, st.lng]); } }));
+    if (pts.length > 1) L.polyline(pts, { color: DAY_COLORS[di], weight: 3, opacity: 0.8 }).addTo(map);
+    if (pts.length > 0) L.circleMarker(pts[0], { radius: 6, color: DAY_COLORS[di], fillColor: DAY_COLORS[di], fillOpacity: 1, weight: 2 }).bindTooltip(`Day ${day.day}`, { permanent: true, direction: 'top', offset: [0, -8] }).addTo(map);
   });
-
-  if (allPoints.length > 1) {
-    map.fitBounds(L.latLngBounds(allPoints), { padding: [20, 20] });
-  }
+  if (allPoints.length > 1) map.fitBounds(L.latLngBounds(allPoints), { padding: [20, 20] });
   overviewMap = map;
 }
 
@@ -511,57 +545,37 @@ function initSectionMap(mapEl) {
   const secIdx = parseInt(mapEl.dataset.section);
   const section = ROUTE.days[dayIdx].sections[secIdx];
   const dayColor = DAY_COLORS[dayIdx];
-
-  const map = L.map(mapEl.id, {
-    scrollWheelZoom: false,
-    zoomControl: false,
-    attributionControl: false,
-    dragging: true
-  });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    maxZoom: 18
-  }).addTo(map);
-
-  const points = [];
+  const map = L.map(mapEl.id, { scrollWheelZoom: false, zoomControl: false, attributionControl: false, dragging: true });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 18 }).addTo(map);
+  const pts = [];
   section.stops.forEach(stop => {
     if (stop.lat && stop.lng) {
       const pt = [stop.lat, stop.lng];
-      points.push(pt);
-      L.circleMarker(pt, { radius: 7, color: dayColor, fillColor: '#fff', fillOpacity: 1, weight: 3 })
-        .bindPopup(`<strong>${stop.name}</strong><br>${stop.desc.substring(0, 80)}...`)
-        .addTo(map);
+      pts.push(pt);
+      L.circleMarker(pt, { radius: 7, color: dayColor, fillColor: '#fff', fillOpacity: 1, weight: 3 }).bindPopup(`<strong>${stop.name}</strong><br>${stop.desc.substring(0, 80)}...`).addTo(map);
     }
   });
-
-  if (points.length > 1) {
-    L.polyline(points, { color: dayColor, weight: 3, opacity: 0.7, dashArray: '8, 6' }).addTo(map);
-    map.fitBounds(L.latLngBounds(points), { padding: [30, 30] });
-  } else if (points.length === 1) {
-    map.setView(points[0], 10);
-  }
-
+  if (pts.length > 1) { L.polyline(pts, { color: dayColor, weight: 3, opacity: 0.7, dashArray: '8, 6' }).addTo(map); map.fitBounds(L.latLngBounds(pts), { padding: [30, 30] }); }
+  else if (pts.length === 1) map.setView(pts[0], 10);
   sectionMaps[mapEl.id] = map;
   return map;
 }
 
-// Lazy-load section maps with IntersectionObserver
 function setupMapObserver() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const mapEl = entry.target;
       if (entry.isIntersecting && !sectionMaps[mapEl.id]) {
         initSectionMap(mapEl);
-        // Add GPS marker if we have a position
         if (currentPosition) updateGPSOnMap(mapEl.id);
       }
     });
   }, { rootMargin: '200px' });
-
   document.querySelectorAll('.section-map').forEach(el => observer.observe(el));
 }
 
 // ============================================================
-// GPS TRACKING
+// GPS
 // ============================================================
 let currentPosition = null;
 let gpsMarkers = {};
@@ -571,29 +585,17 @@ let lastMarkerUpdate = 0;
 
 function startGPS() {
   if (!navigator.geolocation) return;
-  watchId = navigator.geolocation.watchPosition(
-    onPositionUpdate,
-    (err) => { console.log('GPS error:', err.message); },
-    { enableHighAccuracy: true, maximumAge: 10000, timeout: 15000 }
-  );
+  watchId = navigator.geolocation.watchPosition(onPositionUpdate, (err) => console.log('GPS:', err.message), { enableHighAccuracy: true, maximumAge: 10000, timeout: 15000 });
 }
 
 function onPositionUpdate(pos) {
-  currentPosition = { lat: pos.coords.latitude, lng: pos.coords.longitude, accuracy: pos.coords.accuracy };
-
-  // Throttle marker updates to every 5 seconds
+  currentPosition = { lat: pos.coords.latitude, lng: pos.coords.longitude };
   const now = Date.now();
   if (now - lastMarkerUpdate < 5000) return;
   lastMarkerUpdate = now;
-
-  // Update GPS dot on all visible maps
-  Object.keys(sectionMaps).forEach(mapId => updateGPSOnMap(mapId));
+  Object.keys(sectionMaps).forEach(id => updateGPSOnMap(id));
   if (overviewMap) updateGPSOnMap('overview-map');
-
-  // Update you-are-here caret
   updateYouAreHere();
-
-  // Follow mode: scroll to nearest section
   if (followMode) scrollToNearestSection();
 }
 
@@ -603,145 +605,102 @@ function updateGPSOnMap(mapId) {
   if (!currentPosition) return;
   const map = mapId === 'overview-map' ? overviewMap : sectionMaps[mapId];
   if (!map) return;
-
-  const latlng = [currentPosition.lat, currentPosition.lng];
-
-  if (gpsMarkers[mapId]) {
-    gpsMarkers[mapId].setLatLng(latlng);
-  } else {
-    gpsMarkers[mapId] = L.marker(latlng, { icon: gpsDotIcon, zIndexOffset: 1000 }).addTo(map);
-  }
+  const ll = [currentPosition.lat, currentPosition.lng];
+  if (gpsMarkers[mapId]) gpsMarkers[mapId].setLatLng(ll);
+  else gpsMarkers[mapId] = L.marker(ll, { icon: gpsDotIcon, zIndexOffset: 1000 }).addTo(map);
 }
 
 function scrollToNearestSection() {
   if (!currentPosition) return;
-  let closest = null;
-  let minDist = Infinity;
-
+  let closest = null, minDist = Infinity;
   ROUTE.days.forEach((day, di) => {
-    day.sections.forEach((section, si) => {
-      section.stops.forEach(stop => {
-        if (!stop.lat || !stop.lng) return;
-        const d = Math.sqrt(Math.pow(currentPosition.lat - stop.lat, 2) + Math.pow(currentPosition.lng - stop.lng, 2));
-        if (d < minDist) {
-          minDist = d;
-          closest = `map-d${di + 1}-s${si}`;
-        }
+    day.sections.forEach((sec, si) => {
+      sec.stops.forEach(st => {
+        if (!st.lat || !st.lng) return;
+        const d = distMiles(currentPosition.lat, currentPosition.lng, st.lat, st.lng);
+        if (d < minDist) { minDist = d; closest = `map-d${di+1}-s${si}`; }
       });
     });
   });
-
-  if (closest) {
-    const el = document.getElementById(closest);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
+  if (closest) { const el = document.getElementById(closest); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
 }
 
 function toggleFollow() {
   followMode = !followMode;
-  const btn = document.getElementById('follow-btn');
-  btn.classList.toggle('active', followMode);
+  document.getElementById('follow-btn').classList.toggle('active', followMode);
   if (followMode && currentPosition) scrollToNearestSection();
 }
 
 // ============================================================
-// YOU-ARE-HERE CARET
+// YOU-ARE-HERE (forward-only)
 // ============================================================
-
-// Build flat list of all stops with coordinates for distance calc
 function getFlatStops() {
   const flat = [];
-  ROUTE.days.forEach((day, di) => {
-    day.sections.forEach((section, si) => {
-      section.stops.forEach((stop, sti) => {
-        flat.push({ ...stop, dayIdx: di, secIdx: si, stopIdx: sti });
-      });
-    });
-  });
+  ROUTE.days.forEach((day, di) => { day.sections.forEach((sec, si) => { sec.stops.forEach((st, sti) => { flat.push({ ...st, dayIdx: di, secIdx: si, stopIdx: sti }); }); }); });
   return flat;
 }
 
-// Haversine distance in miles
 function distMiles(lat1, lng1, lat2, lng2) {
-  const R = 3959;
-  const dLat = (lat2 - lat1) * Math.PI / 180;
-  const dLng = (lng2 - lng1) * Math.PI / 180;
-  const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-    Math.cos(lat1 * Math.PI/180) * Math.cos(lat2 * Math.PI/180) *
-    Math.sin(dLng/2) * Math.sin(dLng/2);
+  const R = 3959, dLat = (lat2-lat1)*Math.PI/180, dLng = (lng2-lng1)*Math.PI/180;
+  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLng/2)**2;
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 }
 
-let currentStopIdx = -1;
+// Highwater mark — never goes backward. Stored in localStorage.
+let highwaterIdx = parseInt(localStorage.getItem('drivehome_hw') || '0');
 
 function updateYouAreHere() {
   if (!currentPosition) return;
-
   const flat = getFlatStops();
-  let nearestIdx = 0;
-  let nearestDist = Infinity;
 
-  // Find the nearest stop with coordinates
-  flat.forEach((stop, i) => {
-    if (!stop.lat || !stop.lng) return;
-    const d = distMiles(currentPosition.lat, currentPosition.lng, stop.lat, stop.lng);
-    if (d < nearestDist) {
-      nearestDist = d;
-      nearestIdx = i;
+  // Walk through stops in order. A stop is "passed" if we're closer to the NEXT
+  // stop with coords than to this one. We only advance, never go back.
+  let candidateIdx = highwaterIdx;
+  for (let i = highwaterIdx; i < flat.length - 1; i++) {
+    const curr = flat[i];
+    if (!curr.lat || !curr.lng) { candidateIdx = i + 1; continue; }
+    // Find next stop with coords
+    let nextWithCoords = null;
+    for (let j = i + 1; j < flat.length; j++) {
+      if (flat[j].lat && flat[j].lng) { nextWithCoords = flat[j]; break; }
     }
-  });
-
-  // If we're past the nearest stop (closer to next than previous),
-  // and the next stop exists, point the caret at the next one.
-  // But if we're within 5 miles, we're "at" the nearest stop.
-  if (nearestDist > 5 && nearestIdx < flat.length - 1) {
-    // Check if we're between nearest and next — if so, caret goes on next
-    const next = flat[nearestIdx + 1];
-    if (next.lat && next.lng) {
-      const dNext = distMiles(currentPosition.lat, currentPosition.lng, next.lat, next.lng);
-      const dBetween = distMiles(flat[nearestIdx].lat, flat[nearestIdx].lng, next.lat, next.lng);
-      // If distance to nearest + distance to next ≈ distance between them, we're on the route between them
-      // In that case, caret on next (we've passed nearest)
-      if (nearestDist + dNext < dBetween * 1.3) {
-        nearestIdx = nearestIdx + 1;
-      }
+    if (!nextWithCoords) break;
+    const dCurr = distMiles(currentPosition.lat, currentPosition.lng, curr.lat, curr.lng);
+    const dNext = distMiles(currentPosition.lat, currentPosition.lng, nextWithCoords.lat, nextWithCoords.lng);
+    if (dNext < dCurr) {
+      // We're past this stop
+      candidateIdx = i + 1;
+    } else {
+      break;
     }
   }
 
-  if (nearestIdx === currentStopIdx) return; // No change
-  currentStopIdx = nearestIdx;
+  if (candidateIdx > highwaterIdx) {
+    highwaterIdx = candidateIdx;
+    localStorage.setItem('drivehome_hw', String(highwaterIdx));
+  }
 
-  // Clear all caret/passed states
-  document.querySelectorAll('.stop').forEach(el => {
-    el.classList.remove('current', 'passed');
-  });
+  // Apply styles
+  document.querySelectorAll('.stop').forEach(el => el.classList.remove('current', 'passed'));
   document.querySelectorAll('.day-header').forEach(el => el.classList.remove('passed'));
   document.querySelectorAll('.triptik-section').forEach(el => el.classList.remove('passed'));
   document.querySelectorAll('.strip').forEach(el => el.classList.remove('passed'));
 
-  // Apply passed state to all stops before the current one
   const stopEls = document.querySelectorAll('.stop[data-stop-idx]');
   stopEls.forEach(el => {
     const idx = parseInt(el.dataset.stopIdx);
-    if (idx < nearestIdx) {
-      el.classList.add('passed');
-    } else if (idx === nearestIdx) {
-      el.classList.add('current');
-    }
+    if (idx < highwaterIdx) el.classList.add('passed');
+    else if (idx === highwaterIdx) el.classList.add('current');
   });
 
-  // Gray out passed day headers and sections
-  const currentDay = flat[nearestIdx].dayIdx;
-  const currentSec = flat[nearestIdx].secIdx;
+  const currentDay = flat[highwaterIdx] ? flat[highwaterIdx].dayIdx : 0;
+  const currentSec = flat[highwaterIdx] ? flat[highwaterIdx].secIdx : 0;
 
   document.querySelectorAll('.day-header[data-day]').forEach(el => {
-    const d = parseInt(el.dataset.day) - 1;
-    if (d < currentDay) el.classList.add('passed');
+    if (parseInt(el.dataset.day) - 1 < currentDay) el.classList.add('passed');
   });
-
   document.querySelectorAll('.triptik-section').forEach(el => {
-    const d = parseInt(el.dataset.day) - 1;
-    const s = parseInt(el.dataset.section);
+    const d = parseInt(el.dataset.day) - 1, s = parseInt(el.dataset.section);
     if (d < currentDay || (d === currentDay && s < currentSec)) {
       el.classList.add('passed');
       const strip = el.querySelector('.strip');
@@ -757,6 +716,8 @@ renderDays();
 initOverviewMap();
 setupMapObserver();
 startGPS();
+// Apply saved highwater on load
+setTimeout(() => { updateYouAreHere(); }, 100);
 </script>
 </body>
 </html>
