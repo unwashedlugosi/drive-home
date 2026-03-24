@@ -73,6 +73,38 @@
     .stop-link { display: inline-block; margin-top: 0.2rem; font-size: 0.78rem; color: #2d5a87; text-decoration: none; font-weight: 600; }
     .stop-link:hover { text-decoration: underline; }
 
+    /* You-are-here caret */
+    .stop.current { position: relative; }
+    .stop.current::before {
+      content: '';
+      position: absolute;
+      left: -2.8rem;
+      top: 0.65rem;
+      width: 0; height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 12px solid #007AFF;
+      z-index: 5;
+    }
+
+    /* Passed stops */
+    .stop.passed .stop-name,
+    .stop.passed .stop-type-label,
+    .stop.passed .stop-desc,
+    .stop.passed .stop-link { opacity: 0.35; }
+    .stop.passed .stop-dot { opacity: 0.3; }
+
+    /* Passed day headers */
+    .day-header.passed { opacity: 0.35; }
+
+    /* Passed section labels & maps */
+    .triptik-section.passed .triptik-section-label { opacity: 0.35; }
+    .triptik-section.passed .section-map-wrap { opacity: 0.35; }
+    .triptik-section.passed .overnight-box { opacity: 0.35; }
+
+    /* Passed strip road line */
+    .strip.passed::before { opacity: 0.25; }
+
     /* Overnight box */
     .overnight-box { margin-top: 0.5rem; background: #f0f4f8; border-radius: 8px; padding: 0.6rem 0.85rem; }
     .overnight-box .hotel-name { font-weight: 700; font-size: 0.85rem; color: #1a3a5c; }
@@ -363,10 +395,11 @@ const DAY_COLORS = ['#c87533', '#2d5a87', '#6b4c8a', '#1a3a5c', '#8a4444'];
 function renderDays() {
   const container = document.getElementById('triptik-days');
   let html = '';
+  let globalStopIndex = 0;
 
   ROUTE.days.forEach(day => {
     // Day header
-    html += `<div class="day-header">
+    html += `<div class="day-header" data-day="${day.day}">
       <h2>Day ${day.day}: ${day.from} &rarr; ${day.to}</h2>
       <div class="day-sub">${day.date} &middot; ~${day.miles} miles &middot; ~${day.hours} hrs driving</div>
       <div class="day-stats">
@@ -388,7 +421,8 @@ function renderDays() {
 
       section.stops.forEach(stop => {
         const typeLabel = stop.type.charAt(0).toUpperCase() + stop.type.slice(1);
-        html += `<div class="stop">
+        const stopIdx = globalStopIndex++;
+        html += `<div class="stop" data-stop-idx="${stopIdx}">
           <div class="stop-dot ${stop.type}"></div>
           <div class="stop-name">${stop.name} <span class="stop-type-label ${stop.type}">${typeLabel}</span></div>
           <div class="stop-desc">${stop.desc}</div>
@@ -556,6 +590,9 @@ function onPositionUpdate(pos) {
   Object.keys(sectionMaps).forEach(mapId => updateGPSOnMap(mapId));
   if (overviewMap) updateGPSOnMap('overview-map');
 
+  // Update you-are-here caret
+  updateYouAreHere();
+
   // Follow mode: scroll to nearest section
   if (followMode) scrollToNearestSection();
 }
@@ -605,6 +642,112 @@ function toggleFollow() {
   const btn = document.getElementById('follow-btn');
   btn.classList.toggle('active', followMode);
   if (followMode && currentPosition) scrollToNearestSection();
+}
+
+// ============================================================
+// YOU-ARE-HERE CARET
+// ============================================================
+
+// Build flat list of all stops with coordinates for distance calc
+function getFlatStops() {
+  const flat = [];
+  ROUTE.days.forEach((day, di) => {
+    day.sections.forEach((section, si) => {
+      section.stops.forEach((stop, sti) => {
+        flat.push({ ...stop, dayIdx: di, secIdx: si, stopIdx: sti });
+      });
+    });
+  });
+  return flat;
+}
+
+// Haversine distance in miles
+function distMiles(lat1, lng1, lat2, lng2) {
+  const R = 3959;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(lat1 * Math.PI/180) * Math.cos(lat2 * Math.PI/180) *
+    Math.sin(dLng/2) * Math.sin(dLng/2);
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+
+let currentStopIdx = -1;
+
+function updateYouAreHere() {
+  if (!currentPosition) return;
+
+  const flat = getFlatStops();
+  let nearestIdx = 0;
+  let nearestDist = Infinity;
+
+  // Find the nearest stop with coordinates
+  flat.forEach((stop, i) => {
+    if (!stop.lat || !stop.lng) return;
+    const d = distMiles(currentPosition.lat, currentPosition.lng, stop.lat, stop.lng);
+    if (d < nearestDist) {
+      nearestDist = d;
+      nearestIdx = i;
+    }
+  });
+
+  // If we're past the nearest stop (closer to next than previous),
+  // and the next stop exists, point the caret at the next one.
+  // But if we're within 5 miles, we're "at" the nearest stop.
+  if (nearestDist > 5 && nearestIdx < flat.length - 1) {
+    // Check if we're between nearest and next — if so, caret goes on next
+    const next = flat[nearestIdx + 1];
+    if (next.lat && next.lng) {
+      const dNext = distMiles(currentPosition.lat, currentPosition.lng, next.lat, next.lng);
+      const dBetween = distMiles(flat[nearestIdx].lat, flat[nearestIdx].lng, next.lat, next.lng);
+      // If distance to nearest + distance to next ≈ distance between them, we're on the route between them
+      // In that case, caret on next (we've passed nearest)
+      if (nearestDist + dNext < dBetween * 1.3) {
+        nearestIdx = nearestIdx + 1;
+      }
+    }
+  }
+
+  if (nearestIdx === currentStopIdx) return; // No change
+  currentStopIdx = nearestIdx;
+
+  // Clear all caret/passed states
+  document.querySelectorAll('.stop').forEach(el => {
+    el.classList.remove('current', 'passed');
+  });
+  document.querySelectorAll('.day-header').forEach(el => el.classList.remove('passed'));
+  document.querySelectorAll('.triptik-section').forEach(el => el.classList.remove('passed'));
+  document.querySelectorAll('.strip').forEach(el => el.classList.remove('passed'));
+
+  // Apply passed state to all stops before the current one
+  const stopEls = document.querySelectorAll('.stop[data-stop-idx]');
+  stopEls.forEach(el => {
+    const idx = parseInt(el.dataset.stopIdx);
+    if (idx < nearestIdx) {
+      el.classList.add('passed');
+    } else if (idx === nearestIdx) {
+      el.classList.add('current');
+    }
+  });
+
+  // Gray out passed day headers and sections
+  const currentDay = flat[nearestIdx].dayIdx;
+  const currentSec = flat[nearestIdx].secIdx;
+
+  document.querySelectorAll('.day-header[data-day]').forEach(el => {
+    const d = parseInt(el.dataset.day) - 1;
+    if (d < currentDay) el.classList.add('passed');
+  });
+
+  document.querySelectorAll('.triptik-section').forEach(el => {
+    const d = parseInt(el.dataset.day) - 1;
+    const s = parseInt(el.dataset.section);
+    if (d < currentDay || (d === currentDay && s < currentSec)) {
+      el.classList.add('passed');
+      const strip = el.querySelector('.strip');
+      if (strip) strip.classList.add('passed');
+    }
+  });
 }
 
 // ============================================================
