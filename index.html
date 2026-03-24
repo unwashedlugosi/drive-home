@@ -230,10 +230,18 @@ const ROUTE = { days: [
         { name: 'Sky City Casino — Acoma Pueblo Turnoff', type: 'history', lat: 34.909, lng: -107.583,
           desc: 'Acoma Pueblo ("Sky City") is 15 mi south — one of the oldest continuously inhabited settlements in North America, atop a 367-ft mesa. Guided tours ~$25.',
           blurb: 'Acoma Pueblo has been continuously inhabited since at least 1150 AD, making it one of the oldest communities in North America. The pueblo sits atop a sandstone mesa 367 feet above the valley floor. Until the 1950s, the only access was via a hand-carved staircase in the rock. The Spanish attacked it in 1599, and the mesa-top settlement survived because it was nearly impossible to assault.' },
-        { name: 'Dinner in Albuquerque', type: 'food', lat: 35.084, lng: -106.651,
-          desc: 'Vinaigrette — farm-to-table salad bistro. Flying Star Cafe — great veggie burgers and pastries. Both in Nob Hill.' },
+        { name: 'Annapurna\'s World Vegetarian', type: 'food', lat: 35.078, lng: -106.620,
+          desc: 'Ayurvedic vegetarian cafe — Indian, Thai, Middle Eastern. Chai, dosas, curries. A real gem. 2201 Silver Ave SE.',
+          appleMap: 'https://maps.apple.com/?address=2201+Silver+Ave+SE,+Albuquerque,+NM+87106' },
+        { name: 'Vinaigrette', type: 'food', lat: 35.084, lng: -106.651,
+          desc: 'Farm-to-table salad bistro. Creative seasonal salads, excellent vegetarian. Nob Hill area.',
+          appleMap: 'https://maps.apple.com/?address=3500+Central+Ave+SE,+Albuquerque,+NM+87106' },
+        { name: 'Flying Star Cafe', type: 'food', lat: 35.087, lng: -106.654,
+          desc: 'Local chain — great veggie burgers, salads, pastries, green chile everything. Multiple locations.',
+          appleMap: 'https://maps.apple.com/?address=3416+Central+Ave+SE,+Albuquerque,+NM+87106' },
         { name: 'Hampton Inn Albuquerque', type: 'overnight', lat: 35.088, lng: -106.619,
-          desc: 'University/Midtown. Near Old Town.' }
+          desc: 'University/Midtown. Near Old Town and Nob Hill.',
+          appleMap: 'https://maps.apple.com/?address=Hampton+Inn+Albuquerque+University+Midtown,+Albuquerque,+NM' }
       ]}
     ]
   },
@@ -275,9 +283,15 @@ const ROUTE = { days: [
           desc: 'Ten Cadillacs buried nose-down. Bring spray paint — you\'re supposed to add graffiti. Free, 24/7.',
           blurb: 'In 1974, the art collective Ant Farm (Chip Lord, Hudson Marquez, and Doug Michels) buried ten Cadillacs nose-first in a wheat field west of Amarillo. The cars span model years 1949 to 1963, representing the rise and fall of the tailfin era. Eccentric Amarillo millionaire Stanley Marsh 3 financed it. Visitors are encouraged to spray paint the cars — they\'re repainted constantly and look different every day.',
           appleMap: 'https://maps.apple.com/?address=13651+I-40+Frontage+Rd,+Amarillo,+TX+79124' },
-        { name: 'Dinner in Amarillo', type: 'food', lat: 35.199, lng: -101.845,
-          desc: 'Yellow City Street Food — eclectic, good veggie. Six Car Pub & Brewery. Jason\'s Deli has a big organic salad bar.' },
-        { name: 'Hampton Inn Amarillo', type: 'overnight', lat: 35.195, lng: -101.910, desc: 'West/Medical Center area.' }
+        { name: 'Yellow City Street Food', type: 'food', lat: 35.199, lng: -101.845,
+          desc: 'Eclectic menu — tacos, bowls, sandwiches with good veggie options. Local favorite. 2916 SW 6th Ave.',
+          appleMap: 'https://maps.apple.com/?address=2916+SW+6th+Ave,+Amarillo,+TX+79106' },
+        { name: '575 Pizzeria', type: 'food', lat: 35.192, lng: -101.835,
+          desc: 'Neapolitan wood-fired pizza. Great veggie pies, good craft beer selection. 3405 S Western St.',
+          appleMap: 'https://maps.apple.com/?address=3405+S+Western+St,+Amarillo,+TX+79109' },
+        { name: 'Hampton Inn Amarillo', type: 'overnight', lat: 35.195, lng: -101.910,
+          desc: 'West/Medical Center area.',
+          appleMap: 'https://maps.apple.com/?address=Hampton+Inn+Amarillo+West,+Amarillo,+TX' }
       ]}
     ]
   },
@@ -330,9 +344,22 @@ const ROUTE = { days: [
         { name: 'Brigadoon Army Surplus', type: 'surplus', lat: 35.438, lng: -97.440,
           desc: 'The last genuine military surplus store in Oklahoma County. Boots, uniforms, field gear, Civil War to present. Tue–Sat.',
           appleMap: 'https://maps.apple.com/?address=1805+S+Sunnylane+Rd,+Oklahoma+City,+OK+73115' },
-        { name: 'Dinner in OKC', type: 'food', lat: 35.468, lng: -97.515,
-          desc: 'The Loaded Bowl — all-vegan comfort food, famous in OKC. Picasso Cafe in the Paseo Arts District. Or Dhaba OKC for Indian buffet.' },
-        { name: 'Hampton Inn OKC — Bricktown', type: 'overnight', lat: 35.464, lng: -97.509, desc: 'Bricktown entertainment district.' }
+        { name: 'The Loaded Bowl', type: 'food', lat: 35.468, lng: -97.536,
+          desc: 'All-vegan comfort food — OKC\'s first vegan food truck turned restaurant. Creative bowls, tacos, mac & cheese. 1211 SW 2nd St.',
+          appleMap: 'https://maps.apple.com/?address=1211+SW+2nd+St,+Oklahoma+City,+OK+73108' },
+        { name: 'Picasso Cafe', type: 'food', lat: 35.488, lng: -97.530,
+          desc: 'Paseo Arts District. Great veggie options, beautiful patio. Art-filled neighborhood worth walking around. 3009 Paseo St.',
+          appleMap: 'https://maps.apple.com/?address=3009+Paseo+St,+Oklahoma+City,+OK+73103' },
+        { name: 'Dhaba OKC', type: 'truckstop', lat: 35.495, lng: -97.470,
+          desc: 'Indian buffet in a truck stop. Authentic Punjabi food, great vegetarian selection. Not fancy but delicious.',
+          appleMap: 'https://maps.apple.com/?address=Dhaba+OKC,+Oklahoma+City,+OK' },
+        { name: 'First Americans Museum', type: 'history', lat: 35.458, lng: -97.482,
+          desc: '175,000 sq ft museum honoring Oklahoma\'s 39 tribal nations. Indigenous cuisine restaurant. Wed–Sun. 659 First Americans Blvd.',
+          blurb: 'Oklahoma is home to 39 federally recognized tribal nations, more than any other state, because of the Indian Removal Act of 1830. Over 100,000 Native Americans were forcibly relocated from their ancestral homelands to what was then Indian Territory. More than 15,000 died on the journey, known as the Trail of Tears. The museum\'s 10 entrance columns represent the 10 miles Native communities walked each day during the removal. The galleries chronicle their stories from creation to present day.',
+          appleMap: 'https://maps.apple.com/?address=659+First+Americans+Blvd,+Oklahoma+City,+OK+73129' },
+        { name: 'Hampton Inn OKC — Bricktown', type: 'overnight', lat: 35.464, lng: -97.509,
+          desc: 'Bricktown entertainment district. Canal walk, restaurants, ballpark.',
+          appleMap: 'https://maps.apple.com/?address=Hampton+Inn+Bricktown,+Oklahoma+City,+OK' }
       ]}
     ]
   },
@@ -360,8 +387,9 @@ const ROUTE = { days: [
         { name: 'Indian Tadka — Plummerville, AR', type: 'truckstop', lat: 35.164, lng: -92.627,
           desc: 'Exit 107 off I-40. Relocated Punjabi Dhaba. Authentic Indian food, great vegetarian options. In a former Waffle House.',
           appleMap: 'https://maps.apple.com/?address=305+N+Springfield+Dr,+Plummerville,+AR' },
-        { name: 'Lunch in Little Rock', type: 'food', lat: 34.749, lng: -92.280,
-          desc: 'The Root Cafe — farm-to-table, great vegetarian menu. Raduno Brick Oven — wood-fired veggie pizza.' },
+        { name: 'The Root Cafe — Little Rock', type: 'food', lat: 34.738, lng: -92.274,
+          desc: 'Farm-to-table, locally sourced, excellent vegetarian menu. Seasonal dishes, great salads. 1500 Main St.',
+          appleMap: 'https://maps.apple.com/?address=1500+Main+St,+Little+Rock,+AR+72202' },
         { name: 'Little Rock Central High School', type: 'history', lat: 34.737, lng: -92.299,
           desc: 'National Historic Site. Where the Little Rock Nine desegregated a school in 1957 with Army escort. Visitor center, free. 5 min off I-40.',
           blurb: 'In September 1957, nine Black students attempted to enter this all-white high school, and Arkansas Governor Orval Faubus called out the National Guard to block them. President Eisenhower responded by sending the 101st Airborne Division to escort the students inside. The standoff became one of the pivotal moments of the Civil Rights Movement. The school is still an active high school today.',
@@ -378,12 +406,18 @@ const ROUTE = { days: [
         { name: 'Jackson, TN — Casey Jones Village', type: 'history', lat: 35.612, lng: -88.814,
           desc: 'Home and museum of the legendary railroad engineer. Small admission. The ballad of Casey Jones is one of America\'s great folk songs.',
           blurb: 'John Luther "Casey" Jones was an Illinois Central Railroad engineer famous for his speed runs. On April 30, 1900, he was at the throttle of Cannonball Express No. 382 when he spotted a stalled train on the tracks ahead. He told his fireman to jump, then stayed at the brake, dying in the crash but saving every passenger. The ballad written about him became one of America\'s most famous folk songs.' },
-        { name: 'Nashville arrival', type: 'scenic', lat: 36.163, lng: -86.782,
-          desc: 'Music City. Lower Broadway honky-tonks are walking distance from the Vanderbilt area.' },
+        { name: 'The Wild Cow — Nashville', type: 'food', lat: 36.183, lng: -86.746,
+          desc: 'All-vegetarian restaurant in East Nashville. Creative comfort food, big portions, locally sourced. 1896 Eastland Ave.',
+          appleMap: 'https://maps.apple.com/?address=1896+Eastland+Ave,+Nashville,+TN+37206' },
+        { name: 'Sunflower Cafe', type: 'food', lat: 36.155, lng: -86.798,
+          desc: 'Vegetarian/vegan cafe near Vanderbilt. Wraps, salads, smoothies. Laid-back vibe. 2834 Azalea Pl.',
+          appleMap: 'https://maps.apple.com/?address=2834+Azalea+Pl,+Nashville,+TN+37204' },
         { name: 'Battleground Army Surplus', type: 'surplus', lat: 36.124, lng: -86.764,
-          desc: 'Nashville. 2001 Nolensville Pike. Since 1998 — military surplus, boots, ammo cans, MREs. The real deal.',
+          desc: '2001 Nolensville Pike. Since 1998 — military surplus, boots, ammo cans, field gear, MREs. The real deal.',
           appleMap: 'https://maps.apple.com/?address=2001+Nolensville+Pike,+Nashville,+TN+37211' },
-        { name: 'Hampton Inn Nashville', type: 'overnight', lat: 36.150, lng: -86.804, desc: 'Vanderbilt/West End. Near Music Row.' }
+        { name: 'Hampton Inn Nashville', type: 'overnight', lat: 36.150, lng: -86.804,
+          desc: 'Vanderbilt/West End. Near Music Row and Midtown.',
+          appleMap: 'https://maps.apple.com/?address=Hampton+Inn+Nashville+Vanderbilt,+Nashville,+TN' }
       ]}
     ]
   },
@@ -398,7 +432,11 @@ const ROUTE = { days: [
           desc: 'Restored 1909 train depot. Small railroad museum. Free. Quick stretch stop right off I-40.',
           blurb: 'Cookeville\'s depot was built in 1909 by the Tennessee Central Railway. The TC was the underdog railroad of Tennessee — it never turned a profit in 55 years of operation, but it connected Nashville to Knoxville through some of the most rugged terrain in the state. The depot now houses a museum with railroad artifacts and local history.' },
         { name: 'Knoxville — Market Square', type: 'scenic', lat: 35.961, lng: -83.921,
-          desc: 'Gateway to the Smokies. Historic downtown square, good coffee stop. ~3 hrs from Nashville.' },
+          desc: 'Gateway to the Smokies. Historic downtown square, good coffee stop. ~3 hrs from Nashville.',
+          appleMap: 'https://maps.apple.com/?address=Market+Square,+Knoxville,+TN' },
+        { name: 'The Tomato Head — Knoxville', type: 'food', lat: 35.964, lng: -83.920,
+          desc: 'Market Square. Creative pizzas, salads, sandwiches with lots of veggie options. Local institution. 12 Market Square.',
+          appleMap: 'https://maps.apple.com/?address=12+Market+Square,+Knoxville,+TN+37902' },
         { name: 'Greene Military & Police — Knoxville', type: 'surplus', lat: 35.932, lng: -83.872,
           desc: '5,000 sq ft showroom. Boots, tactical gear, holsters, knives. Legit military surplus.',
           appleMap: 'https://maps.apple.com/?q=Greene+Military+Knoxville+TN' }
@@ -425,9 +463,16 @@ const ROUTE = { days: [
       ]},
       { name: 'Shenandoah Valley to NYC', stops: [
         { name: 'Staunton, VA — Woodrow Wilson Birthplace', type: 'history', lat: 38.150, lng: -79.072,
-          desc: 'Charming Shenandoah Valley town. Wilson\'s birthplace museum, plus good lunch spots. Byers Street Bistro.',
+          desc: 'Charming Shenandoah Valley town. Wilson\'s birthplace museum. Beautifully preserved Victorian downtown.',
           blurb: 'Woodrow Wilson was born in this Greek Revival manse in 1856, the son of a Presbyterian minister. He\'s the only president buried in Washington, D.C. (at the National Cathedral). Staunton itself is a beautifully preserved Victorian town — the entire downtown is a National Historic District with buildings dating to the 1850s.',
-          appleMap: 'https://maps.apple.com/?address=Staunton,+VA' },
+          appleMap: 'https://maps.apple.com/?address=Woodrow+Wilson+Presidential+Library,+Staunton,+VA' },
+        { name: 'Frontier Culture Museum', type: 'history', lat: 38.140, lng: -79.095,
+          desc: 'Staunton. Outdoor living-history museum — reconstructed farms from Ireland, England, Germany, West Africa and colonial America. See how Shenandoah Valley culture was forged from these immigrant traditions. $12.',
+          blurb: 'This outdoor museum tells the story of the Shenandoah Valley through the cultures that settled it. Actual historic buildings were disassembled in Ireland, England, and Germany, shipped to Virginia, and rebuilt here. You walk through a 1700s Irish farm, an English yeoman\'s cottage, a German farmstead, and a West African compound, then see how these traditions blended on the American frontier. Costumed interpreters demonstrate period crafts and farming.',
+          appleMap: 'https://maps.apple.com/?address=1290+Richmond+Rd,+Staunton,+VA+24401' },
+        { name: 'Byers Street Bistro', type: 'food', lat: 38.149, lng: -79.074,
+          desc: 'Staunton downtown. Good veggie options, seasonal menu. Nice lunch stop in a charming small-city setting.',
+          appleMap: 'https://maps.apple.com/?address=18+Byers+St,+Staunton,+VA+24401' },
         { name: 'Home', type: 'overnight', lat: 40.748, lng: -73.986,
           desc: 'I-81 N to I-78 E through NJ. Saturday evening. You made it.' }
       ]}
@@ -438,33 +483,96 @@ const ROUTE = { days: [
 const DAY_COLORS = ['#c87533', '#2d5a87', '#6b4c8a', '#1a3a5c', '#8a4444'];
 
 // ============================================================
-// TEXT-TO-SPEECH
+// AUDIO PLAYBACK (MP3 via OpenAI TTS — routes through CarPlay)
 // ============================================================
-let currentUtterance = null;
+const audioPlayer = new Audio();
 let speakingBtn = null;
 
-function speak(text, btn) {
-  if (currentUtterance && speakingBtn === btn) {
-    speechSynthesis.cancel();
-    currentUtterance = null;
+// Map blurb text (first 30 chars) to audio file
+const AUDIO_FILES = {
+  'Twin Arrows was a Hopi-owned t': '/audio/blurb-00-twin-arrows-was-a-hopi-owned-trading-pos.mp3',
+  'Two Guns sits on the site of a': '/audio/blurb-01-two-guns-sits-on-the-site-of-an-apache-d.mp3',
+  'About 50,000 years ago, a nick': '/audio/blurb-02-about-50-000-years-ago-a-nickel-iron-met.mp3',
+  'This park commemorates the Eag': '/audio/blurb-03-this-park-commemorates-the-eagles-1972-h.mp3',
+  'The Jack Rabbit Trading Post h': '/audio/blurb-04-the-jack-rabbit-trading-post-has-been-lu.mp3',
+  'Chester Lewis built this Wigwa': '/audio/blurb-05-chester-lewis-built-this-wigwam-village-.mp3',
+  'These petrified logs are 225 m': '/audio/blurb-06-these-petrified-logs-are-225-million-yea.mp3',
+  'The Continental Divide runs al': '/audio/blurb-07-the-continental-divide-runs-along-the-cr.mp3',
+  'In 1950, a Navajo sheepherder ': '/audio/blurb-08-in-1950-a-navajo-sheepherder-named-paddy.mp3',
+  'Acoma Pueblo has been continuo': '/audio/blurb-09-acoma-pueblo-has-been-continuously-inhab.mp3',
+  'The Blue Hole is a natural art': '/audio/blurb-10-the-blue-hole-is-a-natural-artesian-spri.mp3',
+  'Tucumcari was once home to ove': '/audio/blurb-11-tucumcari-was-once-home-to-over-2-000-mo.mp3',
+  'Glenrio thrived as a Route 66 ': '/audio/blurb-12-glenrio-thrived-as-a-route-66-stop-from-.mp3',
+  'Adrian marks the precise geogr': '/audio/blurb-13-adrian-marks-the-precise-geographic-midp.mp3',
+  'In 1974, the art collective An': '/audio/blurb-14-in-1974-the-art-collective-ant-farm-chip.mp3',
+  'Ralph Britten bought this wate': '/audio/blurb-15-ralph-britten-bought-this-water-tower-fr.mp3',
+  'Steve Thomas, a structural eng': '/audio/blurb-16-steve-thomas-a-structural-engineer-built.mp3',
+  'Barbed wire may be the most tr': '/audio/blurb-17-barbed-wire-may-be-the-most-transformati.mp3',
+  'Architect J.C. Berry designed ': '/audio/blurb-18-architect-j-c-berry-designed-this-stunni.mp3',
+  'About 20% of American long-hau': '/audio/blurb-19-about-20-of-american-long-haul-truck-dri.mp3',
+  'Lucille Hamons ran this gas st': '/audio/blurb-20-lucille-hamons-ran-this-gas-station-and-.mp3',
+  "Oklahoma City's Stockyards Cit": '/audio/blurb-21-oklahoma-city-s-stockyards-city-is-the-l.mp3',
+  'Oklahoma is home to 39 federal': '/audio/blurb-22-oklahoma-is-home-to-39-federally-recogni.mp3',
+  'POPS opened in 2007 and instan': '/audio/blurb-23-pops-opened-in-2007-and-instantly-became.mp3',
+  'On April 19, 1995, a truck bom': '/audio/blurb-24-on-april-19-1995-a-truck-bomb-destroyed-.mp3',
+  'Judge Isaac Parker presided ov': '/audio/blurb-25-judge-isaac-parker-presided-over-this-fe.mp3',
+  'In September 1957, nine Black ': '/audio/blurb-26-in-september-1957-nine-black-students-at.mp3',
+  'Forrest City was named in 1868': '/audio/blurb-27-forrest-city-was-named-in-1868-for-natha.mp3',
+  'Sam Phillips opened Memphis Re': '/audio/blurb-28-sam-phillips-opened-memphis-recording-se.mp3',
+  'John Luther "Casey" Jones was ': '/audio/blurb-29-john-luther-casey-jones-was-an-illinois-.mp3',
+  "Cookeville's depot was built i": '/audio/blurb-30-cookeville-s-depot-was-built-in-1909-by-.mp3',
+  'The Appalachian Mountains are ': '/audio/blurb-31-the-appalachian-mountains-are-among-the-.mp3',
+  'In August 1927, talent scout R': '/audio/blurb-32-in-august-1927-talent-scout-ralph-peer-s.mp3',
+  'This 215-foot natural limeston': '/audio/blurb-33-this-215-foot-natural-limestone-arch-was.mp3',
+  'Lexington is a small college t': '/audio/blurb-34-lexington-is-a-small-college-town-with-a.mp3',
+  'Woodrow Wilson was born in thi': '/audio/blurb-35-woodrow-wilson-was-born-in-this-greek-re.mp3',
+  'This outdoor museum tells the ': '/audio/blurb-36-this-outdoor-museum-tells-the-story-of-t.mp3',
+};
+
+function playBlurb(blurbText, btn) {
+  const key = blurbText.substring(0, 30);
+  const src = AUDIO_FILES[key];
+
+  // If already playing this one, stop it
+  if (speakingBtn === btn && !audioPlayer.paused) {
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
     btn.classList.remove('speaking');
     btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen';
     speakingBtn = null;
     return;
   }
-  speechSynthesis.cancel();
+
+  // Stop any current playback
+  audioPlayer.pause();
   if (speakingBtn) {
     speakingBtn.classList.remove('speaking');
     speakingBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen';
   }
-  const u = new SpeechSynthesisUtterance(text);
-  u.rate = 0.95;
-  u.onend = () => { btn.classList.remove('speaking'); btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen'; speakingBtn = null; currentUtterance = null; };
+
+  if (!src) {
+    // Fallback to speechSynthesis if no MP3
+    const u = new SpeechSynthesisUtterance(blurbText);
+    u.rate = 0.95;
+    u.onend = () => { btn.classList.remove('speaking'); btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen'; speakingBtn = null; };
+    btn.classList.add('speaking');
+    btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Stop';
+    speakingBtn = btn;
+    speechSynthesis.speak(u);
+    return;
+  }
+
+  // Play MP3 (routes through CarPlay as media audio)
+  audioPlayer.src = src;
+  audioPlayer.play();
   btn.classList.add('speaking');
   btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Stop';
   speakingBtn = btn;
-  currentUtterance = u;
-  speechSynthesis.speak(u);
+  audioPlayer.onended = () => {
+    btn.classList.remove('speaking');
+    btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen';
+    speakingBtn = null;
+  };
 }
 
 // ============================================================
@@ -480,9 +588,9 @@ function renderDays() {
       <h2>Day ${day.day}: ${day.from} &rarr; ${day.to}</h2>
       <div class="day-sub">${day.date} &middot; ~${day.miles} miles &middot; ~${day.hours} hrs driving</div>
       <div class="day-stats">${day.sections.map(s => `<span class="day-stat">${s.name}</span>`).join('')}</div>
-      <a href="${day.appleMapsUrl}" target="_blank" class="nav-btn">
+      <a href="#" onclick="navigateDay(${day.day - 1}); return false;" class="nav-btn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        Navigate Day ${day.day} in Apple Maps
+        Navigate Day ${day.day} from here
       </a>
     </div>`;
 
@@ -501,7 +609,7 @@ function renderDays() {
           <div class="stop-name">${stop.name} <span class="stop-type-label ${stop.type}">${typeLabel}</span></div>
           <div class="stop-desc">${stop.desc}</div>
           ${stop.appleMap ? `<a href="${stop.appleMap}" target="_blank" class="stop-link">Open in Apple Maps &rarr;</a>` : ''}
-          ${stop.blurb ? `<button class="listen-btn" onclick="speak(\`${stop.blurb.replace(/`/g,"'").replace(/\\/g,"\\\\")}\`, this)"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen</button>` : ''}
+          ${stop.blurb ? `<button class="listen-btn" onclick="playBlurb(\`${stop.blurb.replace(/`/g,"'").replace(/\\/g,"\\\\")}\`, this)"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg> Listen</button>` : ''}
         </div>`;
       });
 
@@ -699,6 +807,49 @@ function updateYouAreHere() {
       if (strip) strip.classList.add('passed');
     }
   });
+}
+
+// ============================================================
+// NAVIGATE DAY (from current location)
+// ============================================================
+function navigateDay(dayIdx) {
+  const day = ROUTE.days[dayIdx];
+  // Collect all stops with Apple Maps addresses for this day
+  const stops = [];
+  day.sections.forEach(sec => {
+    sec.stops.forEach(st => {
+      if (st.appleMap) {
+        // Extract address from Apple Maps URL
+        const match = st.appleMap.match(/address=([^&]+)/);
+        if (match) stops.push(match[1]);
+        else {
+          const qMatch = st.appleMap.match(/q=([^&]+)/);
+          if (qMatch) stops.push(qMatch[1]);
+        }
+      }
+    });
+  });
+
+  // Build Apple Maps URL from current location
+  // saddr=Current+Location tells Apple Maps to start from GPS
+  let url = 'https://maps.apple.com/?saddr=Current+Location';
+  // Only include stops AHEAD of current position
+  const flat = getFlatStops();
+  const dayStopStart = flat.findIndex(s => s.dayIdx === dayIdx);
+  const dayStopEnd = flat.findIndex(s => s.dayIdx === dayIdx + 1);
+
+  const relevantStops = [];
+  day.sections.forEach(sec => {
+    sec.stops.forEach(st => {
+      if (st.appleMap) {
+        const match = st.appleMap.match(/address=([^&]+)/) || st.appleMap.match(/q=([^&]+)/);
+        if (match) relevantStops.push(match[1]);
+      }
+    });
+  });
+
+  relevantStops.forEach(addr => { url += `&daddr=${addr}`; });
+  window.open(url, '_blank');
 }
 
 // ============================================================
