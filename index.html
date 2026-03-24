@@ -230,6 +230,18 @@ const ROUTE = { days: [
         { name: 'Sky City Casino — Acoma Pueblo Turnoff', type: 'history', lat: 34.909, lng: -107.583,
           desc: 'Acoma Pueblo ("Sky City") is 15 mi south — one of the oldest continuously inhabited settlements in North America, atop a 367-ft mesa. Guided tours ~$25.',
           blurb: 'Acoma Pueblo has been continuously inhabited since at least 1150 AD, making it one of the oldest communities in North America. The pueblo sits atop a sandstone mesa 367 feet above the valley floor. Until the 1950s, the only access was via a hand-carved staircase in the rock. The Spanish attacked it in 1599, and the mesa-top settlement survived because it was nearly impossible to assault.' },
+        { name: 'Petroglyph National Monument', type: 'history', lat: 35.139, lng: -106.764,
+          desc: 'West side of ABQ. One of the largest petroglyph sites in North America — over 24,000 ancient rock carvings. Free. Easy trails. Exit 154 off I-40, 3.5 mi north.',
+          blurb: 'Over 24,000 petroglyphs are carved into the volcanic rocks along a 17-mile escarpment on Albuquerque\'s west side. Most were made by ancestral Pueblo people between 1300 and 1650 AD, though some date back 3,000 years. The images include animals, people, crosses, spirals, and abstract designs. Archaeologists believe many are related to clan symbols, astronomical observations, and spiritual practices. The Pueblo people consider them sacred — they are not graffiti but a form of communication with the spirit world.',
+          appleMap: 'https://maps.apple.com/?address=6510+Western+Trail+NW,+Albuquerque,+NM+87120' },
+        { name: 'Indian Pueblo Cultural Center', type: 'history', lat: 35.107, lng: -106.672,
+          desc: 'ABQ. Museum tracing the history of New Mexico\'s 19 Pueblo nations. Ceremonial dances on weekends. Gift shop with authentic Pueblo pottery and jewelry. $8.50.',
+          blurb: 'New Mexico\'s 19 Pueblo nations have lived in the Rio Grande Valley for over a thousand years — long before the Spanish arrived in 1540. Each pueblo is a sovereign nation with its own government, language, and traditions. The Cultural Center was built and is owned by the 19 Pueblos collectively. The museum traces their history from ancient times through the Pueblo Revolt of 1680 — one of the most successful Native uprisings against colonial rule, which drove the Spanish out of New Mexico for 12 years.',
+          appleMap: 'https://maps.apple.com/?address=2401+12th+St+NW,+Albuquerque,+NM+87104' },
+        { name: 'KiMo Theatre', type: 'history', lat: 35.085, lng: -106.650,
+          desc: 'Downtown ABQ on Route 66. Stunning 1927 Pueblo Deco theater — a unique architectural style blending Art Deco with Pueblo and Navajo motifs. Free to peek inside. 423 Central Ave NW.',
+          blurb: 'The KiMo Theatre opened in 1927, designed by architect Carl Boller in a style he called "Pueblo Deco" — a fusion of Art Deco glamour with Pueblo and Navajo artistic traditions. The interior features plaster longhorn skulls, Navajo-inspired murals, and terra cotta details modeled on Pueblo pottery. The name means "king of its kind" in the Tewa language. It was one of the most elaborate movie palaces west of the Mississippi and is now a performance venue.',
+          appleMap: 'https://maps.apple.com/?address=423+Central+Ave+NW,+Albuquerque,+NM+87102' },
         { name: 'Annapurna\'s World Vegetarian', type: 'food', lat: 35.078, lng: -106.620,
           desc: 'Ayurvedic vegetarian cafe — Indian, Thai, Middle Eastern. Chai, dosas, curries. A real gem. 2201 Silver Ave SE.',
           appleMap: 'https://maps.apple.com/?address=2201+Silver+Ave+SE,+Albuquerque,+NM+87106' },
@@ -253,7 +265,9 @@ const ROUTE = { days: [
     sections: [
       { name: 'Albuquerque to Santa Rosa', stops: [
         { name: 'Old Town Albuquerque', type: 'attraction', lat: 35.096, lng: -106.670,
-          desc: 'Morning stroll. Adobe buildings, galleries, San Felipe de Neri Church (1706). Green chile bread at Golden Crown Panaderia.' },
+          desc: 'Morning stroll. Adobe buildings, galleries, San Felipe de Neri Church (1706). Green chile bread at Golden Crown Panaderia.',
+          blurb: 'Albuquerque\'s Old Town was founded in 1706 by Spanish settlers, making it about 70 years older than the American Revolution. The San Felipe de Neri Church has held services continuously since then — one of the oldest churches in the country. The flat-roofed Pueblo-Spanish adobe architecture you see here is a style that\'s been used in the Rio Grande Valley for centuries, a blend of Spanish colonial design and ancient Pueblo building techniques using sun-dried mud bricks.',
+          appleMap: 'https://maps.apple.com/?address=Old+Town+Albuquerque,+NM' },
         { name: 'Route 66 Auto Museum', type: 'curiosity', lat: 34.939, lng: -104.683,
           desc: 'In Santa Rosa. Vintage cars from the Route 66 era — Corvettes, muscle cars, hot rods. Small admission.',
           appleMap: 'https://maps.apple.com/?address=2866+Will+Rogers+Dr,+Santa+Rosa,+NM+88435' },
@@ -344,6 +358,10 @@ const ROUTE = { days: [
         { name: 'Brigadoon Army Surplus', type: 'surplus', lat: 35.438, lng: -97.440,
           desc: 'The last genuine military surplus store in Oklahoma County. Boots, uniforms, field gear, Civil War to present. Tue–Sat.',
           appleMap: 'https://maps.apple.com/?address=1805+S+Sunnylane+Rd,+Oklahoma+City,+OK+73115' },
+        { name: 'Arcadia Round Barn', type: 'history', lat: 35.662, lng: -97.326,
+          desc: 'Right next to POPS. The only truly round barn in America, built by a farmer in 1898. Most photographed landmark on all of Route 66. Free.',
+          blurb: 'William Harrison Odor built this barn in 1898 using green bur oak lumber that he soaked in water and bent into shape. It\'s 60 feet in diameter and 43 feet tall, and it\'s the only truly round barn in the United States — most "round barns" are actually polygonal. After decades of decay, a retired carpenter named Luke Robison spent his own money and six years restoring it in the 1990s. It\'s now a museum and gift shop, and one of the most iconic Route 66 landmarks.',
+          appleMap: 'https://maps.apple.com/?address=107+E+Hwy+66,+Arcadia,+OK+73007' },
         { name: 'The Loaded Bowl', type: 'food', lat: 35.468, lng: -97.536,
           desc: 'All-vegan comfort food — OKC\'s first vegan food truck turned restaurant. Creative bowls, tacos, mac & cheese. 1211 SW 2nd St.',
           appleMap: 'https://maps.apple.com/?address=1211+SW+2nd+St,+Oklahoma+City,+OK+73108' },
@@ -400,7 +418,18 @@ const ROUTE = { days: [
         { name: 'Memphis — Sun Studio', type: 'attraction', lat: 35.139, lng: -90.034,
           desc: 'Where Elvis, Johnny Cash, Jerry Lee Lewis, and B.B. King recorded. 45-min tour, $15. Or just drive down Beale Street.',
           blurb: 'Sam Phillips opened Memphis Recording Service at 706 Union Avenue in 1950. On July 5, 1954, a teenage Elvis Presley walked in and recorded "That\'s All Right." Rock and roll was born. Phillips also recorded B.B. King, Howlin\' Wolf, Jerry Lee Lewis, Carl Perkins, Roy Orbison, and Johnny Cash here. The original equipment is still in place.',
-          appleMap: 'https://maps.apple.com/?address=706+Union+Ave,+Memphis,+TN+38103' }
+          appleMap: 'https://maps.apple.com/?address=706+Union+Ave,+Memphis,+TN+38103' },
+        { name: 'National Civil Rights Museum', type: 'history', lat: 35.134, lng: -90.057,
+          desc: 'The Lorraine Motel — where MLK was assassinated April 4, 1968. Comprehensive civil rights museum. $18. Mon & Wed–Sun 9–5. 450 Mulberry St.',
+          blurb: 'On April 4, 1968, Dr. Martin Luther King Jr. was shot on the balcony of room 306 of the Lorraine Motel. He had come to Memphis to support striking sanitation workers who marched with signs reading "I AM A MAN." The night before, he delivered his prophetic "Mountaintop" speech at Mason Temple. The motel is now a museum tracing the entire civil rights movement from slavery through the present. The balcony where King fell is preserved exactly as it was that day.',
+          appleMap: 'https://maps.apple.com/?address=450+Mulberry+St,+Memphis,+TN+38103' },
+        { name: 'Stax Museum of American Soul Music', type: 'history', lat: 35.115, lng: -90.029,
+          desc: 'Only soul music museum in the world. Where Otis Redding, Isaac Hayes, the Staple Singers recorded. $15. Tue–Sat 10–5, Sun 1–5.',
+          blurb: 'Stax Records operated out of a converted movie theater in a Black neighborhood of South Memphis from 1957 to 1975. It was one of the most important record labels in American music history, producing Otis Redding, Isaac Hayes, Booker T. & the M.G.\'s, the Staple Singers, and Sam & Dave. Unlike most studios of the era, Stax was racially integrated — Black and white musicians played together daily. The museum sits on the original site.',
+          appleMap: 'https://maps.apple.com/?address=926+E+McLemore+Ave,+Memphis,+TN+38106' },
+        { name: 'City Silo — Memphis', type: 'food', lat: 35.119, lng: -89.988,
+          desc: 'Plant-forward restaurant — vegan-friendly menu, seasonal bowls, smoothies. 1289 Madison Ave.',
+          appleMap: 'https://maps.apple.com/?address=1289+Madison+Ave,+Memphis,+TN+38104' }
       ]},
       { name: 'Memphis to Nashville', stops: [
         { name: 'Jackson, TN — Casey Jones Village', type: 'history', lat: 35.612, lng: -88.814,
@@ -445,6 +474,10 @@ const ROUTE = { days: [
         { name: 'Through the Appalachians', type: 'scenic', lat: 37.081, lng: -80.691,
           desc: 'I-81 through Virginia — beautiful mountain driving. Late March brings early spring blooms.',
           blurb: 'The Appalachian Mountains are among the oldest on Earth — over 480 million years old, they were once taller than the Himalayas. What you\'re driving through is the Great Valley of Virginia, a limestone valley between the Blue Ridge to the east and the Alleghenies to the west. Scotch-Irish settlers poured down this valley in the 1700s, and it became the breadbasket of the Confederacy during the Civil War.' },
+        { name: 'Abingdon, VA — Barter Theatre', type: 'history', lat: 36.710, lng: -81.977,
+          desc: 'State Theatre of Virginia. Founded 1933 during the Depression — admission was paid in produce. Gregory Peck, Ernest Borgnine, and Patricia Neal started here.',
+          blurb: 'Robert Porterfield founded the Barter Theatre in 1933 with a radical idea: during the Depression, actors were starving in New York while farmers in Appalachia had food but no entertainment. He invited actors to Virginia where admission cost a ham, a bushel of corn, or whatever you could grow. On opening night, the theater took in $4.30 and two hogs. It\'s now the longest-running professional theater in America.',
+          appleMap: 'https://maps.apple.com/?address=127+W+Main+St,+Abingdon,+VA+24210' },
         { name: 'Bristol — Birthplace of Country Music', type: 'history', lat: 36.595, lng: -82.189,
           desc: 'The VA/TN state line runs down the main street. In 1927, Ralph Peer recorded Jimmie Rodgers and the Carter Family here — the "Big Bang" of country music.',
           blurb: 'In August 1927, talent scout Ralph Peer set up a temporary recording studio in Bristol and recorded Jimmie Rodgers and the Carter Family, launching both careers and essentially creating commercial country music. A sign on State Street reads "Bristol VA/TN — A Good Place to Live." The state line literally runs down the middle of the street — one sidewalk is in Virginia, the other in Tennessee.',
@@ -462,6 +495,18 @@ const ROUTE = { days: [
           appleMap: 'https://maps.apple.com/?address=Lexington,+VA' }
       ]},
       { name: 'Shenandoah Valley to NYC', stops: [
+        { name: 'New Market Battlefield', type: 'history', lat: 38.656, lng: -78.865,
+          desc: 'Civil War site where VMI cadets (some as young as 15) charged into battle. Museum + 300-acre battlefield. $15. Just off I-81 exit 264.',
+          blurb: 'On May 15, 1864, Confederate forces were so desperate that 257 cadets from Virginia Military Institute — boys aged 15 to 17 — were marched 80 miles from Lexington to fight in the Battle of New Market. They charged across an open field under artillery fire, losing 10 killed and 47 wounded. It was one of the few times in American history that college students were sent into actual combat. The battlefield and museum sit on 300 acres and include the original farmhouse used as a field hospital.',
+          appleMap: 'https://maps.apple.com/?address=8895+George+Collins+Pkwy,+New+Market,+VA+22844' },
+        { name: 'Grand Caverns', type: 'scenic', lat: 38.253, lng: -79.184,
+          desc: 'Grottoes, VA. America\'s oldest show cave (1806). Civil War soldiers carved their names on the walls. National Natural Landmark. $22. 20 min off I-81.',
+          blurb: 'Grand Caverns opened to the public in 1806, making it the oldest continuously operating show cave in America. During the Civil War, both Union and Confederate soldiers visited the caverns and carved their signatures on the walls — you can still read them. The main room, the Grand Ballroom, is one of the largest cave rooms on the East Coast. Thomas Jefferson himself explored nearby caves and wrote about Virginia\'s underground wonders in his Notes on the State of Virginia.',
+          appleMap: 'https://maps.apple.com/?address=5+Grand+Caverns+Dr,+Grottoes,+VA+24441' },
+        { name: 'Museum of the Shenandoah Valley', type: 'history', lat: 39.175, lng: -78.176,
+          desc: 'Winchester, VA. 11,000 artifacts. Glen Burnie House (18th century) + 7 acres of gardens. $12. Great overview of Valley history and culture.',
+          blurb: 'The Shenandoah Valley was the great highway of early American settlement. In the 1700s, waves of Scotch-Irish, German, and English immigrants poured south through the Valley from Pennsylvania, creating a cultural stew unique in America. The museum traces this history through 11,000 artifacts — quilts, furniture, paintings, ceramics. The adjacent Glen Burnie House dates to the 1790s and its seven acres of formal gardens are among the finest in Virginia.',
+          appleMap: 'https://maps.apple.com/?address=901+Amherst+St,+Winchester,+VA+22601' },
         { name: 'Staunton, VA — Woodrow Wilson Birthplace', type: 'history', lat: 38.150, lng: -79.072,
           desc: 'Charming Shenandoah Valley town. Wilson\'s birthplace museum. Beautifully preserved Victorian downtown.',
           blurb: 'Woodrow Wilson was born in this Greek Revival manse in 1856, the son of a Presbyterian minister. He\'s the only president buried in Washington, D.C. (at the National Cathedral). Staunton itself is a beautifully preserved Victorian town — the entire downtown is a National Historic District with buildings dating to the 1850s.',
@@ -500,33 +545,44 @@ const AUDIO_FILES = {
   'The Continental Divide runs al': '/audio/blurb-07-the-continental-divide-runs-along-the-cr.mp3',
   'In 1950, a Navajo sheepherder ': '/audio/blurb-08-in-1950-a-navajo-sheepherder-named-paddy.mp3',
   'Acoma Pueblo has been continuo': '/audio/blurb-09-acoma-pueblo-has-been-continuously-inhab.mp3',
-  'The Blue Hole is a natural art': '/audio/blurb-10-the-blue-hole-is-a-natural-artesian-spri.mp3',
-  'Tucumcari was once home to ove': '/audio/blurb-11-tucumcari-was-once-home-to-over-2-000-mo.mp3',
-  'Glenrio thrived as a Route 66 ': '/audio/blurb-12-glenrio-thrived-as-a-route-66-stop-from-.mp3',
-  'Adrian marks the precise geogr': '/audio/blurb-13-adrian-marks-the-precise-geographic-midp.mp3',
-  'In 1974, the art collective An': '/audio/blurb-14-in-1974-the-art-collective-ant-farm-chip.mp3',
-  'Ralph Britten bought this wate': '/audio/blurb-15-ralph-britten-bought-this-water-tower-fr.mp3',
-  'Steve Thomas, a structural eng': '/audio/blurb-16-steve-thomas-a-structural-engineer-built.mp3',
-  'Barbed wire may be the most tr': '/audio/blurb-17-barbed-wire-may-be-the-most-transformati.mp3',
-  'Architect J.C. Berry designed ': '/audio/blurb-18-architect-j-c-berry-designed-this-stunni.mp3',
-  'About 20% of American long-hau': '/audio/blurb-19-about-20-of-american-long-haul-truck-dri.mp3',
-  'Lucille Hamons ran this gas st': '/audio/blurb-20-lucille-hamons-ran-this-gas-station-and-.mp3',
-  "Oklahoma City's Stockyards Cit": '/audio/blurb-21-oklahoma-city-s-stockyards-city-is-the-l.mp3',
-  'Oklahoma is home to 39 federal': '/audio/blurb-22-oklahoma-is-home-to-39-federally-recogni.mp3',
-  'POPS opened in 2007 and instan': '/audio/blurb-23-pops-opened-in-2007-and-instantly-became.mp3',
-  'On April 19, 1995, a truck bom': '/audio/blurb-24-on-april-19-1995-a-truck-bomb-destroyed-.mp3',
-  'Judge Isaac Parker presided ov': '/audio/blurb-25-judge-isaac-parker-presided-over-this-fe.mp3',
-  'In September 1957, nine Black ': '/audio/blurb-26-in-september-1957-nine-black-students-at.mp3',
-  'Forrest City was named in 1868': '/audio/blurb-27-forrest-city-was-named-in-1868-for-natha.mp3',
-  'Sam Phillips opened Memphis Re': '/audio/blurb-28-sam-phillips-opened-memphis-recording-se.mp3',
-  'John Luther "Casey" Jones was ': '/audio/blurb-29-john-luther-casey-jones-was-an-illinois-.mp3',
-  "Cookeville's depot was built i": '/audio/blurb-30-cookeville-s-depot-was-built-in-1909-by-.mp3',
-  'The Appalachian Mountains are ': '/audio/blurb-31-the-appalachian-mountains-are-among-the-.mp3',
-  'In August 1927, talent scout R': '/audio/blurb-32-in-august-1927-talent-scout-ralph-peer-s.mp3',
-  'This 215-foot natural limeston': '/audio/blurb-33-this-215-foot-natural-limestone-arch-was.mp3',
-  'Lexington is a small college t': '/audio/blurb-34-lexington-is-a-small-college-town-with-a.mp3',
-  'Woodrow Wilson was born in thi': '/audio/blurb-35-woodrow-wilson-was-born-in-this-greek-re.mp3',
-  'This outdoor museum tells the ': '/audio/blurb-36-this-outdoor-museum-tells-the-story-of-t.mp3',
+  'Over 24,000 petroglyphs are ca': '/audio/blurb-10-over-24-000-petroglyphs-are-carved-into-.mp3',
+  "New Mexico's 19 Pueblo nations": '/audio/blurb-11-new-mexico-s-19-pueblo-nations-have-live.mp3',
+  'The KiMo Theatre opened in 192': '/audio/blurb-12-the-kimo-theatre-opened-in-1927-designed.mp3',
+  "Albuquerque's Old Town was fou": '/audio/blurb-13-albuquerque-s-old-town-was-founded-in-17.mp3',
+  'The Blue Hole is a natural art': '/audio/blurb-14-the-blue-hole-is-a-natural-artesian-spri.mp3',
+  'Tucumcari was once home to ove': '/audio/blurb-15-tucumcari-was-once-home-to-over-2-000-mo.mp3',
+  'Glenrio thrived as a Route 66 ': '/audio/blurb-16-glenrio-thrived-as-a-route-66-stop-from-.mp3',
+  'Adrian marks the precise geogr': '/audio/blurb-17-adrian-marks-the-precise-geographic-midp.mp3',
+  'In 1974, the art collective An': '/audio/blurb-18-in-1974-the-art-collective-ant-farm-chip.mp3',
+  'Ralph Britten bought this wate': '/audio/blurb-19-ralph-britten-bought-this-water-tower-fr.mp3',
+  'Steve Thomas, a structural eng': '/audio/blurb-20-steve-thomas-a-structural-engineer-built.mp3',
+  'Barbed wire may be the most tr': '/audio/blurb-21-barbed-wire-may-be-the-most-transformati.mp3',
+  'Architect J.C. Berry designed ': '/audio/blurb-22-architect-j-c-berry-designed-this-stunni.mp3',
+  'About 20% of American long-hau': '/audio/blurb-23-about-20-of-american-long-haul-truck-dri.mp3',
+  'Lucille Hamons ran this gas st': '/audio/blurb-24-lucille-hamons-ran-this-gas-station-and-.mp3',
+  "Oklahoma City's Stockyards Cit": '/audio/blurb-25-oklahoma-city-s-stockyards-city-is-the-l.mp3',
+  'William Harrison Odor built th': '/audio/blurb-26-william-harrison-odor-built-this-barn-in.mp3',
+  'Oklahoma is home to 39 federal': '/audio/blurb-27-oklahoma-is-home-to-39-federally-recogni.mp3',
+  'POPS opened in 2007 and instan': '/audio/blurb-28-pops-opened-in-2007-and-instantly-became.mp3',
+  'On April 19, 1995, a truck bom': '/audio/blurb-29-on-april-19-1995-a-truck-bomb-destroyed-.mp3',
+  'Judge Isaac Parker presided ov': '/audio/blurb-30-judge-isaac-parker-presided-over-this-fe.mp3',
+  'In September 1957, nine Black ': '/audio/blurb-31-in-september-1957-nine-black-students-at.mp3',
+  'Forrest City was named in 1868': '/audio/blurb-32-forrest-city-was-named-in-1868-for-natha.mp3',
+  'Sam Phillips opened Memphis Re': '/audio/blurb-33-sam-phillips-opened-memphis-recording-se.mp3',
+  'On April 4, 1968, Dr. Martin L': '/audio/blurb-34-on-april-4-1968-dr-martin-luther-king-jr.mp3',
+  'Stax Records operated out of a': '/audio/blurb-35-stax-records-operated-out-of-a-converted.mp3',
+  'John Luther "Casey" Jones was ': '/audio/blurb-36-john-luther-casey-jones-was-an-illinois-.mp3',
+  "Cookeville's depot was built i": '/audio/blurb-37-cookeville-s-depot-was-built-in-1909-by-.mp3',
+  'The Appalachian Mountains are ': '/audio/blurb-38-the-appalachian-mountains-are-among-the-.mp3',
+  'Robert Porterfield founded the': '/audio/blurb-39-robert-porterfield-founded-the-barter-th.mp3',
+  'In August 1927, talent scout R': '/audio/blurb-40-in-august-1927-talent-scout-ralph-peer-s.mp3',
+  'This 215-foot natural limeston': '/audio/blurb-41-this-215-foot-natural-limestone-arch-was.mp3',
+  'Lexington is a small college t': '/audio/blurb-42-lexington-is-a-small-college-town-with-a.mp3',
+  'On May 15, 1864, Confederate f': '/audio/blurb-43-on-may-15-1864-confederate-forces-were-s.mp3',
+  'Grand Caverns opened to the pu': '/audio/blurb-44-grand-caverns-opened-to-the-public-in-18.mp3',
+  'The Shenandoah Valley was the ': '/audio/blurb-45-the-shenandoah-valley-was-the-great-high.mp3',
+  'Woodrow Wilson was born in thi': '/audio/blurb-46-woodrow-wilson-was-born-in-this-greek-re.mp3',
+  'This outdoor museum tells the ': '/audio/blurb-47-this-outdoor-museum-tells-the-story-of-t.mp3',
 };
 
 function playBlurb(idx, btn) {
@@ -712,7 +768,6 @@ function onPositionUpdate(pos) {
   Object.keys(sectionMaps).forEach(id => updateGPSOnMap(id));
   if (overviewMap) updateGPSOnMap('overview-map');
   updateYouAreHere();
-  if (followMode) scrollToNearestSection();
 }
 
 const gpsDotIcon = L.divIcon({ className: 'gps-dot tracking', iconSize: [16, 16], iconAnchor: [8, 8] });
@@ -742,9 +797,13 @@ function scrollToNearestSection() {
 }
 
 function toggleFollow() {
-  followMode = !followMode;
-  document.getElementById('follow-btn').classList.toggle('active', followMode);
-  if (followMode && currentPosition) scrollToNearestSection();
+  // One-time jump to current location — no persistent mode that fights scrolling
+  if (currentPosition) {
+    scrollToNearestSection();
+    const btn = document.getElementById('follow-btn');
+    btn.classList.add('active');
+    setTimeout(() => btn.classList.remove('active'), 1500);
+  }
 }
 
 // ============================================================
