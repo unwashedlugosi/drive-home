@@ -95,6 +95,12 @@
     .triptik-section.passed .overnight-box { opacity: 0.3; }
     .strip.passed::before { opacity: 0.2; }
 
+    /* ETA button */
+    .eta-btn { display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.25rem; margin-left: 0.1rem; padding: 0.2rem 0.55rem; font-size: 0.72rem; font-weight: 600; color: #666; background: #f0ece6; border: 1px solid #ddd8d0; border-radius: 5px; cursor: pointer; font-family: inherit; }
+    .eta-btn:active { background: #ddd8d0; }
+    .eta-btn.has-time { color: #1a3a5c; background: #e8f0f8; border-color: #c0d4e8; }
+    .eta-btn svg { width: 11px; height: 11px; fill: currentColor; }
+
     .overnight-box { margin-top: 0.5rem; background: #f0f4f8; border-radius: 8px; padding: 0.6rem 0.85rem; }
     .overnight-box .hotel-name { font-weight: 700; font-size: 0.85rem; color: #1a3a5c; }
     .overnight-box .hotel-detail { font-size: 0.78rem; color: #666; }
@@ -710,6 +716,7 @@ function renderDays() {
           <div class="stop-name">${stop.name} <span class="stop-type-label ${stop.type}">${typeLabel}</span></div>
           <div class="stop-desc">${stop.desc}</div>
           ${stop.appleMap ? `<a href="${stop.appleMap}" target="_blank" class="stop-link">Open in Apple Maps &rarr;</a>` : ''}
+          ${stop.lat && stop.lng ? `<button class="eta-btn" onclick="showETA(${stop.lat}, ${stop.lng}, this)"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> How far?</button>` : ''}
           ${stop.blurb ? `<button class="listen-btn" onclick="playBlurb(${stop._blurbIdx}, this)"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg><span class="label-listen">Listen</span><span class="label-stop">Stop</span></button>` : ''}
         </div>`;
       });
@@ -912,6 +919,37 @@ function updateYouAreHere() {
       if (strip) strip.classList.add('passed');
     }
   });
+}
+
+// ============================================================
+// ETA CALCULATOR
+// ============================================================
+function showETA(lat, lng, btn) {
+  if (!currentPosition) {
+    btn.textContent = 'No GPS';
+    setTimeout(() => { btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> How far?'; }, 3000);
+    return;
+  }
+  const miles = distMiles(currentPosition.lat, currentPosition.lng, lat, lng);
+  // Highway factor: straight-line distance * 1.25 for road curves, at ~65 mph avg
+  const roadMiles = Math.round(miles * 1.25);
+  const totalMin = Math.round(roadMiles / 65 * 60);
+  const hrs = Math.floor(totalMin / 60);
+  const mins = totalMin % 60;
+
+  let timeStr;
+  if (roadMiles < 5) timeStr = 'You\'re here!';
+  else if (hrs === 0) timeStr = `~${mins} min (${roadMiles} mi)`;
+  else if (mins === 0) timeStr = `~${hrs} hr (${roadMiles} mi)`;
+  else timeStr = `~${hrs}h ${mins}m (${roadMiles} mi)`;
+
+  btn.textContent = timeStr;
+  btn.classList.add('has-time');
+  // Reset after 10 seconds
+  setTimeout(() => {
+    btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> How far?';
+    btn.classList.remove('has-time');
+  }, 10000);
 }
 
 // ============================================================
