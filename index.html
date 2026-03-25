@@ -185,8 +185,8 @@ const TYPE_LABELS = {
 
 const ROUTE = { days: [
   // ==================== DAY 1 ====================
-  { day: 1, date: 'Tue Mar 25', from: 'Mesa, AZ', to: 'Albuquerque, NM', miles: 470, hours: '7.5',
-    overnight: { name: 'Hampton Inn Albuquerque — University/Midtown', detail: 'Near Old Town and Nob Hill.' },
+  { day: 1, date: 'Tue Mar 25', from: 'Mesa, AZ', to: 'Edgewood, NM', miles: 500, hours: '8',
+    overnight: { name: 'Comfort Inn, Edgewood, NM', detail: '30 miles east of Albuquerque on I-40.' },
     tip: 'Hit the road by 7 AM to reach the Jack Rabbit by 10 when it opens. The AZ stops are clustered along I-40 between miles 185–280 from Mesa.',
     appleMapsUrl: 'https://maps.apple.com/?saddr=Mesa,+AZ&daddr=3386+Historic+US-66,+Joseph+City,+AZ+86032&daddr=Petrified+Forest+National+Park,+AZ&daddr=Meteor+Crater,+Winslow,+AZ&daddr=Hampton+Inn,+Albuquerque,+NM',
     sections: [
@@ -255,23 +255,19 @@ const ROUTE = { days: [
         { name: 'Flying Star Cafe', type: 'food', lat: 35.087, lng: -106.654,
           desc: 'Local chain — great veggie burgers, salads, pastries, green chile everything. Multiple locations.',
           appleMap: 'https://maps.apple.com/?address=3416+Central+Ave+SE,+Albuquerque,+NM+87106' },
-        { name: 'Hampton Inn Albuquerque', type: 'overnight', lat: 35.088, lng: -106.619,
-          desc: 'University/Midtown. Near Old Town and Nob Hill.',
-          appleMap: 'https://maps.apple.com/?address=Hampton+Inn+Albuquerque+University+Midtown,+Albuquerque,+NM' }
+        { name: 'Comfort Inn, Edgewood', type: 'overnight', lat: 35.063, lng: -106.191,
+          desc: 'Edgewood, NM. 30 miles east of Albuquerque on I-40.',
+          appleMap: 'https://maps.apple.com/?address=Comfort+Inn,+Edgewood,+NM+87015' }
       ]}
     ]
   },
   // ==================== DAY 2 ====================
-  { day: 2, date: 'Wed Mar 26', from: 'Albuquerque, NM', to: 'Amarillo, TX', miles: 290, hours: '5',
+  { day: 2, date: 'Wed Mar 26', from: 'Edgewood, NM', to: 'Amarillo, TX', miles: 260, hours: '4.5',
     overnight: { name: 'Hampton Inn Amarillo — West/Medical Center', detail: 'Short day. Consider Palo Duro Canyon (25 mi south).' },
     tip: 'Shortest driving day. Palo Duro Canyon (25 mi south of Amarillo) is the second-largest canyon in the US — 120 miles long, 800 feet deep. $8 entry. Adds 1.5–2 hrs but genuinely stunning.',
     appleMapsUrl: 'https://maps.apple.com/?saddr=Albuquerque,+NM&daddr=1085+Blue+Hole+Rd,+Santa+Rosa,+NM&daddr=Tucumcari,+NM&daddr=13651+I-40+Frontage+Rd,+Amarillo,+TX&daddr=Hampton+Inn,+Amarillo,+TX',
     sections: [
-      { name: 'Albuquerque to Santa Rosa', stops: [
-        { name: 'Old Town Albuquerque', type: 'attraction', lat: 35.096, lng: -106.670,
-          desc: 'Morning stroll. Adobe buildings, galleries, San Felipe de Neri Church (1706). Green chile bread at Golden Crown Panaderia.',
-          blurb: 'Albuquerque\'s Old Town was founded in 1706 by Spanish settlers, making it about 70 years older than the American Revolution. The San Felipe de Neri Church has held services continuously since then — one of the oldest churches in the country. The flat-roofed Pueblo-Spanish adobe architecture you see here is a style that\'s been used in the Rio Grande Valley for centuries, a blend of Spanish colonial design and ancient Pueblo building techniques using sun-dried mud bricks.',
-          appleMap: 'https://maps.apple.com/?address=Old+Town+Albuquerque,+NM' },
+      { name: 'Edgewood to Santa Rosa', stops: [
         { name: 'Route 66 Auto Museum', type: 'curiosity', lat: 34.939, lng: -104.683,
           desc: 'In Santa Rosa. Vintage cars from the Route 66 era — Corvettes, muscle cars, hot rods. Small admission.',
           appleMap: 'https://maps.apple.com/?address=2866+Will+Rogers+Dr,+Santa+Rosa,+NM+88435' },
