@@ -924,32 +924,70 @@ function updateYouAreHere() {
 // ============================================================
 // ETA CALCULATOR
 // ============================================================
-function showETA(lat, lng, btn) {
+const ETA_ICON = '<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>';
+
+function resetETA(btn) {
+  btn.innerHTML = ETA_ICON + ' How far?';
+  btn.classList.remove('has-time');
+}
+
+async function showETA(lat, lng, btn) {
   if (!currentPosition) {
     btn.textContent = 'No GPS';
-    setTimeout(() => { btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> How far?'; }, 3000);
+    setTimeout(() => resetETA(btn), 3000);
     return;
   }
-  const miles = distMiles(currentPosition.lat, currentPosition.lng, lat, lng);
-  // Highway factor: straight-line distance * 1.25 for road curves, at ~65 mph avg
-  const roadMiles = Math.round(miles * 1.25);
-  const totalMin = Math.round(roadMiles / 65 * 60);
+
+  // Check if we're already very close
+  const straightMi = distMiles(currentPosition.lat, currentPosition.lng, lat, lng);
+  if (straightMi < 3) {
+    btn.textContent = 'You\'re here!';
+    btn.classList.add('has-time');
+    setTimeout(() => resetETA(btn), 10000);
+    return;
+  }
+
+  btn.textContent = 'Calculating...';
+
+  try {
+    // OSRM free routing API — gives actual driving distance & time on real roads
+    const url = `https://router.project-osrm.org/route/v1/driving/${currentPosition.lng},${currentPosition.lat};${lng},${lat}?overview=false`;
+    const resp = await fetch(url);
+    const data = await resp.json();
+
+    if (data.code !== 'Ok' || !data.routes || !data.routes.length) {
+      // Fallback to estimate
+      const roadMiles = Math.round(straightMi * 1.25);
+      const totalMin = Math.round(roadMiles / 65 * 60);
+      showTime(btn, totalMin, roadMiles, true);
+      return;
+    }
+
+    const route = data.routes[0];
+    const routeMiles = Math.round(route.distance * 0.000621371); // meters to miles
+    const totalMin = Math.round(route.duration / 60); // seconds to minutes
+    showTime(btn, totalMin, routeMiles, false);
+  } catch(e) {
+    // Fallback to straight-line estimate
+    const roadMiles = Math.round(straightMi * 1.25);
+    const totalMin = Math.round(roadMiles / 65 * 60);
+    showTime(btn, totalMin, roadMiles, true);
+  }
+}
+
+function showTime(btn, totalMin, miles, isEstimate) {
   const hrs = Math.floor(totalMin / 60);
   const mins = totalMin % 60;
+  const prefix = isEstimate ? '~' : '';
 
   let timeStr;
-  if (roadMiles < 5) timeStr = 'You\'re here!';
-  else if (hrs === 0) timeStr = `~${mins} min (${roadMiles} mi)`;
-  else if (mins === 0) timeStr = `~${hrs} hr (${roadMiles} mi)`;
-  else timeStr = `~${hrs}h ${mins}m (${roadMiles} mi)`;
+  if (hrs === 0) timeStr = `${prefix}${mins} min (${miles} mi)`;
+  else if (mins === 0) timeStr = `${prefix}${hrs} hr (${miles} mi)`;
+  else timeStr = `${prefix}${hrs}h ${mins}m (${miles} mi)`;
 
   btn.textContent = timeStr;
   btn.classList.add('has-time');
-  // Reset after 10 seconds
-  setTimeout(() => {
-    btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> How far?';
-    btn.classList.remove('has-time');
-  }, 10000);
+  setTimeout(() => resetETA(btn), 15000);
 }
 
 // ============================================================
