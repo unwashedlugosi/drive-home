@@ -952,7 +952,10 @@ async function showETA(lat, lng, btn) {
   try {
     // OSRM free routing API — gives actual driving distance & time on real roads
     const url = `https://router.project-osrm.org/route/v1/driving/${currentPosition.lng},${currentPosition.lat};${lng},${lat}?overview=false`;
-    const resp = await fetch(url);
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+    const resp = await fetch(url, { signal: controller.signal });
+    clearTimeout(timeout);
     const data = await resp.json();
 
     if (data.code !== 'Ok' || !data.routes || !data.routes.length) {
