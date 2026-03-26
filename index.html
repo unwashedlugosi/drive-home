@@ -904,7 +904,7 @@ function distMiles(lat1, lng1, lat2, lng2) {
 
 // Highwater mark — never goes backward. Stored in localStorage.
 // Version key so stale data from reorderings gets cleared
-const HW_KEY = 'drivehome_hw_v6';
+const HW_KEY = 'drivehome_hw_v7';
 let highwaterIdx = parseInt(localStorage.getItem(HW_KEY) || '0');
 localStorage.removeItem('drivehome_hw_v4');
 localStorage.removeItem('drivehome_hw_v3');
@@ -916,33 +916,34 @@ function updateYouAreHere() {
   if (!currentPosition) return;
   const flat = getFlatStops();
 
-  // Walk through stops from the current highwater. For each consecutive pair,
-  // if we're closer to the NEXT stop than the current one, we've passed it — advance.
-  // This always points at the next upcoming stop, never behind.
-  let candidateIdx = highwaterIdx;
-  for (let i = highwaterIdx; i < flat.length - 1; i++) {
-    const curr = flat[i];
-    if (!curr.lat || !curr.lng) { candidateIdx = i + 1; continue; }
-    // Find next stop with coordinates
-    let nextIdx = -1;
-    for (let j = i + 1; j < flat.length; j++) {
-      if (flat[j].lat && flat[j].lng) { nextIdx = j; break; }
-    }
-    if (nextIdx === -1) break;
-    const next = flat[nextIdx];
-    const dCurr = distMiles(currentPosition.lat, currentPosition.lng, curr.lat, curr.lng);
+  // Build list of stops that have coordinates, in order
+  const withCoords = [];
+  flat.forEach((stop, i) => { if (stop.lat && stop.lng) withCoords.push({ idx: i, lat: stop.lat, lng: stop.lng }); });
+
+  // Find the nearest stop by distance
+  let nearestListIdx = 0;
+  let nearestDist = Infinity;
+  withCoords.forEach((s, li) => {
+    const d = distMiles(currentPosition.lat, currentPosition.lng, s.lat, s.lng);
+    if (d < nearestDist) { nearestDist = d; nearestListIdx = li; }
+  });
+
+  // The "current" stop is the nearest one, OR the one after it if we're
+  // past the midpoint (closer to the next). This ensures we always show
+  // the NEXT upcoming stop.
+  let currentIdx = withCoords[nearestListIdx].idx;
+  if (nearestListIdx < withCoords.length - 1) {
+    const next = withCoords[nearestListIdx + 1];
     const dNext = distMiles(currentPosition.lat, currentPosition.lng, next.lat, next.lng);
-    // If we're closer to the next stop, we've passed the current one
-    if (dNext < dCurr) {
-      candidateIdx = nextIdx;
-    } else {
-      break; // We haven't passed this one yet — it's our next stop
+    // If nearest is behind us (next is closer or similar distance), advance
+    if (dNext <= nearestDist) {
+      currentIdx = next.idx;
     }
   }
 
-  // Only advance forward
-  if (candidateIdx > highwaterIdx) {
-    highwaterIdx = candidateIdx;
+  // Only advance forward, never backward
+  if (currentIdx > highwaterIdx) {
+    highwaterIdx = currentIdx;
     localStorage.setItem(HW_KEY, String(highwaterIdx));
   }
 
