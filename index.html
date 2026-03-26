@@ -408,18 +408,18 @@ const ROUTE = { days: [
           appleMap: 'https://maps.apple.com/?address=659+First+Americans+Blvd,+Oklahoma+City,+OK+73129' }
       ]},
       { name: 'OKC to Little Rock', stops: [
+        { name: 'OKC National Memorial', type: 'history', lat: 35.473, lng: -97.517,
+          desc: 'Downtown OKC. Drive past the reflecting pool and 168 empty chairs. Open 24/7, free. Profoundly moving.',
+          blurb: 'On April 19, 1995, a truck bomb destroyed the Alfred P. Murrah Federal Building, killing 168 people including 19 children in the day care center. The memorial features 168 empty bronze and glass chairs arranged in nine rows representing each floor. They glow at night. A survivor tree — an American elm that withstood the blast — still stands.',
+          appleMap: 'https://maps.apple.com/?address=620+N+Harvey+Ave,+Oklahoma+City,+OK+73102' },
         { name: 'POPS Soda Ranch', type: 'curiosity', lat: 35.611, lng: -97.334,
-          desc: 'Arcadia, OK. 66-foot illuminated soda bottle, 700+ craft sodas. Quick stop heading out.',
+          desc: 'Arcadia, OK. 66-foot illuminated soda bottle, 700+ craft sodas. On the way out of OKC.',
           blurb: 'POPS opened in 2007 and instantly became a Route 66 icon. The 66-foot-tall soda bottle sculpture out front is made of steel and LED lights that cycle through colors at night. Inside, the gas station/restaurant stocks over 700 varieties of soda from around the world, organized by color.',
           appleMap: 'https://maps.apple.com/?address=660+W+Hwy+66,+Arcadia,+OK+73007' },
         { name: 'Arcadia Round Barn', type: 'history', lat: 35.662, lng: -97.326,
           desc: 'Right next to POPS. Only truly round barn in America, built 1898. Free.',
           blurb: 'William Harrison Odor built this barn in 1898 using green bur oak lumber that he soaked in water and bent into shape. It\'s 60 feet in diameter and 43 feet tall, and it\'s the only truly round barn in the United States. A retired carpenter named Luke Robison spent his own money and six years restoring it in the 1990s.',
           appleMap: 'https://maps.apple.com/?address=107+E+Hwy+66,+Arcadia,+OK+73007' },
-        { name: 'OKC National Memorial', type: 'history', lat: 35.473, lng: -97.517,
-          desc: 'If leaving early, drive past the reflecting pool and 168 empty chairs. Open 24/7, free. Profoundly moving.',
-          blurb: 'On April 19, 1995, a truck bomb destroyed the Alfred P. Murrah Federal Building, killing 168 people including 19 children in the day care center. The memorial features 168 empty bronze and glass chairs arranged in nine rows representing each floor. They glow at night. A survivor tree — an American elm that withstood the blast — still stands.',
-          appleMap: 'https://maps.apple.com/?address=620+N+Harvey+Ave,+Oklahoma+City,+OK+73102' },
         { name: 'Indian Tadka — Plummerville, AR', type: 'truckstop', lat: 35.164, lng: -92.627,
           desc: 'Exit 107 off I-40. Authentic Indian food in a former Waffle House. Great vegetarian options.',
           appleMap: 'https://maps.apple.com/?address=305+N+Springfield+Dr,+Plummerville,+AR' },
@@ -891,8 +891,10 @@ function distMiles(lat1, lng1, lat2, lng2) {
 
 // Highwater mark — never goes backward. Stored in localStorage.
 // Version key so stale data from reorderings gets cleared
-const HW_KEY = 'drivehome_hw_v4';
+const HW_KEY = 'drivehome_hw_v5';
 let highwaterIdx = parseInt(localStorage.getItem(HW_KEY) || '0');
+localStorage.removeItem('drivehome_hw_v4');
+localStorage.removeItem('drivehome_hw_v3');
 localStorage.removeItem('drivehome_hw_v2');
 // Clear old key
 localStorage.removeItem('drivehome_hw');
