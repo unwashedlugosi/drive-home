@@ -420,13 +420,24 @@ const ROUTE = { days: [
           desc: 'Right next to POPS. Only truly round barn in America, built 1898. Free.',
           blurb: 'William Harrison Odor built this barn in 1898 using green bur oak lumber that he soaked in water and bent into shape. It\'s 60 feet in diameter and 43 feet tall, and it\'s the only truly round barn in the United States. A retired carpenter named Luke Robison spent his own money and six years restoring it in the 1990s.',
           appleMap: 'https://maps.apple.com/?address=107+E+Hwy+66,+Arcadia,+OK+73007' },
+        { name: 'Seminole Nation Museum', type: 'history', lat: 35.238, lng: -96.670,
+          desc: 'Seminole, OK. Small museum covering the Seminole people\'s forced removal from Florida to Oklahoma. Free. Right off I-40.',
+          blurb: 'The Seminole people were the last of the Five Civilized Tribes removed to Indian Territory. Unlike the others, they fought back — the Seminole Wars in Florida lasted from 1817 to 1858, the longest and most expensive Indian wars the U.S. ever fought. The Army spent $40 million and never fully defeated them. A remnant stayed in the Everglades and never signed a peace treaty. Those who were forcibly removed ended up here in Oklahoma.',
+          appleMap: 'https://maps.apple.com/?address=524+S+Wewoka+Ave,+Wewoka,+OK+74884' },
+        { name: 'Sequoyah\'s Cabin', type: 'history', lat: 35.452, lng: -94.773,
+          desc: 'Near Sallisaw, OK. Home of the Cherokee genius who single-handedly created a written alphabet for his language. National Historic Landmark. Free.',
+          blurb: 'Sequoyah was a Cherokee silversmith who, despite being illiterate in English, spent 12 years creating a complete writing system for the Cherokee language — 85 symbols, one for each syllable. He finished in 1821. Within a few years, the Cherokee Nation had a higher literacy rate than the surrounding white settlers. They published a newspaper, the Cherokee Phoenix, in 1828. Sequoyah\'s cabin near Sallisaw is where he lived after removal to Indian Territory.',
+          appleMap: 'https://maps.apple.com/?address=470288+Hwy+101,+Sallisaw,+OK+74955' },
+        { name: 'Fort Smith, AR', type: 'history', lat: 35.386, lng: -94.398,
+          desc: '"Hanging Judge" Parker\'s courtroom and Trail of Tears endpoint. Quick walkthrough. Just off I-40.',
+          blurb: 'Judge Isaac Parker presided over this federal court from 1875 to 1896, sentencing 160 people to death in a jurisdiction that covered 74,000 square miles of Indian Territory. The fort also marks the endpoint of the Trail of Tears, where Cherokee, Choctaw, Creek, and other nations were forcibly relocated in the 1830s.',
+          appleMap: 'https://maps.apple.com/?address=Fort+Smith+National+Historic+Site,+Fort+Smith,+AR' },
+        { name: 'Ozark Foothills', type: 'scenic', lat: 35.469, lng: -93.467,
+          desc: 'The stretch of I-40 through western Arkansas climbs into the Ozark foothills. Rolling green hills, pine forests, small farms. Enjoy the scenery.',
+          appleMap: 'https://maps.apple.com/?address=Clarksville,+AR' },
         { name: 'Indian Tadka — Plummerville, AR', type: 'truckstop', lat: 35.164, lng: -92.627,
           desc: 'Exit 107 off I-40. Authentic Indian food in a former Waffle House. Great vegetarian options.',
           appleMap: 'https://maps.apple.com/?address=305+N+Springfield+Dr,+Plummerville,+AR' },
-        { name: 'Fort Smith, AR', type: 'history', lat: 35.386, lng: -94.398,
-          desc: '"Hanging Judge" Parker\'s courtroom and Trail of Tears endpoint. Quick walkthrough if time allows.',
-          blurb: 'Judge Isaac Parker presided over this federal court from 1875 to 1896, sentencing 160 people to death in a jurisdiction that covered 74,000 square miles of Indian Territory. The fort also marks the endpoint of the Trail of Tears, where Cherokee, Choctaw, Creek, and other nations were forcibly relocated in the 1830s.',
-          appleMap: 'https://maps.apple.com/?address=Fort+Smith+National+Historic+Site,+Fort+Smith,+AR' },
         { name: 'The Root Cafe — Little Rock', type: 'food', lat: 34.738, lng: -92.274,
           desc: 'Farm-to-table, great vegetarian menu. 1500 Main St.',
           appleMap: 'https://maps.apple.com/?address=1500+Main+St,+Little+Rock,+AR+72202' }
@@ -621,30 +632,32 @@ const AUDIO_FILES = {
   'Lucille Hamons ran this gas st': '/audio/blurb-28-lucille-hamons-ran-this-gas-station-and-.mp3',
   'Oklahoma City\'s Stockyards Cit': '/audio/blurb-29-oklahoma-city-s-stockyards-city-is-the-l.mp3',
   'Oklahoma is home to 39 federal': '/audio/blurb-30-oklahoma-is-home-to-39-federally-recogni.mp3',
-  'POPS opened in 2007 and instan': '/audio/blurb-31-pops-opened-in-2007-and-instantly-became.mp3',
-  'William Harrison Odor built th': '/audio/blurb-32-william-harrison-odor-built-this-barn-in.mp3',
-  'On April 19, 1995, a truck bom': '/audio/blurb-33-on-april-19-1995-a-truck-bomb-destroyed-.mp3',
-  'Judge Isaac Parker presided ov': '/audio/blurb-34-judge-isaac-parker-presided-over-this-fe.mp3',
-  'In September 1957, nine Black ': '/audio/blurb-35-in-september-1957-nine-black-students-at.mp3',
-  'Sam Phillips opened Memphis Re': '/audio/blurb-36-sam-phillips-opened-memphis-recording-se.mp3',
-  'On April 4, 1968, Dr. Martin L': '/audio/blurb-37-on-april-4-1968-dr-martin-luther-king-jr.mp3',
-  'Stax Records operated out of a': '/audio/blurb-38-stax-records-operated-out-of-a-converted.mp3',
-  'John Luther "Casey" Jones was ': '/audio/blurb-39-john-luther-casey-jones-was-an-illinois-.mp3',
-  'The Kentucky Horse Park is uni': '/audio/blurb-40-the-kentucky-horse-park-is-unique-in-the.mp3',
-  'In 1985, a convicted drug smug': '/audio/blurb-41-in-1985-a-convicted-drug-smuggler-named-.mp3',
-  'Buffalo Trace has been making ': '/audio/blurb-42-buffalo-trace-has-been-making-whiskey-on.mp3',
-  'Lexington sits in the Bluegras': '/audio/blurb-43-lexington-sits-in-the-bluegrass-region-o.mp3',
-  'At the Exhibition Coal Mine, y': '/audio/blurb-44-at-the-exhibition-coal-mine-you-ride-a-r.mp3',
-  'Tamarack is a one-of-a-kind cu': '/audio/blurb-45-tamarack-is-a-one-of-a-kind-cultural-cen.mp3',
-  'Despite its name, the New Rive': '/audio/blurb-46-despite-its-name-the-new-river-is-one-of.mp3',
-  'Robert Porterfield founded the': '/audio/blurb-47-robert-porterfield-founded-the-barter-th.mp3',
-  'This 215-foot natural limeston': '/audio/blurb-48-this-215-foot-natural-limestone-arch-was.mp3',
-  'Lexington is a small college t': '/audio/blurb-49-lexington-is-a-small-college-town-with-a.mp3',
-  'Grand Caverns opened to the pu': '/audio/blurb-50-grand-caverns-opened-to-the-public-in-18.mp3',
-  'On May 15, 1864, Confederate f': '/audio/blurb-51-on-may-15-1864-confederate-forces-were-s.mp3',
-  'This outdoor museum tells the ': '/audio/blurb-52-this-outdoor-museum-tells-the-story-of-t.mp3',
-  'Winchester changed hands more ': '/audio/blurb-53-winchester-changed-hands-more-than-70-ti.mp3',
-  'The Shenandoah Valley was the ': '/audio/blurb-54-the-shenandoah-valley-was-the-great-high.mp3',
+  'On April 19, 1995, a truck bom': '/audio/blurb-31-on-april-19-1995-a-truck-bomb-destroyed-.mp3',
+  'POPS opened in 2007 and instan': '/audio/blurb-32-pops-opened-in-2007-and-instantly-became.mp3',
+  'William Harrison Odor built th': '/audio/blurb-33-william-harrison-odor-built-this-barn-in.mp3',
+  'The Seminole people were the l': '/audio/blurb-34-the-seminole-people-were-the-last-of-the.mp3',
+  'Sequoyah was a Cherokee silver': '/audio/blurb-35-sequoyah-was-a-cherokee-silversmith-who-.mp3',
+  'Judge Isaac Parker presided ov': '/audio/blurb-36-judge-isaac-parker-presided-over-this-fe.mp3',
+  'In September 1957, nine Black ': '/audio/blurb-37-in-september-1957-nine-black-students-at.mp3',
+  'Sam Phillips opened Memphis Re': '/audio/blurb-38-sam-phillips-opened-memphis-recording-se.mp3',
+  'On April 4, 1968, Dr. Martin L': '/audio/blurb-39-on-april-4-1968-dr-martin-luther-king-jr.mp3',
+  'Stax Records operated out of a': '/audio/blurb-40-stax-records-operated-out-of-a-converted.mp3',
+  'John Luther "Casey" Jones was ': '/audio/blurb-41-john-luther-casey-jones-was-an-illinois-.mp3',
+  'The Kentucky Horse Park is uni': '/audio/blurb-42-the-kentucky-horse-park-is-unique-in-the.mp3',
+  'In 1985, a convicted drug smug': '/audio/blurb-43-in-1985-a-convicted-drug-smuggler-named-.mp3',
+  'Buffalo Trace has been making ': '/audio/blurb-44-buffalo-trace-has-been-making-whiskey-on.mp3',
+  'Lexington sits in the Bluegras': '/audio/blurb-45-lexington-sits-in-the-bluegrass-region-o.mp3',
+  'At the Exhibition Coal Mine, y': '/audio/blurb-46-at-the-exhibition-coal-mine-you-ride-a-r.mp3',
+  'Tamarack is a one-of-a-kind cu': '/audio/blurb-47-tamarack-is-a-one-of-a-kind-cultural-cen.mp3',
+  'Despite its name, the New Rive': '/audio/blurb-48-despite-its-name-the-new-river-is-one-of.mp3',
+  'Robert Porterfield founded the': '/audio/blurb-49-robert-porterfield-founded-the-barter-th.mp3',
+  'This 215-foot natural limeston': '/audio/blurb-50-this-215-foot-natural-limestone-arch-was.mp3',
+  'Lexington is a small college t': '/audio/blurb-51-lexington-is-a-small-college-town-with-a.mp3',
+  'Grand Caverns opened to the pu': '/audio/blurb-52-grand-caverns-opened-to-the-public-in-18.mp3',
+  'On May 15, 1864, Confederate f': '/audio/blurb-53-on-may-15-1864-confederate-forces-were-s.mp3',
+  'This outdoor museum tells the ': '/audio/blurb-54-this-outdoor-museum-tells-the-story-of-t.mp3',
+  'Winchester changed hands more ': '/audio/blurb-55-winchester-changed-hands-more-than-70-ti.mp3',
+  'The Shenandoah Valley was the ': '/audio/blurb-56-the-shenandoah-valley-was-the-great-high.mp3',
 };
 
 const LISTEN_SVG = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>';
@@ -891,7 +904,7 @@ function distMiles(lat1, lng1, lat2, lng2) {
 
 // Highwater mark — never goes backward. Stored in localStorage.
 // Version key so stale data from reorderings gets cleared
-const HW_KEY = 'drivehome_hw_v5';
+const HW_KEY = 'drivehome_hw_v6';
 let highwaterIdx = parseInt(localStorage.getItem(HW_KEY) || '0');
 localStorage.removeItem('drivehome_hw_v4');
 localStorage.removeItem('drivehome_hw_v3');
@@ -903,18 +916,33 @@ function updateYouAreHere() {
   if (!currentPosition) return;
   const flat = getFlatStops();
 
-  // Find the nearest stop with coordinates
-  let nearestIdx = 0;
-  let nearestDist = Infinity;
-  flat.forEach((stop, i) => {
-    if (!stop.lat || !stop.lng) return;
-    const d = distMiles(currentPosition.lat, currentPosition.lng, stop.lat, stop.lng);
-    if (d < nearestDist) { nearestDist = d; nearestIdx = i; }
-  });
+  // Walk through stops from the current highwater. For each consecutive pair,
+  // if we're closer to the NEXT stop than the current one, we've passed it — advance.
+  // This always points at the next upcoming stop, never behind.
+  let candidateIdx = highwaterIdx;
+  for (let i = highwaterIdx; i < flat.length - 1; i++) {
+    const curr = flat[i];
+    if (!curr.lat || !curr.lng) { candidateIdx = i + 1; continue; }
+    // Find next stop with coordinates
+    let nextIdx = -1;
+    for (let j = i + 1; j < flat.length; j++) {
+      if (flat[j].lat && flat[j].lng) { nextIdx = j; break; }
+    }
+    if (nextIdx === -1) break;
+    const next = flat[nextIdx];
+    const dCurr = distMiles(currentPosition.lat, currentPosition.lng, curr.lat, curr.lng);
+    const dNext = distMiles(currentPosition.lat, currentPosition.lng, next.lat, next.lng);
+    // If we're closer to the next stop, we've passed the current one
+    if (dNext < dCurr) {
+      candidateIdx = nextIdx;
+    } else {
+      break; // We haven't passed this one yet — it's our next stop
+    }
+  }
 
-  // Only advance forward, never backward
-  if (nearestIdx > highwaterIdx) {
-    highwaterIdx = nearestIdx;
+  // Only advance forward
+  if (candidateIdx > highwaterIdx) {
+    highwaterIdx = candidateIdx;
     localStorage.setItem(HW_KEY, String(highwaterIdx));
   }
 
