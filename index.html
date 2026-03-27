@@ -902,66 +902,69 @@ function distMiles(lat1, lng1, lat2, lng2) {
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 }
 
-// Highwater mark — never goes backward. Stored in localStorage.
-// Version key so stale data from reorderings gets cleared
-const HW_KEY = 'drivehome_hw_v7';
-let highwaterIdx = parseInt(localStorage.getItem(HW_KEY) || '0');
-localStorage.removeItem('drivehome_hw_v4');
-localStorage.removeItem('drivehome_hw_v3');
-localStorage.removeItem('drivehome_hw_v2');
-// Clear old key
-localStorage.removeItem('drivehome_hw');
+// Clear ALL old localStorage keys
+['drivehome_hw','drivehome_hw_v2','drivehome_hw_v3','drivehome_hw_v4','drivehome_hw_v5','drivehome_hw_v6','drivehome_hw_v7'].forEach(k => localStorage.removeItem(k));
 
 function updateYouAreHere() {
   if (!currentPosition) return;
   const flat = getFlatStops();
 
-  // Build list of stops that have coordinates, in order
-  const withCoords = [];
-  flat.forEach((stop, i) => { if (stop.lat && stop.lng) withCoords.push({ idx: i, lat: stop.lat, lng: stop.lng }); });
+  // Pure GPS — no saved state, no highwater, no caching.
+  // Every update: find nearest stop, point caret at the NEXT one after it.
 
-  // Find the nearest stop by distance
-  let nearestListIdx = 0;
+  // 1. Get all stops with coordinates
+  const withCoords = [];
+  flat.forEach((stop, i) => {
+    if (stop.lat && stop.lng) withCoords.push({ flatIdx: i, lat: stop.lat, lng: stop.lng });
+  });
+  if (withCoords.length === 0) return;
+
+  // 2. Find the nearest stop
+  let nearestI = 0;
   let nearestDist = Infinity;
-  withCoords.forEach((s, li) => {
+  withCoords.forEach((s, i) => {
     const d = distMiles(currentPosition.lat, currentPosition.lng, s.lat, s.lng);
-    if (d < nearestDist) { nearestDist = d; nearestListIdx = li; }
+    if (d < nearestDist) { nearestDist = d; nearestI = i; }
   });
 
-  // The "current" stop is the nearest one, OR the one after it if we're
-  // past the midpoint (closer to the next). This ensures we always show
-  // the NEXT upcoming stop.
-  let currentIdx = withCoords[nearestListIdx].idx;
-  if (nearestListIdx < withCoords.length - 1) {
-    const next = withCoords[nearestListIdx + 1];
+  // 3. Determine: are we approaching the nearest stop or past it?
+  //    If the next stop in sequence is closer than the previous one, we've passed nearest.
+  let caretFlatIdx = withCoords[nearestI].flatIdx;
+
+  if (nearestI < withCoords.length - 1) {
+    const prev = nearestI > 0 ? withCoords[nearestI - 1] : null;
+    const next = withCoords[nearestI + 1];
     const dNext = distMiles(currentPosition.lat, currentPosition.lng, next.lat, next.lng);
-    // If nearest is behind us (next is closer or similar distance), advance
-    if (dNext <= nearestDist) {
-      currentIdx = next.idx;
+
+    if (prev) {
+      const dPrev = distMiles(currentPosition.lat, currentPosition.lng, prev.lat, prev.lng);
+      // If we're closer to nearest than to previous, AND closer to next than to nearest,
+      // we've passed nearest — caret goes to next
+      if (dNext < nearestDist) {
+        caretFlatIdx = next.flatIdx;
+      }
+    } else {
+      // No previous stop — if next is closer, advance
+      if (dNext < nearestDist) {
+        caretFlatIdx = next.flatIdx;
+      }
     }
   }
 
-  // Only advance forward, never backward
-  if (currentIdx > highwaterIdx) {
-    highwaterIdx = currentIdx;
-    localStorage.setItem(HW_KEY, String(highwaterIdx));
-  }
-
-  // Apply styles
+  // 4. Apply styles — everything before caret is passed
   document.querySelectorAll('.stop').forEach(el => el.classList.remove('current', 'passed'));
   document.querySelectorAll('.day-header').forEach(el => el.classList.remove('passed'));
   document.querySelectorAll('.triptik-section').forEach(el => el.classList.remove('passed'));
   document.querySelectorAll('.strip').forEach(el => el.classList.remove('passed'));
 
-  const stopEls = document.querySelectorAll('.stop[data-stop-idx]');
-  stopEls.forEach(el => {
+  document.querySelectorAll('.stop[data-stop-idx]').forEach(el => {
     const idx = parseInt(el.dataset.stopIdx);
-    if (idx < highwaterIdx) el.classList.add('passed');
-    else if (idx === highwaterIdx) el.classList.add('current');
+    if (idx < caretFlatIdx) el.classList.add('passed');
+    else if (idx === caretFlatIdx) el.classList.add('current');
   });
 
-  const currentDay = flat[highwaterIdx] ? flat[highwaterIdx].dayIdx : 0;
-  const currentSec = flat[highwaterIdx] ? flat[highwaterIdx].secIdx : 0;
+  const currentDay = flat[caretFlatIdx] ? flat[caretFlatIdx].dayIdx : 0;
+  const currentSec = flat[caretFlatIdx] ? flat[caretFlatIdx].secIdx : 0;
 
   document.querySelectorAll('.day-header[data-day]').forEach(el => {
     if (parseInt(el.dataset.day) - 1 < currentDay) el.classList.add('passed');
