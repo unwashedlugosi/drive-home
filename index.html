@@ -485,7 +485,7 @@ const ROUTE = { days: [
   },
   // ==================== DAY 4: NASHVILLE → BECKLEY WV (I-40/I-75/I-64/I-77) ====================
   { day: 4, date: 'Fri Mar 28', from: 'Nashville, TN', to: 'Beckley, WV', miles: 450, hours: '7',
-    overnight: { name: 'Hotel in Beckley, WV (TBD)', detail: 'Near New River Gorge National Park.' },
+    overnight: { name: 'Natural Bridge Historic Hotel', detail: 'Historic hotel at Natural Bridge, VA. Arrived 3AM.' },
     tip: 'A touring day — Knoxville, Kentucky horse country, Charleston, and New River Gorge. Buffalo Trace distillery tour is free. The Cocaine Bear in Lexington is ridiculous and wonderful.',
     appleMapsUrl: 'https://maps.apple.com/?saddr=Current+Location&daddr=Knoxville,+TN&daddr=Lexington,+KY&daddr=Charleston,+WV&daddr=Beckley,+WV',
     sections: [
@@ -534,48 +534,75 @@ const ROUTE = { days: [
         { name: 'Hotel in Beckley', type: 'overnight', lat: 37.778, lng: -81.188,
           desc: 'Near New River Gorge. Gateway to tomorrow\'s mountain drive.',
           appleMap: 'https://maps.apple.com/?address=Beckley,+WV' }
-      ]}
-    ]
-  },
-  // ==================== DAY 5: BECKLEY → NYC (I-77/I-81/I-78) ====================
-  { day: 5, date: 'Sat Mar 29', from: 'Beckley, WV', to: 'New York, NY', miles: 540, hours: '8.5',
+    // ==================== DAY 5: NATURAL BRIDGE → NYC (I-81/I-78) ====================
+  { day: 5, date: 'Sat Mar 29', from: 'Natural Bridge, VA', to: 'New York, NY', miles: 340, hours: '5.5',
     overnight: null,
-    tip: 'Moderate final day. Leave by 7 AM, home by 4–5 PM. The I-81 corridor through Virginia is packed with history — enjoy the blurbs. Natural Bridge and Grand Caverns are worth a quick stop.',
-    appleMapsUrl: 'https://maps.apple.com/?saddr=Current+Location&daddr=Wytheville,+VA&daddr=Staunton,+VA&daddr=New+York,+NY',
+    tip: 'Easy final day — home by mid-afternoon. The Shenandoah Valley is packed with history. Kline\'s Dairy Bar in Harrisonburg and Route 11 Chips in Middletown are worth a stop.',
+    appleMapsUrl: 'https://maps.apple.com/?saddr=Current+Location&daddr=Staunton,+VA&daddr=Harrisonburg,+VA&daddr=Winchester,+VA&daddr=New+York,+NY',
     sections: [
-      { name: 'Beckley to Wytheville', stops: [
-        { name: 'Wytheville, VA', type: 'food', lat: 36.948, lng: -81.085,
-          desc: 'I-77 meets I-81 here. Good food stop. Graze on Main has vegetarian options.',
-          appleMap: 'https://maps.apple.com/?address=Wytheville,+VA' },
-        { name: 'Abingdon — Barter Theatre', type: 'history', lat: 36.710, lng: -81.977,
-          desc: 'State Theatre of Virginia, founded 1933. Admission was paid in produce during the Depression. Gregory Peck started here.',
-          blurb: 'Robert Porterfield founded the Barter Theatre in 1933 with a radical idea: during the Depression, actors were starving in New York while farmers in Appalachia had food but no entertainment. He invited actors to Virginia where admission cost a ham or a bushel of corn. On opening night, the theater took in $4.30 and two hogs. It\'s now the longest-running professional theater in America.',
-          appleMap: 'https://maps.apple.com/?address=127+W+Main+St,+Abingdon,+VA+24210' }
-      ]},
-      { name: 'Shenandoah Valley', stops: [
-        { name: 'Natural Bridge, VA', type: 'scenic', lat: 37.628, lng: -79.544,
-          desc: '215-foot natural limestone arch. George Washington carved his initials in it. Jefferson bought it. $9. 15 min off I-81.',
+      { name: 'Natural Bridge to Staunton', stops: [
+        { name: 'Natural Bridge Historic Hotel', type: 'overnight', lat: 37.628, lng: -79.544,
+          desc: 'Last night\'s hotel. 15 Appledore Ln, Natural Bridge, VA.',
+          appleMap: 'https://maps.apple.com/?address=15+Appledore+Ln,+Natural+Bridge,+VA+24578' },
+        { name: 'Natural Bridge', type: 'scenic', lat: 37.628, lng: -79.544,
+          desc: '215-foot natural limestone arch. George Washington carved his initials. Jefferson bought it. $9. Right here at the hotel.',
           blurb: 'This 215-foot natural limestone arch was once considered one of the natural wonders of the world. George Washington surveyed it as a young man and carved his initials in the rock. Thomas Jefferson was so impressed he bought it from King George III in 1774 for 20 shillings. The Monacan people considered it sacred.',
           appleMap: 'https://maps.apple.com/?address=Natural+Bridge,+VA' },
         { name: 'Lexington, VA — VMI & W&L', type: 'history', lat: 37.784, lng: -79.443,
           desc: 'VMI (1839) and Washington & Lee. Stonewall Jackson and Robert E. Lee buried here. 10 min off I-81.',
           blurb: 'Lexington is a small college town with an outsized place in American history. VMI, founded in 1839, is the oldest state-supported military college. Stonewall Jackson taught physics here before the Civil War. After the war, Robert E. Lee served as president of what became Washington and Lee University until his death in 1870. George C. Marshall, architect of the plan to rebuild Europe after WWII, was a VMI graduate.',
           appleMap: 'https://maps.apple.com/?address=Lexington,+VA' },
+        { name: 'Frontier Culture Museum', type: 'history', lat: 38.140, lng: -79.095,
+          desc: 'Staunton. Outdoor living-history museum — farms from Ireland, England, Germany, West Africa. How the Valley\'s culture was forged. $12.',
+          blurb: 'This outdoor museum tells the story of the Shenandoah Valley through the cultures that settled it. Actual historic buildings were disassembled in Ireland, England, and Germany, shipped to Virginia, and rebuilt here. You walk through a 1700s Irish farm, an English cottage, a German farmstead, and a West African compound.',
+          appleMap: 'https://maps.apple.com/?address=1290+Richmond+Rd,+Staunton,+VA+24401' },
+        { name: 'Woodrow Wilson Birthplace', type: 'history', lat: 38.150, lng: -79.072,
+          desc: 'Staunton. The 28th president was born here in 1856. Greek Revival manse, museum. Staunton\'s entire downtown is a National Historic District.',
+          blurb: 'Woodrow Wilson was born in this Greek Revival manse in 1856, the son of a Presbyterian minister. He\'s the only president buried in Washington, D.C. (at the National Cathedral). Staunton itself is a beautifully preserved Victorian town — the entire downtown is a National Historic District with buildings dating to the 1850s.',
+          appleMap: 'https://maps.apple.com/?address=Woodrow+Wilson+Presidential+Library,+Staunton,+VA' },
+        { name: 'Byers Street Bistro', type: 'food', lat: 38.149, lng: -79.074,
+          desc: 'Staunton downtown. Good veggie options, seasonal menu. Nice lunch stop.',
+          appleMap: 'https://maps.apple.com/?address=18+Byers+St,+Staunton,+VA+24401' }
+      ]},
+      { name: 'Staunton to Winchester', stops: [
         { name: 'Grand Caverns', type: 'scenic', lat: 38.253, lng: -79.184,
           desc: 'Grottoes, VA. America\'s oldest show cave (1806). Civil War soldiers carved names on the walls. $22. 20 min off I-81.',
           blurb: 'Grand Caverns opened to the public in 1806, making it the oldest continuously operating show cave in America. During the Civil War, both Union and Confederate soldiers visited and carved their signatures on the walls — you can still read them. Thomas Jefferson explored nearby caves and wrote about Virginia\'s underground wonders.',
           appleMap: 'https://maps.apple.com/?address=5+Grand+Caverns+Dr,+Grottoes,+VA+24441' },
+        { name: 'Virginia Quilt Museum', type: 'history', lat: 38.449, lng: -78.869,
+          desc: 'Harrisonburg. 300+ quilts, some from the Civil War era. In a beautiful 1856 home. Small admission.',
+          blurb: 'This museum houses over 300 quilts spanning two centuries of American life. Quilts were never just blankets — they were stories, family records, and even coded messages. During the Civil War, women on both sides stitched quilts with patriotic motifs. Some historians believe certain quilt patterns were used as signals on the Underground Railroad, though this is debated. The museum is in a restored 1856 Warren-Sipe house.',
+          appleMap: 'https://maps.apple.com/?address=301+S+Main+St,+Harrisonburg,+VA+22801' },
+        { name: 'The Little Grill Collective', type: 'food', lat: 38.451, lng: -78.869,
+          desc: 'Harrisonburg. Worker-owned cooperative, amazing breakfast/brunch. Excellent vegetarian menu. First-come first-served. 621 Main St.',
+          appleMap: 'https://maps.apple.com/?address=621+N+Main+St,+Harrisonburg,+VA+22802' },
+        { name: 'Kline\'s Dairy Bar', type: 'food', lat: 38.436, lng: -78.870,
+          desc: 'Harrisonburg. Legendary ice cream since 1943. Cash only. The line is always long and always worth it.',
+          blurb: 'Kline\'s has been serving homemade ice cream in Harrisonburg since 1943, and the recipe hasn\'t changed. They rotate two flavors daily — one is always vanilla, the other changes. There\'s no menu board, no fancy toppings. You get a cone or a cup. The line wraps around the building on summer evenings and nobody cares because it\'s that good.',
+          appleMap: 'https://maps.apple.com/?address=58+E+Wolfe+St,+Harrisonburg,+VA+22802' },
         { name: 'New Market Battlefield', type: 'history', lat: 38.656, lng: -78.865,
           desc: 'Civil War site where VMI cadets (ages 15-17) charged into battle. Museum + 300-acre battlefield. $15.',
           blurb: 'On May 15, 1864, Confederate forces were so desperate that 257 cadets from Virginia Military Institute — boys aged 15 to 17 — were marched 80 miles from Lexington to fight in the Battle of New Market. They charged across an open field under artillery fire, losing 10 killed and 47 wounded.',
           appleMap: 'https://maps.apple.com/?address=8895+George+Collins+Pkwy,+New+Market,+VA+22844' },
-        { name: 'Frontier Culture Museum', type: 'history', lat: 38.140, lng: -79.095,
-          desc: 'Staunton. Outdoor living-history museum — farms from Ireland, England, Germany, West Africa. $12.',
-          blurb: 'This outdoor museum tells the story of the Shenandoah Valley through the cultures that settled it. Actual historic buildings were disassembled in Ireland, England, and Germany, shipped to Virginia, and rebuilt here. You walk through a 1700s Irish farm, an English cottage, a German farmstead, and a West African compound.',
-          appleMap: 'https://maps.apple.com/?address=1290+Richmond+Rd,+Staunton,+VA+24401' },
-        { name: 'Stonewall Jackson\'s HQ — Winchester', type: 'history', lat: 39.186, lng: -78.167,
-          desc: 'Winchester changed hands 70+ times during the Civil War. Jackson\'s headquarters during the Valley Campaign.',
-          blurb: 'Winchester changed hands more than 70 times during the Civil War — more than any other town in America. It was strategically vital because it sat at the northern end of the Shenandoah Valley, which pointed like a dagger at Washington, D.C. Jackson used this house as his headquarters while planning his legendary Valley Campaign of 1862.',
+        { name: 'Shenandoah Caverns', type: 'scenic', lat: 38.730, lng: -78.785,
+          desc: 'Exit 269 off I-81. The only cavern in Virginia with elevator access. Also has a bizarre collection of vintage parade floats in the "American Celebration on Parade" building next door.',
+          blurb: 'Shenandoah Caverns is the only Virginia cave with elevator access — you ride 60 feet underground. But the real oddity is next door: American Celebration on Parade, a warehouse full of massive floats from presidential inaugurals, Macy\'s Thanksgiving, and other parades. It\'s a surreal combination — ancient limestone formations and a 20-foot Smokey Bear float, all at the same exit.',
+          appleMap: 'https://maps.apple.com/?address=261+Caverns+Rd,+Quicksburg,+VA+22847' },
+        { name: 'Route 11 Potato Chips', type: 'curiosity', lat: 39.029, lng: -78.507,
+          desc: 'Middletown, VA. Small-batch chips made in a factory you can watch. Free samples, factory store. Right off I-81.',
+          blurb: 'Route 11 Chips has been making small-batch kettle-cooked potato chips in Middletown since 1992. They\'re named for the old Valley Turnpike (Route 11) that I-81 replaced. You can watch the chips being made through a window and sample flavors like Chesapeake Crab, Dill Pickle, and Mama Zuma\'s Revenge habanero. It\'s a two-minute detour off I-81.',
+          appleMap: 'https://maps.apple.com/?address=7815+Main+St,+Middletown,+VA+22645' },
+        { name: 'Belle Grove Plantation', type: 'history', lat: 39.024, lng: -78.530,
+          desc: 'Middletown. 1797 manor house — James Madison\'s sister lived here. Union HQ during the Battle of Cedar Creek (1864). On the battlefield.',
+          blurb: 'Belle Grove was built in 1797 by Major Isaac Hite and his wife Nelly, who was James Madison\'s sister. Thomas Jefferson contributed to the architectural design. In October 1864, the house became the epicenter of the Battle of Cedar Creek — Union General Sheridan used it as headquarters. His dramatic counterattack here effectively ended the Civil War in the Shenandoah Valley.',
+          appleMap: 'https://maps.apple.com/?address=336+Belle+Grove+Rd,+Middletown,+VA+22645' },
+        { name: 'Patsy Cline Historic House', type: 'history', lat: 39.175, lng: -78.166,
+          desc: 'Winchester. The home where country legend Patsy Cline grew up. Preserved with original furnishings. Tours Apr–Oct, $10.',
+          blurb: 'Virginia Patterson Hensley — Patsy Cline — grew up in this modest house at 608 South Kent Street. She lived here longer than anywhere else and always called Winchester home, even after moving to Nashville. She recorded "Crazy," "I Fall to Pieces," and "Walking After Midnight" before dying in a plane crash in 1963 at age 30. She was the first female solo artist inducted into the Country Music Hall of Fame.',
+          appleMap: 'https://maps.apple.com/?address=608+S+Kent+St,+Winchester,+VA+22601' },
+        { name: 'Stonewall Jackson\'s HQ', type: 'history', lat: 39.186, lng: -78.167,
+          desc: 'Winchester. Jackson\'s headquarters during the Valley Campaign. Winchester changed hands 70+ times in the Civil War.',
+          blurb: 'Winchester changed hands more than 70 times during the Civil War — more than any other town in America. It was strategically vital because it sat at the northern end of the Shenandoah Valley, which pointed like a dagger at Washington, D.C. Jackson used this house while planning his legendary Valley Campaign of 1862.',
           appleMap: 'https://maps.apple.com/?address=415+N+Braddock+St,+Winchester,+VA+22601' },
         { name: 'Museum of the Shenandoah Valley', type: 'history', lat: 39.175, lng: -78.176,
           desc: 'Winchester. 11,000 artifacts, Glen Burnie House (1790s), 7 acres of gardens. $12.',
@@ -583,9 +610,17 @@ const ROUTE = { days: [
           appleMap: 'https://maps.apple.com/?address=901+Amherst+St,+Winchester,+VA+22601' }
       ]},
       { name: 'Winchester to NYC', stops: [
+        { name: 'Roadside America', type: 'curiosity', lat: 40.525, lng: -76.107,
+          desc: 'Shartlesville, PA. Massive indoor model railroad village — an old-school roadside attraction. Every hour the lights dim for a patriotic night scene. Right off I-78.',
+          blurb: 'Roadside America has been wowing travelers since 1953. Laurence Gieringer spent 60 years building this enormous indoor miniature village, complete with working trains, tiny factories, waterfalls, and an entire mountain landscape. Every hour, the lights fade to simulate nightfall while "God Bless America" plays and tiny lights twinkle across the model. It\'s gloriously earnest and completely unreproducible — the kind of thing one obsessive person builds over a lifetime.',
+          appleMap: 'https://maps.apple.com/?address=109+Roadside+Dr,+Shartlesville,+PA+19554' },
         { name: 'Home', type: 'overnight', lat: 40.748, lng: -73.986,
-          desc: 'I-81 N to I-78 E through NJ. Home by late afternoon. You made it.' }
+          desc: 'I-81 to I-78 through PA and NJ. Home by mid-afternoon. You made it.' }
       ]}
+    ]
+  }
+
+    ]}
     ]
   }
 
@@ -650,14 +685,21 @@ const AUDIO_FILES = {
   'At the Exhibition Coal Mine, y': '/audio/blurb-46-at-the-exhibition-coal-mine-you-ride-a-r.mp3',
   'Tamarack is a one-of-a-kind cu': '/audio/blurb-47-tamarack-is-a-one-of-a-kind-cultural-cen.mp3',
   'Despite its name, the New Rive': '/audio/blurb-48-despite-its-name-the-new-river-is-one-of.mp3',
-  'Robert Porterfield founded the': '/audio/blurb-49-robert-porterfield-founded-the-barter-th.mp3',
-  'This 215-foot natural limeston': '/audio/blurb-50-this-215-foot-natural-limestone-arch-was.mp3',
-  'Lexington is a small college t': '/audio/blurb-51-lexington-is-a-small-college-town-with-a.mp3',
-  'Grand Caverns opened to the pu': '/audio/blurb-52-grand-caverns-opened-to-the-public-in-18.mp3',
-  'On May 15, 1864, Confederate f': '/audio/blurb-53-on-may-15-1864-confederate-forces-were-s.mp3',
-  'This outdoor museum tells the ': '/audio/blurb-54-this-outdoor-museum-tells-the-story-of-t.mp3',
-  'Winchester changed hands more ': '/audio/blurb-55-winchester-changed-hands-more-than-70-ti.mp3',
-  'The Shenandoah Valley was the ': '/audio/blurb-56-the-shenandoah-valley-was-the-great-high.mp3',
+  'This 215-foot natural limeston': '/audio/blurb-49-this-215-foot-natural-limestone-arch-was.mp3',
+  'Lexington is a small college t': '/audio/blurb-50-lexington-is-a-small-college-town-with-a.mp3',
+  'This outdoor museum tells the ': '/audio/blurb-51-this-outdoor-museum-tells-the-story-of-t.mp3',
+  'Woodrow Wilson was born in thi': '/audio/blurb-52-woodrow-wilson-was-born-in-this-greek-re.mp3',
+  'Grand Caverns opened to the pu': '/audio/blurb-53-grand-caverns-opened-to-the-public-in-18.mp3',
+  'This museum houses over 300 qu': '/audio/blurb-54-this-museum-houses-over-300-quilts-spann.mp3',
+  'Kline\'s has been serving homem': '/audio/blurb-55-kline-s-has-been-serving-homemade-ice-cr.mp3',
+  'On May 15, 1864, Confederate f': '/audio/blurb-56-on-may-15-1864-confederate-forces-were-s.mp3',
+  'Shenandoah Caverns is the only': '/audio/blurb-57-shenandoah-caverns-is-the-only-virginia-.mp3',
+  'Route 11 Chips has been making': '/audio/blurb-58-route-11-chips-has-been-making-small-bat.mp3',
+  'Belle Grove was built in 1797 ': '/audio/blurb-59-belle-grove-was-built-in-1797-by-major-i.mp3',
+  'Virginia Patterson Hensley — P': '/audio/blurb-60-virginia-patterson-hensley-patsy-cline-g.mp3',
+  'Winchester changed hands more ': '/audio/blurb-61-winchester-changed-hands-more-than-70-ti.mp3',
+  'The Shenandoah Valley was the ': '/audio/blurb-62-the-shenandoah-valley-was-the-great-high.mp3',
+  'Roadside America has been wowi': '/audio/blurb-63-roadside-america-has-been-wowing-travele.mp3',
 };
 
 const LISTEN_SVG = '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>';
